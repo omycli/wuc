@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "logs/", "dist/", "test/", "node_modules/**/node_modules"],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "env": {
+    "NODE_ENV": "local",
+    "DEBUG": "*,-nodemon:*,-nodemon,-knex:pool"
+  },
+  "ext": "js json",
+  "legacy-watch": false
+}

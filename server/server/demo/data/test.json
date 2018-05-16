@@ -1,0 +1,15 @@
+{
+    "code": "0",
+    "msg": "登陆成功",
+    "data": {
+        "uid": "8z5bbpG9rH+m5NCx++m0yg==",
+        "openid": "",
+        "headimgurl": "/static/images/demo_head.png",
+        "wx_nickname": "",
+        "unionid": "",
+        "from": 1,
+        "created": "0000-00-00 00:00:00",
+        "updated": "0000-00-00 00:00:00",
+        "deleted": "0000-00-00 00:00:00"
+    }
+}

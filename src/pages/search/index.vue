@@ -68,20 +68,22 @@ $bem-component-namespace: 'md';
   @include e('header') {
     display: flex;
     justify-content: center;
-    border-bottom: 1rpx solid #ccc;
+    border: 1rpx solid #ccc;
+    border-radius: 15rpx;
+    margin: 10rpx 20rpx;
   }
 
   @include e('input') {
     width: 100%;
     padding: 20rpx 40rpx;
     color: #666;
-    font-size: 38rpx;
+    font-size: 30rpx;
     text-align: center;
   }
 
   @include e('placeholder') {
     color: #ccc;
-    font-size: 38rpx;
+    font-size: 30rpx;
     text-align: center;
   }
 }

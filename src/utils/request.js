@@ -10,6 +10,8 @@ if (process.env.METHOD === 'proxy1') {
   request.config.baseURL = 'http://localhost:3002' // 本地代理2(100次/小时)
 } else if (process.env.METHOD === 'nginx') {
   request.config.baseURL = 'https://movie.douban.gusaifei.com/v2/movie' // nginx 代理(100次/小时)
+} else if (process.env.METHOD === 'server') {
+  request.config.baseURL = 'https://127.0.0.1:3003/douban' // 本地接口不限次数
 }
 
 request.interceptors.request.use((request) => {

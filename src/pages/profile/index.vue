@@ -20,8 +20,8 @@ export default {
       title: '关于',
       userInfo: {
         wechat: 'SG',
-        nickName: 'https://github.com/mini-mpvue/mpvue-douban',
-        avatarUrl: '/static/images/qrcode-sg.png'
+        nickName: '福小秘',
+        avatarUrl: '/static/images/qrcode-sg.jpeg'
       }
     }
   },
@@ -56,7 +56,7 @@ $bem-component-namespace: 'md';
   @include e('title') {
     padding: 40rpx;
     color: #999;
-    font-size: 148rpx;
+    font-size: 88rpx;
     text-align: center;
   }
 

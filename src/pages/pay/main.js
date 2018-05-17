@@ -10,7 +10,7 @@ app.$mount()
 
 export default {
   config: {
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: '支付',
     navigationBarTextStyle: 'white',
     enablePullDownRefresh: false,
     navigationBarBackgroundColor: '#24C6DC'

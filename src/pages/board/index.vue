@@ -1,8 +1,8 @@
 <template>
     <div class="md-board">
         <view class="md-board__slide">
-            <swiper class="md-board__swiper" @change="onSwiperChange" :current="curIndex" :circular="true" :indicator-dots="true" :autoplay="false" :interval="5000" :duration="300">
-                <swiper-item class="md-board__swiper-item" v-for="(movie, index) in movies" :key="actpic">
+            <swiper style="overflow: visible;" class="md-board__swiper" @change="onSwiperChange" :current="curIndex" :circular="true" :indicator-dots="true" :autoplay="false" :interval="5000" :duration="300">
+                <swiper-item class="md-board__swiper-item" v-for="(movie, index) in movies" :key="actpic" style="overflow: visible;">
                     <image class="md-board__slide-image" :src="movie.images.large" :style="'-webkit-transform: scale('+(curIndex === index ? 0.9 : 0.65)+') translate('+((curIndex == index - 1 || curIndex == index + 1) ? (curIndex - index) * 30 : 0)+'%,0)' " mode="aspectFill" />
                 </swiper-item>
             </swiper>
@@ -79,7 +79,7 @@ $bem-component-namespace: 'md';
 
 @include c('board') {
     @include e('swiper') {
-        height: 380rpx;
+        height: 480rpx;
         margin-bottom: 20rpx;
         overflow: visible;
     }
@@ -87,14 +87,14 @@ $bem-component-namespace: 'md';
     @include e('swiper-item') {
         overflow: visible;
         width: 100%;
-        height: 300rpx;
+        height: 420rpx;
         border-radius: 15rpx;
         overflow: hidden;
     }
 
     @include e('slide-image') {
         width: 100%;
-        height: 300rpx;
+        height: 420rpx;
         border-radius: 15rpx;
         overflow: hidden;
         box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.1);

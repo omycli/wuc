@@ -1,31 +1,37 @@
-import wx from './wx'
+import wx from './wx';
 
-export function login () {
+export function login() {
   return new Promise((resolve, reject) => {
-    wx.login({ success: resolve, fail: reject })
-  })
+    wx.login({ success: resolve, fail: reject });
+  });
 }
 
-export function getUserInfo () {
+export function getUserInfo() {
   return new Promise((resolve, reject) => {
-    wx.getUserInfo({ success: resolve, fail: reject })
-  })
+    wx.getUserInfo({ success: resolve, fail: reject });
+  });
 }
 
-export function setStorage (key, value) {
+export function setStorage(key, value) {
   return new Promise((resolve, reject) => {
-    wx.setStorage({ key: key, data: value, success: resolve, fail: reject })
-  })
+    wx.setStorage({ key: key, data: value, success: resolve, fail: reject });
+  });
 }
 
-export function getStorage (key) {
+export function getStorage(key) {
   return new Promise((resolve, reject) => {
-    wx.getStorage({ key: key, success: resolve, fail: reject })
-  })
+    wx.getStorage({ key: key, success: resolve, fail: reject });
+  });
 }
 
-export function getLocation (type) {
+export function getLocation(type) {
   return new Promise((resolve, reject) => {
-    wx.getLocation({ type: type, success: resolve, fail: reject })
-  })
+    wx.getLocation({ type: type, success: resolve, fail: reject });
+  });
+}
+
+export function requestPayment(data) {
+  return new Promise((resolve, reject) => {
+    wx.requestPayment({ data, success: resolve, fail: reject });
+  });
 }

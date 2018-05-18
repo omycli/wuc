@@ -6,6 +6,6 @@ app.$mount();
 
 export default {
   config: {
-    navigationBarTitleText: '豆瓣电影'
+    navigationBarTitleText: '车牌键盘'
   }
 };

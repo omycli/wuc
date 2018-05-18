@@ -41,6 +41,17 @@
   justify-content: flex-end;
   -webkit-justify-content: flex-end;
 }
+.row-wrap{
+  @extend .row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.row-nowrap{
+  @extend .row;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+}
+
 .column {
   display: flex;
   display: -webkit-flex;
@@ -61,14 +72,6 @@
   @extend .column;
   justify-content: space-between;
   -webkit-justify-content: space-between;
-}
-.row-wrap{
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-}
-.row-nowrap{
-  flex-wrap: nowrap;
-  -webkit-flex-wrap: nowrap;
 }
 
 

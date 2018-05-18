@@ -3,7 +3,7 @@
     <swiper class="md-splash__swiper" indicator-dots>
       <swiper-item class="md-splash__item"  v-for="(item, index) in movies" :for-index="index" :key="item.id">
         <image :src="item.images.large" class="md-splash__image" mode="aspectFill"/>
-        <button class="md-splash__start" @click="handleStart" v-if="index === movies.length - 1">立即体验</button>
+        <button class="md-splash__start" @click="handleStart">立即体验</button>
       </swiper-item>
     </swiper>
   </div>

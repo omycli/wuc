@@ -32,7 +32,8 @@ export default {
                 {
                     img:
                         'http://hbfile.b0.upaiyun.com/img/home/banner/c88dab66a15416697c930a31c0ec3364b2c3990b102914',
-                    name: '停车键盘'
+                    name: '停车键盘',
+                    url: '../keyboard/main'
                 },
                 {
                     img:
@@ -83,14 +84,14 @@ $bem-component-namespace: 'tit';
     );
     
     swiper {
-        height: 580rpx;
+        height: 1080rpx;
         margin-bottom: 20rpx;
     }
 
     swiper-item,
     swiper-item image {
         width: 100%;
-        height: 500rpx;
+        height: 1000rpx;
         border-radius: 15rpx;
         overflow: hidden;
         box-shadow: 0 10rpx 15rpx rgba(0, 0, 0, 0.2);

@@ -6,6 +6,8 @@ app.$mount();
 
 export default {
   config: {
-    navigationBarTitleText: '车牌键盘'
+    navigationBarTitleText: '车牌键盘',
+    navigationBarTextStyle: 'black',
+    navigationBarBackgroundColor: '#ffffff'
   }
 };

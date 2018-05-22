@@ -118,6 +118,20 @@ $bem-component-namespace: 'kb';
 .kb {
     width: 100%;
     height: 100%;
+    --from: #ffffff;
+    --stop: #ffffff;
+    --to: #ffefba;
+
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(var(--from)),
+        color-stop(0.1, var(--stop)),
+        to(var(--to))
+    );
 }
 
 @include c('input') {

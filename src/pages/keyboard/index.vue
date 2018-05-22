@@ -1,11 +1,11 @@
 <template>
-    <div class="kb">
+    <div class="kb" :style="'background:'+bgcolor">
         <!-- <div class="kb-input row-center">
-            <text @tap="showKeyboard" class="row-center" :class="[ isKeyboard ? 'kb-input__text-focus' : 'kb-input__text']">{{textValue || placeholder}}</text>
+            <text @tap="showKeyboard" class="row-center" :class="[ isKeyboard ? 'kb-input__text-focus' : 'kb-input__text']">{{textValue || placeholder}}</text> 
         </div> -->
         <div class="row-center">
             <ul class="kb-input kb-input__ul row-around" @tap="showKeyboard">
-                <li v-for="(item , index) in textBaseArr" :key="index" class="row-center kb-input__li" :class="index === 7 && textBaseArr[7] === ''? 'kb-input__new-energy' :'' ">{{item}}</li>
+                <li v-for="(item , index) in textBaseArr" :key="index" class="row-center kb-input__li" :class="index === 7 && textBaseArr[7] === ''? 'kb-input__new-energy' : '' " :style="'background:'+index === textArr.length ? activeBorColor : baseBorColor">{{item}}</li>
             </ul>
         </div>
 
@@ -55,6 +55,8 @@ export default {
             textArr: [],
             textValue: '',
             placeholder: '输入或拍照录入车牌',
+            bgcolor: '#ffffff',
+            baseBorColor: '#cccccc',
             activeBorColor: '#24c6dc'
         };
     },
@@ -99,7 +101,9 @@ export default {
                 this.isNum = true;
             }
         },
-        tapFinished(e) {}
+        tapFinished(e) {
+            console.log(this.textValue)
+        }
     },
     mounted() {
         let animation = wx.createAnimation({
@@ -118,20 +122,20 @@ $bem-component-namespace: 'kb';
 .kb {
     width: 100%;
     height: 100%;
-    --from: #ffffff;
-    --stop: #ffffff;
-    --to: #ffefba;
+    // --from: #ffffff;
+    // --stop: #ffffff;
+    // --to: #ffefba;
 
-    width: 100%;
-    height: 100%;
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(var(--from)),
-        color-stop(0.1, var(--stop)),
-        to(var(--to))
-    );
+    // width: 100%;
+    // height: 100%;
+    // background: -webkit-gradient(
+    //     linear,
+    //     left top,
+    //     left bottom,
+    //     from(var(--from)),
+    //     color-stop(0.1, var(--stop)),
+    //     to(var(--to))
+    // );
 }
 
 @include c('input') {

@@ -38,7 +38,8 @@ export default {
                 {
                     img:
                         'http://hbfile.b0.upaiyun.com/img/home/banner/97d8ff820f692ab31bb02e701d27517db55fd39ad26c0',
-                    name: '富文本'
+                    name: '富文本',
+                    url: '../parse/main'
                 },
                 {
                     img:

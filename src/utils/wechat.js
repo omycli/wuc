@@ -32,6 +32,8 @@ export function getLocation(type) {
 
 export function requestPayment(data) {
   return new Promise((resolve, reject) => {
-    wx.requestPayment({ data, success: resolve, fail: reject });
+    const perObj = { success: resolve, fail: reject }
+    Object.assign(data, perObj)
+    wx.requestPayment(data);
   });
 }

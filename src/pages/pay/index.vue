@@ -32,8 +32,9 @@ export default {
 
         async bindGetUserInfo(e) {
             this.userInfo = e.mp.detail.userInfo;
+            let payNum = this.amount;
             let url = 'https://parkinglot.qqdayu.com/test/get_pay';
-            await this.payment({ url, amount });
+            await this.payment({ url, payNum });
         }
     },
 

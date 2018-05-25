@@ -10,17 +10,17 @@ import { PAYINFO } from '@/store/mutations-type';
  *  可传参数：
  *    @params {String} url
  */
-async function payMoney(url, amount) {
+async function payMoney(url, payNum) {
   if (!url) {
     console.log(`支付接口缺少url参数`);
     return false;
   }
-  const uInfo = await login()
-  console.log(uInfo)
+  const uInfo = await login();
+  console.log(payNum);
   if (uInfo.code) {
     const params = {
       code: uInfo.code,
-      amount: amount
+      amount: payNum
     };
     return request.get(url, params);
   }
@@ -32,24 +32,24 @@ const state = {
 
 const mutations = {
   [PAYINFO](state, { res }) {
-      state.payRes = res
+    state.payRes = res;
   }
 };
 
 const actions = {
-  async payment({ state, commit }, { url }) {
-    let response = await payMoney(url);
+  async payment({ state, commit }, { url, payNum }) {
+    let response = await payMoney(url, payNum);
     let params = {
-        timeStamp: response.data.timeStamp.toString(),
-        nonceStr: response.data.nonceStr,
-        package: response.data.package,
-        signType: 'MD5',
-        paySign: response.data.paySign
-    }
+      timeStamp: response.data.timeStamp.toString(),
+      nonceStr: response.data.nonceStr,
+      package: response.data.package,
+      signType: 'MD5',
+      paySign: response.data.paySign
+    };
     requestPayment(params).then(res => {
-      console.log(res)
-        commit(PAYINFO, { res });
-    })
+      console.log(res);
+      commit(PAYINFO, { res });
+    });
   }
 };
 

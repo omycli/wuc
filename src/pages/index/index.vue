@@ -19,6 +19,12 @@ export default {
             imgUrls: [
                 {
                     img:
+                        'http://hbfile.b0.upaiyun.com/img/home/banner/96146c37704d5c35ef375f478709e87394794f3175673',
+                    name: '无感支付',
+                    url: '../nospay/main'
+                },
+                {
+                    img:
                         'http://hbfile.b0.upaiyun.com/img/home/banner/b5f1b4311b029c3c21c21324d895ee9e652109e65767e',
                     name: '豆瓣',
                     url: '../splash/main'
@@ -44,7 +50,8 @@ export default {
                 {
                     img:
                         'http://hbfile.b0.upaiyun.com/img/home/banner/c88dab66a15416697c930a31c0ec3364b2c3990b102914',
-                    name: 'threejs'
+                    name: '面对面翻译',
+                    url: '../face2face/main'
                 }
             ],
             curIndex: 0
@@ -83,7 +90,7 @@ $bem-component-namespace: 'tit';
         color-stop(0.1, var(--stop)),
         to(var(--to))
     );
-    
+
     swiper {
         height: 1080rpx;
         margin-bottom: 20rpx;

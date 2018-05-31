@@ -37,3 +37,12 @@ export function requestPayment(data) {
     wx.requestPayment(data);
   });
 }
+
+export function navigateToMiniProgram(data) {
+  return new Promise((resolve, reject) => {
+    const perObj = { success: resolve, fail: reject }
+    Object.assign(data, perObj)
+    wx.navigateToMiniProgram(data);
+  });
+}
+

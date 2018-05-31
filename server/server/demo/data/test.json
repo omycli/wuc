@@ -2,14 +2,14 @@
     "code": "0",
     "msg": "登陆成功",
     "data": {
-        "uid": "8z5bbpG9rH+m5NCx++m0yg==",
-        "openid": "",
-        "headimgurl": "/static/images/demo_head.png",
-        "wx_nickname": "",
-        "unionid": "",
-        "from": 1,
-        "created": "0000-00-00 00:00:00",
-        "updated": "0000-00-00 00:00:00",
-        "deleted": "0000-00-00 00:00:00"
+        "openid": "ec2316275641faa3aacf3cc599e8730f",
+        "appid": "wx2421b1c4370ec43b",
+        "mch_id": "10000100",
+        "sub_mch_id": "10000100",
+        "nonce_str": "ec2316275641faa3aacf3cc599e8730f",
+        "user_status": "UNAUTHORIZED",
+        "result_code ": "SUCCESS",
+        "sign": "EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5",
+        "plate_number_list": "粤B888888"
     }
 }

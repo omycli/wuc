@@ -1,4 +1,4 @@
-import request from '@/utils/request';
+import request from '@/api/request';
 import { login, requestPayment } from '@/utils/wechat';
 import { PAYINFO } from '@/store/mutations-type';
 
@@ -47,7 +47,6 @@ const actions = {
       paySign: response.data.paySign
     };
     requestPayment(params).then(res => {
-      console.log(res);
       commit(PAYINFO, { res });
     });
   }

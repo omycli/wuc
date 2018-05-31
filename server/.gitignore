@@ -11,6 +11,5 @@ run/
 *.sw*
 *.un~
 *config.json
-qrcode.jpg
 exe/
 dist/

@@ -6,15 +6,17 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+    "start": "npm run dev:local",
+    "build": "rm -rf dist && node build/build.js",
+    "dev:server": "cross-env METHOD=server npm-run-all --parallel dev",
+    "dev:dev": "cross-env METHOD=dev npm-run-all --parallel dev",
+    "dev:local": "cross-env METHOD=local npm-run-all --parallel dev local",
     "dev:proxy1": "cross-env METHOD=proxy1 npm-run-all --parallel dev proxy1",
     "dev:proxy2": "cross-env METHOD=proxy2 npm-run-all --parallel dev proxy2",
-    "dev:server": "cross-env METHOD=server npm-run-all --parallel dev server",
-    "start": "npm run dev:proxy1",
-    "build": "rm -rf dist && node build/build.js",
     "lint": "eslint --ext .js,.vue src",
     "proxy1": "node server/app.js",
     "proxy2": " node server/proxy.js",
-    "server": "nodemon server/server/index.js --exec babel-node --presets es2015,stage-2",
+    "local": "nodemon server/server/index.js --exec babel-node --presets es2015,stage-2",
     "filemap": "filemap -i node_modules build config dist .git"
   },
   "dependencies": {

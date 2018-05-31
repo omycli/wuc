@@ -15,7 +15,13 @@ export default {
   // 这个字段走 app.json
   config: {
     // 页面前带有 ^ 符号的，会被编译成首页，其他页面可以选填，我们会自动把 webpack entry 里面的入口页面加进去
-    pages: ['^pages/index/main', 'pages/pay/main', 'pages/keyboard/main', 'pages/parse/main'],
+    pages: [
+      '^pages/index/main',
+      'pages/pay/main',
+      'pages/keyboard/main',
+      'pages/face2face/main',
+      'pages/parse/main'
+    ],
     window: {
       navigationBarTitleText: 'mpvueBase',
       navigationStyle: 'default',
@@ -49,6 +55,12 @@ export default {
           selectedIconPath: 'static/images/profile-actived.png'
         }
       ]
+    },
+    plugins: {
+      WechatSI: {
+        version: '0.0.6',
+        provider: 'wx069ba97219f66d99'
+      }
     },
     networkTimeout: {
       request: 10000,

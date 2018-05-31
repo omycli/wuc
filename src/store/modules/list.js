@@ -1,4 +1,4 @@
-import { getBoardData } from '@/utils/api'
+import { getBoardData } from '@/api/api'
 import { LIST_MOVIE_LIST, LIST_CLEAR_STATE } from '@/store/mutations-type'
 
 const state = {

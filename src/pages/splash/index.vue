@@ -11,7 +11,7 @@
 
 <script>
 import { getStorage, setStorage } from '@/utils/wechat'
-import { getBoardData } from '@/utils/api'
+import { getBoardData } from '@/api/api'
 const LAST_SPLASH_DATA = 'LAST_SPLASH_DATA'
 
 export default {

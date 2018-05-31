@@ -1,4 +1,4 @@
-import { getMovieData } from '@/utils/api'
+import { getMovieData } from '@/api/api'
 import { ITEM_MOVIE_DETAIL, ITEM_CLEAR_MOVIE } from '@/store/mutations-type'
 
 const state = {

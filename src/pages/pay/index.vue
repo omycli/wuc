@@ -6,7 +6,7 @@
                 <span style="color:#24c6dc;font-size:48rpx;">{{amount}}</span>
                 元
             </div>
-            <button v-if="canIUse" open-type="getUserInfo" class="md-pay__card row-center" @getuserinfo="bindGetUserInfo">
+            <button v-if="canIUse" open-type="getUserInfo" class="md-pay__card row-center" @getuserinfo='bindGetUserInfo'>
                 点击支付
             </button>
             <view v-else>请升级微信版本</view>

@@ -49,9 +49,8 @@ export default {
                                 mch_id: this.partRes.data.mch_id,
                                 sub_mch_id: this.partRes.data.sub_mch_id,
                                 nonce_str: this.partRes.data.nonce_str,
-                                sign_type: "HMAC-SHA256",
-                                sign:
-                                    this.partRes.data.sign,
+                                sign_type: 'HMAC-SHA256',
+                                sign: this.partRes.data.sign,
                                 trade_scene: 'PARKING',
                                 openid: this.partRes.data.openid
                             }

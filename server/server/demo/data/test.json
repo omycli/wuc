@@ -1,6 +1,6 @@
 {
     "code": "0",
-    "msg": "登陆成功",
+    "msg": "success",
     "data": {
         "openid": "ec2316275641faa3aacf3cc599e8730f",
         "appid": "wx2421b1c4370ec43b",

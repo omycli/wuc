@@ -25,7 +25,7 @@ export default {
         async openpay() {
             console.log('开通');
             const params = {
-                url: '/demo/test'
+                url: '/test/query_state'
             };
             await store.dispatch('getpartnerpay', params);
             let userStatus = this.partRes.data.user_status;

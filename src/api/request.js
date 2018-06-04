@@ -7,9 +7,9 @@ request.config.timeout = 10 * 1000;
 if (process.env.METHOD === 'server') {
   request.config.baseURL = 'https://https.com';
 } else if (process.env.METHOD === 'dev') {
-  request.config.baseURL = 'https://tshttps.com';
+  request.config.baseURL = 'https://parkinglot.qqdayu.com';
 } else if (process.env.METHOD === 'local') {
-  request.config.baseURL = 'https://127.0.0.1:3003/api'; // 本地接口不限次数
+  request.config.baseURL = 'https://127.0.0.1:3003'; // 本地接口不限次数
 } else if (process.env.METHOD === 'proxy1') {
   request.config.baseURL = 'http://localhost:3001/douban'; // 本地代理2(100次/小时)
 } else if (process.env.METHOD === 'proxy2') {

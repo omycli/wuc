@@ -4,7 +4,7 @@ function run(Request, Response) {
   var Params = MAIN.getParams(Request);
   if (Request.params && Request.params.name) {
     var funs = {
-      test: test
+      query_state: test
     };
     funs[Request.params.name](Params, Request, Response);
   } else {

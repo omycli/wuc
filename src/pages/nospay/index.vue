@@ -23,7 +23,6 @@ export default {
     },
     methods: {
         async openpay() {
-            console.log('开通');
             const params = {
                 url: '/test/query_state'
             };

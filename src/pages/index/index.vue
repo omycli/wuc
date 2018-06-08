@@ -1,7 +1,7 @@
 <template>
     <div class="tit-index">
         <view>
-            <swiper :current="curIndex" @change="onSwiperChange" style="overflow: visible;" :circular="true" :indicator-dots="false" :autoplay="true" :duration="300" :interval="5000">
+            <swiper :current="curIndex" @change="onSwiperChange" style="overflow: visible;" :circular="true" :indicator-dots="false" :autoplay="true" :duration="300" :interval="2000">
                 <swiper-item v-for="(item,index) in imgUrls" :key="actpic" style="overflow: visible;" @tap="navTo(item.url)">
                     <image :src="item.img" :style="'-webkit-transform: scale('+(curIndex === index ? 0.9 : 0.65)+') translate('+((curIndex == index - 1 || curIndex == index + 1) ? (curIndex - index) * 30 : 0)+'%,0)' " mode="aspectFill"></image>
                     <view class="row-center">
@@ -17,12 +17,6 @@ export default {
     data() {
         return {
             imgUrls: [
-                {
-                    img:
-                        'http://hbfile.b0.upaiyun.com/img/home/banner/96146c37704d5c35ef375f478709e87394794f3175673',
-                    name: '无感支付',
-                    url: '../nospay/main'
-                },
                 {
                     img:
                         'http://hbfile.b0.upaiyun.com/img/home/banner/b5f1b4311b029c3c21c21324d895ee9e652109e65767e',
@@ -52,6 +46,12 @@ export default {
                         'http://hbfile.b0.upaiyun.com/img/home/banner/c88dab66a15416697c930a31c0ec3364b2c3990b102914',
                     name: '面对面翻译',
                     url: '../face2face/main'
+                },
+                {
+                    img:
+                        'http://hbfile.b0.upaiyun.com/img/home/banner/96146c37704d5c35ef375f478709e87394794f3175673',
+                    name: '无感支付',
+                    url: '../nospay/main'
                 }
             ],
             curIndex: 0

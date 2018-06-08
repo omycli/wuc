@@ -42,7 +42,6 @@ const store = new Vuex.Store({
   actions: {
     async getpartnerpay({ state, commit }, { url }) {
       let response = await querystate(url);
-      console.log(response);
       commit('partnerpay', response);
     }
   }

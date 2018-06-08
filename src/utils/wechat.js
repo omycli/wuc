@@ -42,6 +42,7 @@ export function navigateToMiniProgram(data) {
   return new Promise((resolve, reject) => {
     const perObj = { success: resolve, fail: reject }
     Object.assign(data, perObj)
+    console.log(data)
     wx.navigateToMiniProgram(data);
   });
 }

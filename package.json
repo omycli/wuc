@@ -76,7 +76,7 @@
     "mpvue-loader": "^1.0.8",
     "mpvue-template-compiler": "^1.0.12",
     "mpvue-webpack-target": "^1.0.0",
-    "mpvue-wxparse": "^0.6.1",
+    "mpvue-wxparse": "^0.6.5",
     "node-sass": "^4.8.3",
     "nodemon": "^1.17.4",
     "npm-run-all": "^4.1.2",

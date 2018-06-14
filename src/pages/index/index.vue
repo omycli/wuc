@@ -47,6 +47,12 @@ export default {
                         'http://hbfile.b0.upaiyun.com/img/home/banner/96146c37704d5c35ef375f478709e87394794f3175673',
                     name: '无感支付',
                     url: '../nospay/main'
+                },
+                {
+                    img:
+                        'http://hbfile.b0.upaiyun.com/img/home/banner/96146c37704d5c35ef375f478709e87394794f3175673',
+                    name: '授权用户页面',
+                    url: '../authorize/main'
                 }
             ],
             curIndex: 0

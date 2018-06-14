@@ -86,3 +86,52 @@ export function jumpTo(url) {
     });
   }
 }
+
+export function toast(
+  title = '提示',
+  icon = 'success',
+  duration = 1500,
+  mask = false
+) {
+  return new Promise((resolve, reject) => {
+    wx.showToast({
+      title: title,
+      icon: icon,
+      duration: duration,
+      mask: mask,
+      success: res => resolve(res),
+      fail: err => reject(err)
+    });
+  });
+}
+
+export function showLoading(title = '加载中', mask = false) {
+  return new Promise((resolve, reject) => {
+    wx.showLoading({
+      title: title,
+      success: res => resolve(res),
+      fail: err => reject(err)
+    });
+  });
+}
+
+export function hideLoading() {
+  wx.hideLoading();
+}
+
+export function modal(title = '提示', content = '') {
+  return new Promise((resolve, reject) => {
+    wx.showModal({
+      title: title,
+      content: content,
+      success: res => {
+        if (res.confirm) {
+          resolve(res);
+        } else {
+          reject();
+        }
+      },
+      fail: err => reject(err)
+    });
+  });
+}

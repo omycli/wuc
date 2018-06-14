@@ -1,75 +1,40 @@
 <template>
-  <div class="md-item">
-    <image v-if="movie.images" class="md-item__background" :src="movie.images.large" mode="aspectFill" />
-    <block v-if="movie.title">
-      <view class="md-item__meta">
-        <image class="md-item__poster" :src="movie.images.large" mode="aspectFit" @click="preImage" />
-        <text class="md-item__title">{{ movie.title }}({{ movie.year }})</text>
-        <text class="md-item__info">评分：{{ movie.rating.average }}</text>
-        <text class="md-item__info">导演：
-          <block v-for="director in movie.directors" :key="director.id"> {{ director.name }} </block>
-        </text>
-        <text class="md-item__info">主演：
-          <block v-for="cast in movie.casts" :key="cast.id"> {{ cast.name }} </block>
-        </text>
-      </view>
-      <view class="md-item__summary">
-        <text class="md-item__label">摘要：</text>
-        <text class="md-item__content">{{ movie.summary }}</text>
-      </view>
-    </block>
-  </div>
+    <div class="md-item">
+        <image v-if="movie.images" class="md-item__background" :src="movie.images.large" mode="aspectFill" />
+        <block v-if="movie.title">
+            <view class="md-item__meta">
+                <image class="md-item__poster" :src="movie.images.large" mode="aspectFit" @click="preImage" />
+                <text class="md-item__title">{{ movie.title }}({{ movie.year }})</text>
+                <text class="md-item__info">评分：{{ movie.rating.average }}</text>
+                <text class="md-item__info">导演：
+                    <block v-for="director in movie.directors" :key="director.id"> {{ director.name }} </block>
+                </text>
+                <text class="md-item__info">主演：
+                    <block v-for="cast in movie.casts" :key="cast.id"> {{ cast.name }} </block>
+                </text>
+            </view>
+            <view class="md-item__summary">
+                <text class="md-item__label">摘要：</text>
+                <text class="md-item__content">{{ movie.summary }}</text>
+            </view>
+        </block>
+    </div>
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from 'vuex';
-import { ITEM_CLEAR_MOVIE } from '@/store/mutations-type';
-import wx from '@/utils/wx';
 
 export default {
     data() {
-        return {
-            id: null
-        };
+        return {};
     },
 
-    computed: {
-        ...mapState('item', {
-            movie: state => state.movie
-        })
-    },
+    computed: {},
 
-    methods: {
-        ...mapActions('item', ['getMovie']),
-        ...mapMutations('item', {
-            clearMovie: ITEM_CLEAR_MOVIE
-        }),
-        async getMovieData(id) {
-            await this.getMovie({ id });
-            wx.setNavigationBarTitle({
-                title: this.movie.title + ' « 电影 « 豆瓣'
-            });
-        },
-        preImage(e) {
-            wx.previewImage({
-                current: this.movie.images.large, // 当前显示图片的http链接
-                urls: [this.movie.images.large] // 需要预览的图片http链接列表
-            });
-        }
-    },
+    methods: {},
 
-    mounted() {
-        const id = this.$root.$mp.query.id;
-        if (!id) {
-            return wx.navigateBack();
-        }
-        this.id = id;
-        this.getMovieData(id);
-    },
+    mounted() {},
 
-    onUnload() {
-        this.clearMovie();
-    }
+    onUnload() {}
 };
 </script>
 

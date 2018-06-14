@@ -11,11 +11,7 @@
     "dev:server": "cross-env METHOD=server npm-run-all --parallel dev",
     "dev:dev": "cross-env METHOD=dev npm-run-all --parallel dev",
     "dev:local": "cross-env METHOD=local npm-run-all --parallel dev local",
-    "dev:proxy1": "cross-env METHOD=proxy1 npm-run-all --parallel dev proxy1",
-    "dev:proxy2": "cross-env METHOD=proxy2 npm-run-all --parallel dev proxy2",
     "lint": "eslint --ext .js,.vue src",
-    "proxy1": "node server/app.js",
-    "proxy2": " node server/proxy.js",
     "local": "nodemon server/server/index.js --exec babel-node --presets es2015,stage-2",
     "filemap": "filemap -i node_modules build config dist .git"
   },

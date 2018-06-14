@@ -13,16 +13,11 @@
     </div>
 </template>
 <script>
+import { jumpTo } from './../../utils/wechat';
 export default {
     data() {
         return {
             imgUrls: [
-                {
-                    img:
-                        'http://hbfile.b0.upaiyun.com/img/home/banner/b5f1b4311b029c3c21c21324d895ee9e652109e65767e',
-                    name: '豆瓣',
-                    url: '../splash/main'
-                },
                 {
                     img:
                         'http://hbfile.b0.upaiyun.com/img/home/banner/e09cb62482e57b615c32f3e18feeffc57851372a5aea3',
@@ -63,9 +58,7 @@ export default {
             this.curIndex = e.target.current;
         },
         navTo(url) {
-            wx.navigateTo({
-                url: url
-            });
+            jumpTo(url)
         }
     },
     mounted() {}

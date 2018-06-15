@@ -2,11 +2,11 @@
     <div class="md-item">
         <image class="md-item__background" :src="img" mode="aspectFill" />
         <div>
-            <image class="md-item__poster" :src="img" mode="aspectFit" @click="preImage" />
-            <button open-type="getUserInfo" @getuserinfo="bindGetUserInfo">
-                <div>授权进入</div>
+            <button class="md-item__start" open-type="getUserInfo" @getuserinfo="bindGetUserInfo">
+                授权进入
             </button>
             <formButton :button-content="buttonContent" @getFormId="getFormId" :active="canClick" />
+            <image class="md-item__poster" :src="img" mode="aspectFit" @click="preImage" />
         </div>
     </div>
 </template>
@@ -29,12 +29,12 @@ export default {
             img:
                 'http://hbfile.b0.upaiyun.com/img/home/banner/e09cb62482e57b615c32f3e18feeffc57851372a5aea3',
 
-            buttonContent: '加入',
+            buttonContent: '推送模板',
             canClick: true
         };
     },
     components: {
-      formButton
+        formButton
     },
     methods: {
         bindGetUserInfo(e) {
@@ -57,7 +57,7 @@ export default {
                 });
         },
         getFormId(key) {
-            console.log(key)
+            console.log(key);
         }
     },
     onLoad() {
@@ -100,32 +100,18 @@ $bem-component-namespace: 'md';
         height: 800rpx;
         margin: 20rpx;
     }
-}
-button {
-    margin-top: -250rpx;
-    background-color: transparent;
-    height: 80rpx;
-    padding: 0;
-    div {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+
+    @include e('start') {
         position: absolute;
-        font-size: 32rpx;
-        color: #33270c;
-        font-weight: 400;
-        z-index: 9999;
+        bottom: 200rpx;
+        left: 50%;
+        width: 300rpx;
+        margin-left: -150rpx;
+        background-color: rgba(64, 88, 109, 0.4);
+        color: #fff;
+        border: 1rpx solid rgba(64, 88, 109, 0.8);
+        border-radius: 200rpx;
+        font-size: 40rpx;
     }
-    img {
-        box-sizing: border-box;
-        border-radius: 30px;
-        background-color: #fff;
-        padding: 0;
-        width: 540rpx;
-        height: 80rpx;
-    }
-}
-button:after {
-    border: none;
 }
 </style>

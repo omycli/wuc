@@ -1,6 +1,9 @@
 <template>
-    <div class="row-center">
+    <div class="row-center column">
         <button class="open-pay" @tap="openpay()">{{info}}</button>
+        <ul>
+            <li v-for="(item,index) in list" :key="index">{{item.plate_number}}</li>
+        </ul>
     </div>
 </template>
 
@@ -8,12 +11,12 @@
 import store from './store';
 import Tips from '@/utils/Tips.js';
 import { navigateToMiniProgram } from '@/utils/wechat.js';
-// import { mapState, mapActions } from 'vuex';
 
 export default {
     data() {
         return {
-            info: '查看用户是否开通无感支付'
+            info: '查看用户是否开通无感支付',
+            list: []
         };
     },
     computed: {
@@ -24,17 +27,18 @@ export default {
     methods: {
         async openpay() {
             const params = {
-                url: '/test/query_state'
+                url: '/api/user/get-binding'
             };
             await store.dispatch('getpartnerpay', params);
             try {
-                let resInfo = JSON.parse(this.partRes);
-                console.log(resInfo.data);
-                let userStatus = resInfo.data.user_state;
+                if (!this.partRes) return false;
+                let resInfo = this.partRes.result;
+                let userStatus = resInfo.user_state;
                 console.log(userStatus);
                 switch (userStatus) {
                     case 'NORMAL':
                         this.info = '正常用户，已开通车主服务，且已授权访问';
+                        this.list = resInfo.plate_number_info.plate_number_info;
                         break;
                     case 'PAUSED':
                         this.info = '已暂停车主服务';
@@ -50,14 +54,14 @@ export default {
                                     appId: 'wxbcad394b3d99dac9',
                                     path: 'pages/route/index',
                                     extraData: {
-                                        appid: resInfo.data.appid,
-                                        mch_id: resInfo.data.mch_id,
-                                        sub_mch_id: resInfo.data.sub_mch_id,
-                                        nonce_str: resInfo.data.nonce_str,
+                                        appid: resInfo.appid,
+                                        mch_id: resInfo.mch_id,
+                                        sub_mch_id: resInfo.sub_mch_id,
+                                        nonce_str: resInfo.nonce_str,
                                         sign_type: 'HMAC-SHA256',
-                                        sign: resInfo.data.sign,
+                                        sign: resInfo.sign,
                                         trade_scene: 'PARKING',
-                                        openid: resInfo.data.sub_openid
+                                        openid: resInfo.sub_openid
                                     }
                                 };
                                 navigateToMiniProgram(miniParams).then(

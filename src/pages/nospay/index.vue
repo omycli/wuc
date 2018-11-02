@@ -1,16 +1,19 @@
 <template>
-    <div class="row-center column">
+    <div class="row-center column car-main">
         <button class="open-pay" @tap="openpay()">{{info}}</button>
         <ul>
             <li v-for="(item,index) in list" :key="index">{{item.plate_number}}</li>
         </ul>
+
+        <div class="band-car row-center">
+            <button class="band-car-btn row-center" @tap="openCar()">绑定车牌号</button>
+        </div>
     </div>
 </template>
 
 <script>
 import store from './store';
-import Tips from '@/utils/Tips.js';
-import { navigateToMiniProgram } from '@/utils/wechat.js';
+import { navigateToMiniProgram, jumpTo } from '@/utils/wechat.js';
 import request from '@/api/request';
 import { login } from '@/utils/wechat';
 
@@ -27,42 +30,11 @@ export default {
         }
     },
     methods: {
+        openCar() {
+            jumpTo('/pages/keyboard/index');
+        },
         async openpay() {
-            const params = {
-                url: '/api/user/get-binding'
-            };
-            await store.dispatch('getpartnerpay', params);
-            try {
-                if (!this.partRes) return false;
-                let resInfo = this.partRes.result;
-                let userStatus = resInfo.user_state;
-                switch (userStatus) {
-                    case 'NORMAL':
-                        this.info = '正常用户，已开通车主服务，且已授权访问';
-                        this.list = resInfo.plate_number_info.plate_number_info;
-                        this.navCar();
-                        break;
-                    case 'PAUSED':
-                        this.info = '已暂停车主服务';
-                        break;
-                    case 'OVERDUE':
-                        this.info = '欠费状态';
-                        break;
-                    case 'UNAUTHORIZED':
-                        this.info = '未开通车主服务';
-                        Tips.modal(`未开通车主服务,请先开通车主服务`).then(
-                            async res => {
-                                this.navCar();
-                            }
-                        );
-                        break;
-
-                    default:
-                        break;
-                }
-            } catch (error) {
-                console.log(error);
-            }
+            this.navCar();
         },
         async navCar() {
             const uInfo = await login();
@@ -76,7 +48,7 @@ export default {
             // debugger;
             const miniParams = {
                 appId: 'wxbcad394b3d99dac9',
-                path: 'pages/route/index',
+                path: 'pages/index/index',
                 extraData: {
                     appid: result.appid,
                     sub_appid: result.sub_appid,
@@ -92,42 +64,76 @@ export default {
             navigateToMiniProgram(miniParams).then(minires => {
                 console.log(minires);
             });
-        }
-    },
-    mounted() {},
-    onShow(res) {
-        if (!res) return false;
-        if (res.scene === 1038) {
-            // 场景值1038：从被打开的小程序返回
-            const { appId, extraData } = res.referrerInfo;
-            if (appId === 'wxbcad394b3d99dac9') {
-                // appId为wxbcad394b3d99dac9：从车主小程序跳转回来
-                if (typeof extraData === 'undefined') {
-                    // TODO
-                    // 客户端小程序不确定授权结果，需要发起‘用户状态查询接口’确认授权结果
-                    Tips.modal(
-                        `客户端小程序不确定授权结果，需要发起‘用户状态查询接口’确认授权结果`
-                    );
-                    return;
-                }
-                if (extraData.auth === 'true') {
-                    // TODO
-                    // 客户端小程序授权成功
-                    Tips.modal(`客户端小程序授权成功`);
-                    return;
-                } else {
-                    // TODO
-                    // 授权失败
-                    Tips.modal(`授权失败`);
-                    return;
-                }
+        },
+        async freshCarInfo() {
+            const params = {
+                url: '/api/user/get-binding'
+            };
+            await store.dispatch('getpartnerpay', params);
+            if (!this.partRes) return false;
+            let resInfo = this.partRes.result;
+            let userStatus = resInfo.user_state;
+            switch (userStatus) {
+                case 'NORMAL':
+                    this.info = '正常用户，已开通车主服务，且已授权访问';
+                    if (resInfo.plate_number_info) {
+                        console.log(
+                            resInfo.plate_number_info.plate_number_info
+                        );
+                        this.list = resInfo.plate_number_info.plate_number_info;
+                    } else {
+                        this.list.length = 0;
+                    }
+                    break;
+                case 'PAUSED':
+                    this.info = '已暂停车主服务';
+                    this.list.length = 0;
+                    break;
+                case 'OVERDUE':
+                    this.info = '欠费状态';
+                    this.list.length = 0;
+                    break;
+                case 'UNAUTHORIZED':
+                    this.info = '未开通车主服务';
+                    this.list.length = 0;
+                    break;
+
+                default:
+                    break;
             }
         }
+    },
+    async mounted() {},
+    async onShow() {
+        await this.freshCarInfo();
     }
 };
 </script>
 <style lang="scss">
+.car-main {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    li {
+        width: 100%;
+        padding: 10rpx;
+    }
+}
 .open-pay {
+    margin-top: 20rpx;
     background: #ffe321;
+}
+.band-car {
+    margin: 120rpx 20rpx;
+    width: 100%;
+    height: 200rpx;
+    background: #ffffff;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.band-car-btn {
+    width: 640rpx;
+    height: 200rpx;
+    background: #ffffff;
 }
 </style>

@@ -10,7 +10,6 @@ import Keyboard from 'mpvue-keyboard';
 import { navigateToMiniProgram } from '@/utils/wechat.js';
 import request from '@/api/request';
 import { login } from '@/utils/wechat';
-import Tips from '@/utils/Tips.js';
 
 export default {
     components: {
@@ -68,35 +67,6 @@ export default {
             });
         }
     },
-    mounted() {},
-    onShow(res) {
-        if (!res) return false;
-        if (res.scene === 1038) {
-            // 场景值1038：从被打开的小程序返回
-            const { appId, extraData } = res.referrerInfo;
-            if (appId === 'wxbcad394b3d99dac9') {
-                // appId为wxbcad394b3d99dac9：从车主小程序跳转回来
-                if (typeof extraData === undefined) {
-                    // TODO
-                    // 客户端小程序不确定授权结果，需要发起‘用户状态查询接口’确认授权结果
-                    Tips.modal(
-                        `客户端小程序不确定授权结果，需要发起‘用户状态查询接口’确认授权结果`
-                    );
-                    return;
-                }
-                if (extraData.auth === true) {
-                    // TODO
-                    // 客户端小程序授权成功
-                    Tips.modal(`客户端小程序授权成功`);
-                    return;
-                } else {
-                    // TODO
-                    // 授权失败
-                    Tips.modal(`授权失败`);
-                    return;
-                }
-            }
-        }
-    }
+    mounted() {}
 };
 </script>

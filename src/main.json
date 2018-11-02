@@ -21,14 +21,8 @@
         "selectedIconPath": "static/images/board-actived.png"
       },
       {
-        "text": "无感支付",
-        "pagePath": "pages/nospay/index",
-        "iconPath": "static/images/search.png",
-        "selectedIconPath": "static/images/search-actived.png"
-      },
-      {
-        "text": "停车键盘",
-        "pagePath": "pages/keyboard/index",
+        "text": "幸运转盘",
+        "pagePath": "pages/luckywheel/index",
         "iconPath": "static/images/profile.png",
         "selectedIconPath": "static/images/profile-actived.png"
       }

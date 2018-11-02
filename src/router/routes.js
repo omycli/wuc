@@ -11,7 +11,7 @@ module.exports = [
     path: '/pages/parse/index',
     name: 'parse',
     config: {
-      navigationBarTitleText: '首页',
+      navigationBarTitleText: '富文本',
       disableScroll: true
     }
   },
@@ -19,7 +19,7 @@ module.exports = [
     path: '/pages/nospay/index',
     name: 'nospay',
     config: {
-      navigationBarTitleText: '首页',
+      navigationBarTitleText: '无感支付',
       disableScroll: true
     }
   },

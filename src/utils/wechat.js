@@ -71,18 +71,44 @@ export function upLoad(filePath, formData) {
   });
 }
 
-export function jumpTo(url) {
-  let state =
-    url.indexOf('parse') !== -1 ||
-    url.indexOf('nospay') !== -1 ||
-    url.indexOf('keyboard') !== -1;
+export async function jumpTo(url, params) {
+  if (!params) {
+    params = {};
+  }
+  let state = url.indexOf('parse') !== -1 || url.indexOf('luckywheel') !== -1;
   if (state) {
-    wx.switchTab({
-      url: url
+    await setStorage('EXTRADATA', JSON.stringify(params));
+    return new Promise((resolve, reject) => {
+      wx.switchTab({ url: url, success: resolve, fail: reject });
     });
   } else {
-    wx.navigateTo({
-      url: url
+    return new Promise((resolve, reject) => {
+      wx.navigateTo({
+        url: `${url}?extraData=${JSON.stringify(params)}`,
+        success: resolve,
+        fail: reject
+      });
+    });
+  }
+}
+
+export async function redirTo(url, params) {
+  if (!params) {
+    params = {};
+  }
+  let state = url.indexOf('parse') !== -1 || url.indexOf('luckywheel') !== -1;
+  if (state) {
+    await setStorage('EXTRADATA', JSON.stringify(params));
+    return new Promise((resolve, reject) => {
+      wx.switchTab({ url: url, success: resolve, fail: reject });
+    });
+  } else {
+    return new Promise((resolve, reject) => {
+      wx.redirectTo({
+        url: `${url}?extraData=${JSON.stringify(params)}`,
+        success: resolve,
+        fail: reject
+      });
     });
   }
 }

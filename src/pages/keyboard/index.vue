@@ -25,32 +25,7 @@ export default {
     methods: {
         async keyboard(msg) {
             this.msg = msg;
-            const uInfo = await login();
-            const params = {
-                code: uInfo.code
-            };
-            const { result } = await request.get(
-                '/api/user/get-binding',
-                params
-            );
-            const miniParams = {
-                appId: 'wxbcad394b3d99dac9',
-                path: 'pages/route/index',
-                plate_number: msg,
-                extraData: {
-                    appid: result.appid,
-                    mch_id: result.mch_id,
-                    sub_mch_id: result.sub_mch_id,
-                    nonce_str: result.nonce_str,
-                    sign_type: 'HMAC-SHA256',
-                    sign: result.sign,
-                    trade_scene: 'PARKING',
-                    openid: result.sub_openid
-                }
-            };
-            navigateToMiniProgram(miniParams).then(minires => {
-                console.log(minires);
-            });
+            await this.navCar();
         },
         inputChange() {
             console.log('get input');
@@ -60,6 +35,37 @@ export default {
         },
         delChnage() {
             console.log('get del');
+        },
+        async navCar() {
+            const uInfo = await login();
+            const params = {
+                code: uInfo.code,
+                plate_number: this.msg
+            };
+            const { result } = await request.get(
+                '/api/user/authorization',
+                params
+            );
+            // debugger;
+            const miniParams = {
+                appId: 'wxbcad394b3d99dac9',
+                path: 'pages/route/index',
+                extraData: {
+                    appid: result.appid,
+                    sub_appid: result.sub_appid,
+                    mch_id: result.mch_id,
+                    sub_mch_id: result.sub_mch_id,
+                    nonce_str: result.nonce_str,
+                    sign_type: 'HMAC-SHA256',
+                    sign: result.sign,
+                    trade_scene: 'PARKING',
+                    plate_number: this.msg,
+                    sub_openid: result.sub_openid
+                }
+            };
+            navigateToMiniProgram(miniParams).then(minires => {
+                console.log(minires);
+            });
         }
     },
     mounted() {},
@@ -70,7 +76,7 @@ export default {
             const { appId, extraData } = res.referrerInfo;
             if (appId === 'wxbcad394b3d99dac9') {
                 // appId为wxbcad394b3d99dac9：从车主小程序跳转回来
-                if (typeof extraData === 'undefined') {
+                if (typeof extraData === undefined) {
                     // TODO
                     // 客户端小程序不确定授权结果，需要发起‘用户状态查询接口’确认授权结果
                     Tips.modal(
@@ -78,7 +84,7 @@ export default {
                     );
                     return;
                 }
-                if (extraData.auth === 'true') {
+                if (extraData.auth === true) {
                     // TODO
                     // 客户端小程序授权成功
                     Tips.modal(`客户端小程序授权成功`);

@@ -1,13 +1,11 @@
 {
   "name": "mpvuebase",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "基于 mpvue的起始项目",
   "author": "Mr.Ypeng",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "dev:server": "cross-env METHOD=server npm-run-all --parallel dev",
-    "dev:dev": "cross-env METHOD=dev npm-run-all --parallel dev",
     "start": "npm run dev",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
@@ -15,11 +13,10 @@
     "filemap": "filemap -i node_modules build config dist .git"
   },
   "dependencies": {
-    "flyio": "^0.4.5",
+    "flyio": "^0.4.9",
     "hermes-wxparse": "^0.6.7",
     "mpvue": "^1.0.13",
-    "mpvue-keyboard": "^1.0.8",
-    "mpvue-wxparse": "^0.6.5",
+    "mpvue-keyboard": "^1.1.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

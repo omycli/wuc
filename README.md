@@ -1,35 +1,27 @@
 # mpvueBase
-基于 mpvue的起始项目
+> [uni-app](https://uniapp.dcloud.io) 是一个使用 [Vue.js](https://vuejs.org) 开发跨平台应用的前端框架，开发者编写一套代码，可编译到iOS、Android、H5、小程序等多个平台。
 
 ## 运行
 
 ``` bash
-# 安装依赖
-npm install
-
-# 开发
-npm run dev
-
-# 基于本地代理1 开发
-npm run dev:proxy1
-
-# 基于本地代理2 开发
-npm run dev:proxy2
-
-# 生产
-npm run build
-
-# 生产分析图表
-npm run build --report
-
-# 启动本地代理1
-npm run proxy1
-
-# 启动本地代理2
-npm run proxy2
+$ vue create -p dcloudio/uni-preset-vue my-project
 ```
 
-## 感谢
-[mpvue](https://github.com/Meituan-Dianping/mpvue)
-[mpvue-douban](https://github.com/mini-mpvue/mpvue-douban)
-[mpvue](https://github.com/Meituan-Dianping/mpvue)
+## 运行步骤
+
+* 安装依赖 `$ yarn`
+
+* 编译运行
+  - 小程序 `$ yarn dev`
+  - 网页 `$ yarn dev:h5`
+
+* 生产构建
+  - 小程序 `$ yarn build`
+  - 网页 `$ yarn build:h5`
+
+* 查看调试
+  - 小程序 使用微信开发者工具打开 `dist/dev/mp-weixin`
+  - 网页 通过浏览器访问 `localhost:8080`
+
+
+[colorUi](https://github.com/weilanwl/ColorUI)

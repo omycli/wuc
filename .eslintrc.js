@@ -1,42 +1,39 @@
-// http://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: 'module'
-  },
   env: {
-    browser: false,
-    node: true,
-    es6: true
+    node: true
   },
-  // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-  extends: 'standard',
-  // required to lint *.vue files
-  plugins: ['html'],
-  // add your custom rules here
+  extends: ['plugin:vue/essential', '@vue/standard'],
   rules: {
-    // allow paren-less arrow functions
     'arrow-parens': 0,
-    // allow async-await
     'generator-star-spacing': 0,
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    semi: [0],
+    'no-multiple-empty-lines': 0,
+    'no-trailing-spaces': 0,
+    'no-mixed-spaces-and-tabs': 0,
+    'no-duplicates': 0,
+    'no-tabs': 0,
     indent: 0,
+    semi: 0,
     quotes: [0],
     camelcase: 0,
     curly: [0],
+    'semi-spacing': 0,
+    'no-labels': 0,
     'space-before-function-paren': [0],
-    'semi-spacing': 0
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+  },
+  parserOptions: {
+    parser: 'babel-eslint'
   },
   globals: {
     App: true,
     Page: true,
     wx: true,
+    uni: true,
     getApp: true,
-    requirePlugin: true,
-    getPage: true
+    getPage: true,
+    getCurrentPages: true,
+    requirePlugin: true
   }
 };

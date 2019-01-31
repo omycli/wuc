@@ -1,0 +1,108 @@
+{
+  "pages": [
+    {
+      "path": "pages/basics/index",
+      "style": {
+        "navigationBarTitleText": "基础"
+      }
+    },
+    {
+      "path": "pages/basics/layout",
+      "style": {
+        "navigationBarTitleText": "布局"
+      }
+    },
+    {
+      "path": "pages/basics/background",
+      "style": {
+        "navigationBarTitleText": "背景"
+      }
+    },
+    {
+      "path": "pages/basics/text",
+      "style": {
+        "navigationBarTitleText": "文本"
+      }
+    },
+    {
+      "path": "pages/basics/button",
+      "style": {
+        "navigationBarTitleText": "按钮"
+      }
+    },
+    {
+      "path": "pages/basics/icons",
+      "style": {
+        "navigationBarTitleText": "图标"
+      }
+    },
+    {
+      "path": "pages/basics/tag",
+      "style": {
+        "navigationBarTitleText": "标签"
+      }
+    },
+    {
+      "path": "pages/basics/avatar",
+      "style": {
+        "navigationBarTitleText": "头像"
+      }
+    },
+    {
+      "path": "pages/basics/progress",
+      "style": {
+        "navigationBarTitleText": "进度条"
+      }
+    },
+    {
+      "path": "pages/basics/shadow",
+      "style": {
+        "navigationBarTitleText": "边框阴影"
+      }
+    },
+    {
+      "path": "pages/component/index",
+      "style": {
+        "navigationBarTitleText": "组件"
+      }
+    },
+    {
+      "path": "pages/plugin/index",
+      "style": {
+        "navigationBarTitleText": "扩展"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "compent",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#39b54a",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/basics/index",
+        "iconPath": "/static/assets/tabbar/basics.png",
+        "selectedIconPath": "/static/assets/tabbar/basics_cur.png",
+        "text": "基础"
+      },
+      {
+        "pagePath": "pages/component/index",
+        "iconPath": "/static/assets/tabbar/component.png",
+        "selectedIconPath": "/static/assets/tabbar/component_cur.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/plugin/index",
+        "iconPath": "/static/assets/tabbar/plugin.png",
+        "selectedIconPath": "/static/assets/tabbar/plugin_cur.png",
+        "text": "扩展"
+      }
+    ]
+  }
+}

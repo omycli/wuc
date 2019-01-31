@@ -1,17 +1,12 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-import pay from './modules/pay'
-
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  modules: {
-    pay: {
-      namespaced: true,
-      ...pay
-    }
-  }
-})
+  state: {},
+  mutations: {},
+  actions: {}
+});
 
-export default store
+export default store;

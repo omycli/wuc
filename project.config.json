@@ -5,13 +5,14 @@
 		"es6": false,
 		"postcss": false,
 		"minified": false,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
-	"miniprogramRoot": "dist/",
+	"miniprogramRoot": "dist/dev/mp-weixin/",
 	"compileType": "miniprogram",
-	"appid": "wx3d0ed865a378ffeb",
+	"appid": "wxd8e67c61d2a8a307",
 	"projectname": "mpvuebase",
-	"libVersion": "2.3.0",
+	"libVersion": "2.5.2",
 	"condition": {
 		"search": {
 			"current": -1,

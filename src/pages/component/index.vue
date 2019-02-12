@@ -72,7 +72,7 @@ export default {
     return {
       title: "(vue版)ColorUI-高颜值的小程序UI组件库",
       imageUrl: "https://image.weilanwl.com/color2.0/share2215.jpg",
-      path: "/pages/basics/home/home"
+      path: "/pages/basics/index"
     };
   }
 };

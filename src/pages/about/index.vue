@@ -6,11 +6,11 @@
         class="png"
         mode="widthFix"
       />
-      <div class="text-xl">ColorUI组件库
+      <div class="text-xl">ColorUI组件库vue版
         <text class="text-df">v2.0</text>
       </div>
       <div class="margin-top-sm">
-        <text>By:文晓港</text>
+        <text>By:云中大鹏</text>
       </div>
       <image
         src="https://image.weilanwl.com/gif/wave.gif"
@@ -157,7 +157,6 @@ export default {
       return e;
     },
     CopyLink(e) {
-      console.log(e);
       uni.setClipboardData({
         data: e.currentTarget.dataset.link,
         success: res => {

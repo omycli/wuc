@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="边框阴影"></custom>
+    <custom name="边框阴影" bg-color="bg-gradual-blue"></custom>
 
     <div class="cu-bar solid-bottom">
       <div class="action">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="文本"></custom>
+    <custom name="文本" bg-color="bg-gradual-blue"></custom>
     <div class="cu-bar solid-bottom">
       <div class="action">
         <text class="icon-title text-blue"></text>文字大小

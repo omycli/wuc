@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="布局"></custom>
+    <custom name="布局" bg-color="bg-gradual-blue"></custom>
 
     <scroll-view
       scroll-x
@@ -17,7 +17,7 @@
     </scroll-view>
 
     <div v-if="TabCur === 0">
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>固定尺寸
         </div>
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>比例布局
         </div>
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>水平对齐(justify)
         </div>
@@ -83,7 +83,7 @@
         </div>
       </div>
 
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>垂直对齐(align)
         </div>
@@ -105,7 +105,7 @@
     </div>
 
     <div v-if="TabCur === 1">
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>等分列
         </div>
@@ -128,7 +128,7 @@
         </div>
       </div>
 
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>等高
         </div>
@@ -148,7 +148,7 @@
     </div>
 
     <div v-if="TabCur === 2">
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>浮动
         </div>
@@ -160,7 +160,7 @@
         </div>
       </div>
 
-      <div class="cu-bar margin-top solid-bottom">
+      <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>内外边距
         </div>

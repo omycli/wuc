@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="背景颜色"></custom>
+    <custom name="背景颜色" bg-color="bg-gradual-blue"></custom>
 
     <div>
       <div class="cu-bar solid-bottom">

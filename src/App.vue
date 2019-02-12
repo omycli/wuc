@@ -2,10 +2,9 @@
 export default {
   mpType: "app",
   async created() {
+    // #ifdef MP-WEIXIN
     const updateManager = uni.getUpdateManager();
-    updateManager.onCheckForUpdate(res => {
-      console.log("是否需要更新：" + res.hasUpdate);
-    });
+    updateManager.onCheckForUpdate(res => {});
     updateManager.onUpdateReady(() => {
       uni.showModal({
         title: "更新提示",
@@ -18,12 +17,12 @@ export default {
       });
     });
     updateManager.onUpdateFailed(function() {
-      // 新的版本下载失败
       uni.showModal({
         title: "更新提示",
         content: "更新失败，请检查网络是否连接？"
       });
     });
+    // #endif
 
     const systemInfo = uni.getSystemInfoSync();
     let CustomBar =
@@ -47,7 +46,6 @@ export default {
 }
 
 .nav-li {
-  color: #666;
   padding: 30rpx;
   border-radius: 12rpx;
   width: 45%;

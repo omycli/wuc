@@ -81,6 +81,6 @@ export default {
 // @import "~@/style/colorui";
 .tit-img {
   width: 100%;
-  height: 486px;
+  height: 486rpx;
 }
 </style>

@@ -1,11 +1,5 @@
-# mpvueBase
-> [uni-app](https://uniapp.dcloud.io) 是一个使用 [Vue.js](https://vuejs.org) 开发跨平台应用的前端框架，开发者编写一套代码，可编译到iOS、Android、H5、小程序等多个平台。
+# 组件库
 
-## 运行
-
-``` bash
-$ vue create -p dcloudio/uni-preset-vue my-project
-```
 
 ## 运行步骤
 
@@ -24,4 +18,7 @@ $ vue create -p dcloudio/uni-preset-vue my-project
   - 网页 通过浏览器访问 `localhost:8080`
 
 
+## 文档
 [colorUi](https://github.com/weilanwl/ColorUI)
+[uni-app](https://uniapp.dcloud.io)
+[Vue.js](https://vuejs.org) 

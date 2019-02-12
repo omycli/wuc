@@ -9,7 +9,7 @@
       <navigator
         class="action"
         open-type="navigateBack"
-        delta="1"
+        :delta="1"
         hover-class="none"
         v-show="!isBar"
       >
@@ -57,7 +57,7 @@ export default {
     bgColor: {
       type: String,
       default() {
-        return "gradual-blue";
+        return "bg-gradual-green";
       }
     },
     noneBg: {

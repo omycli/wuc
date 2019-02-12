@@ -3,12 +3,12 @@
     <custom name="按钮"></custom>
 
     <div>
-      <div class="cu-bar">
+      <div class="cu-bar bg-white solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>按钮形状
         </div>
       </div>
-      <div class="padding flex flex-wrap justify-between align-center">
+      <div class="padding flex flex-wrap justify-between align-center bg-white">
         <button class="cu-btn">默认</button>
         <button class="cu-btn round">圆角</button>
         <button class="cu-btn icon">
@@ -18,12 +18,12 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar margin-top bg-white solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>按钮尺寸
         </div>
       </div>
-      <div class="padding flex flex-wrap justify-between align-center">
+      <div class="padding flex flex-wrap justify-between align-center bg-white">
         <button class="cu-btn round sm">小尺寸</button>
         <button class="cu-btn round">默认</button>
         <button class="cu-btn round lg">大尺寸</button>
@@ -31,12 +31,12 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar margin-top bg-white">
         <div class="action">
           <text class="icon-title text-blue"></text>按钮颜色
         </div>
         <div class="action">
-          <text class="text-df">阴影</text>
+          <text class="text-df margin-right-sm">阴影</text>
           <switch class="sm" @change="SetShadow"></switch>
         </div>
       </div>
@@ -55,7 +55,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar margin-top bg-white">
         <div class="action">
           <text class="icon-title text-blue"></text>镂空按钮
         </div>
@@ -87,7 +87,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar margin-top bg-white">
         <div class="action">
           <text class="icon-title text-blue"></text>块状按钮
         </div>
@@ -99,7 +99,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar margin-top bg-white">
         <div class="action">
           <text class="icon-title text-blue"></text>无效状态
         </div>
@@ -111,7 +111,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar margin-top bg-white">
         <div class="action">
           <text class="icon-title text-blue"></text>按钮加图标
         </div>

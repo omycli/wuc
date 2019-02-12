@@ -85,6 +85,12 @@
       }
     },
     {
+      "path": "pages/auth/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
       "path": "pages/about/log",
       "style": {
         "navigationBarTitleText": "日志"

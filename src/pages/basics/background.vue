@@ -1,9 +1,9 @@
 <template>
   <div>
-    <custom name="背景颜色"></custom>
+    <custom name="背景颜色" bg-color="bg-gradual-blue"></custom>
 
     <div>
-      <div class="cu-bar solid-bottom">
+      <div class="cu-bar bg-white solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>深色背景
         </div>
@@ -22,7 +22,7 @@
     </div>
 
     <div>
-      <div class="cu-bar solid-bottom">
+      <div class="cu-bar bg-white solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>淡色背景
         </div>
@@ -45,44 +45,44 @@
     </div>
 
     <div>
-      <div class="cu-bar solid-bottom margin-top">
+      <div class="cu-bar bg-white solid-bottom margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>渐变背景
         </div>
       </div>
       <div class="grid col-2 padding-sm">
         <div class="padding-sm">
-          <div class="gradual-red padding radius text-center shadow-blur">
+          <div class="bg-gradual-red padding radius text-center shadow-blur">
             <div class="text-lg">魅红</div>
             <div class="margin-top-sm text-Abc">#f43f3b - #ec008c</div>
           </div>
         </div>
         <div class="padding-sm">
-          <div class="gradual-orange padding radius text-center shadow-blur">
+          <div class="bg-gradual-orange padding radius text-center shadow-blur">
             <div class="text-lg">鎏金</div>
             <div class="margin-top-sm text-Abc">#ff9700 - #ed1c24</div>
           </div>
         </div>
         <div class="padding-sm">
-          <div class="gradual-green padding radius text-center shadow-blur">
+          <div class="bg-gradual-green padding radius text-center shadow-blur">
             <div class="text-lg">翠柳</div>
             <div class="margin-top-sm text-Abc">#39b54a - #8dc63f</div>
           </div>
         </div>
         <div class="padding-sm">
-          <div class="gradual-blue padding radius text-center shadow-blur">
+          <div class="bg-gradual-blue padding radius text-center shadow-blur">
             <div class="text-lg">靛青</div>
             <div class="margin-top-sm text-Abc">#0081ff - #1cbbb4</div>
           </div>
         </div>
         <div class="padding-sm">
-          <div class="gradual-purple padding radius text-center shadow-blur">
+          <div class="bg-gradual-purple padding radius text-center shadow-blur">
             <div class="text-lg">惑紫</div>
             <div class="margin-top-sm text-Abc">#9000ff - #5e00ff</div>
           </div>
         </div>
         <div class="padding-sm">
-          <div class="gradual-pink padding radius text-center shadow-blur">
+          <div class="bg-gradual-pink padding radius text-center shadow-blur">
             <div class="text-lg">霞彩</div>
             <div class="margin-top-sm text-Abc">#ec008c - #6739b6</div>
           </div>
@@ -91,7 +91,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>图片背景
         </div>
@@ -108,7 +108,7 @@
     </div>
 
     <div>
-      <view class="cu-bar margin-top">
+      <view class="cu-bar bg-white margin-top">
         <view class="action">
           <text class="icon-title text-blue"></text>视频背景
         </view>
@@ -133,7 +133,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>透明背景(文字层)
         </div>

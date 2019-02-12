@@ -3,7 +3,7 @@
     <custom name="头像"></custom>
 
     <div>
-      <view class="cu-bar">
+      <view class="cu-bar bg-white">
         <view class="action">
           <text class="icon-title text-blue"></text>头像形状
         </view>
@@ -21,7 +21,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>头像尺寸
         </div>
@@ -45,21 +45,21 @@
         ></div>
       </div>
       <div class="padding">
-        <div class="cu-avatar sm round margin-left bg-red">orange</div>
-        <div class="cu-avatar round margin-left bg-red">orange</div>
-        <div class="cu-avatar lg round margin-left bg-red">orange</div>
-        <div class="cu-avatar xl round margin-left bg-red">orange</div>
+        <div class="cu-avatar sm round margin-left bg-red">A</div>
+        <div class="cu-avatar round margin-left bg-red">B</div>
+        <div class="cu-avatar lg round margin-left bg-red">C</div>
+        <div class="cu-avatar xl round margin-left bg-red">D</div>
       </div>
       <div class="padding">
-        <div class="cu-avatar sm round margin-left bg-red">蔚蓝</div>
-        <div class="cu-avatar round margin-left bg-red">蔚蓝</div>
-        <div class="cu-avatar lg round margin-left bg-red">蔚蓝</div>
-        <div class="cu-avatar xl round margin-left bg-red">蔚蓝</div>
+        <div class="cu-avatar sm round margin-left bg-red">蔚</div>
+        <div class="cu-avatar round margin-left bg-red">蓝</div>
+        <div class="cu-avatar lg round margin-left bg-red"><text>wl</text></div>
+        <div class="cu-avatar xl round margin-left bg-red"><text class='avatar-text'>网络</text></div>
       </div>
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>内嵌文字(图标)
         </div>
@@ -75,7 +75,7 @@
     </div>
 
     <div>
-      <view class="cu-bar margin-top">
+      <view class="cu-bar bg-white margin-top">
         <view class="action">
           <text class="icon-title text-blue"></text>头像颜色
         </view>
@@ -87,13 +87,13 @@
           v-for="(item,index) in ColorList"
           :key="index"
         >
-          <text>{{item.name}}</text>
+          <text class='avatar-text'>{{item.name}}</text>
         </view>
       </view>
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>头像组
         </div>
@@ -111,7 +111,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>头像标签
         </div>

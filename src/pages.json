@@ -61,6 +61,12 @@
       }
     },
     {
+      "path": "pages/basics/loading",
+      "style": {
+        "navigationBarTitleText": "加载"
+      }
+    },
+    {
       "path": "pages/component/index",
       "style": {
         "navigationBarTitleText": "组件"

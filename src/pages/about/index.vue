@@ -52,7 +52,7 @@
       <div class="cu-item arrow">
         <navigator
           class="content"
-          url="/pages/about/home"
+          url="/subPackagesA/about/home"
           hover-class="none"
         >
           <image
@@ -66,7 +66,7 @@
       <div class="cu-item arrow">
         <navigator
           class="content"
-          url="/pages/about/log"
+          url="/subPackagesA/about/log"
           hover-class="none"
         >
           <text class="icon-formfill text-green"></text>
@@ -94,7 +94,7 @@
       <div class="cu-item arrow">
         <navigator
           class="content"
-          url="../test/list"
+          url="/subPackagesT/test/list"
           hover-class="none"
         >
           <text class="icon-creativefill text-orange"></text>

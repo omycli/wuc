@@ -7,7 +7,7 @@
 
     <div class='padding margin'>
       <navigator
-        url='/pages/test/filter'
+        url='/subPackagesT/test/filter'
         class='bg-grey padding radius'
       >
         <text>filter：blur引起的ios花屏测试</text>

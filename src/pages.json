@@ -79,39 +79,15 @@
       }
     },
     {
-      "path": "pages/about/index",
-      "style": {
-        "navigationBarTitleText": "关于"
-      }
-    },
-    {
-      "path": "pages/about/home",
-      "style": {
-        "navigationBarTitleText": "关于我"
-      }
-    },
-    {
       "path": "pages/auth/index",
       "style": {
         "navigationBarTitleText": "登录"
       }
     },
     {
-      "path": "pages/about/log",
+      "path": "pages/about/index",
       "style": {
-        "navigationBarTitleText": "日志"
-      }
-    },
-    {
-      "path": "pages/test/list",
-      "style": {
-        "navigationBarTitleText": "测试"
-      }
-    },
-    {
-      "path": "pages/test/filter",
-      "style": {
-        "navigationBarTitleText": "blur引起的ios花屏测试"
+        "navigationBarTitleText": "关于"
       }
     }
   ],
@@ -157,5 +133,59 @@
         "usingComponents": {}
       }
     ]
+  },
+  "subPackages": [
+    {
+      "root": "subPackagesA",
+      "pages": [
+        {
+          "path": "about/home",
+          "style": {
+            "navigationBarTitleText": "关于我"
+          }
+        },
+        {
+          "path": "about/log",
+          "style": {
+            "navigationBarTitleText": "日志"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subPackagesT",
+      "pages": [
+        {
+          "path": "test/list",
+          "style": {
+            "navigationBarTitleText": "测试"
+          }
+        },
+        {
+          "path": "test/filter",
+          "style": {
+            "navigationBarTitleText": "blur引起的ios花屏测试"
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "subPackagesA/about/home": {
+      "network": "wifi",
+      "packages": ["subPackagesA"]
+    },
+    "subPackagesA/about/log": {
+      "network": "wifi",
+      "packages": ["subPackagesA"]
+    },
+    "subPackagesT/test/list": {
+      "network": "wifi",
+      "packages": ["subPackagesA"]
+    },
+    "subPackagesT/test/filter": {
+      "network": "wifi",
+      "packages": ["subPackagesA"]
+    }
   }
 }

@@ -1,6 +1,6 @@
 <template  lang='pug'>
 .container
-    img.png.tit-img(src="/static/assets/images/BasicsBg.png", mode="widthFix")
+    img.png.tit-img(src="http://www.bbvdd.com/d/20190214163102nk4.png", mode="widthFix")
 
     .nav-list
       navigator(
@@ -68,6 +68,15 @@ export default {
       }
     });
     // #endif
+  },
+  pageLifetimes: {
+    show() {
+      if (typeof this.getTabBar === "function" && this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 0
+        });
+      }
+    }
   },
   onShareAppMessage() {
     return {

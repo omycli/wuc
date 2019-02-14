@@ -73,6 +73,12 @@
       }
     },
     {
+      "path": "pages/component/bar",
+      "style": {
+        "navigationBarTitleText": "操作条"
+      }
+    },
+    {
       "path": "pages/plugin/index",
       "style": {
         "navigationBarTitleText": "扩展"
@@ -108,32 +114,29 @@
         "pagePath": "pages/basics/index",
         "iconPath": "/static/assets/tabbar/basics.png",
         "selectedIconPath": "/static/assets/tabbar/basics_cur.png",
-        "text": "基础",
-        "usingComponents": {}
+        "text": "基础"
       },
       {
         "pagePath": "pages/component/index",
         "iconPath": "/static/assets/tabbar/component.png",
         "selectedIconPath": "/static/assets/tabbar/component_cur.png",
-        "text": "组件",
-        "usingComponents": {}
+        "text": "组件"
       },
       {
         "pagePath": "pages/plugin/index",
         "iconPath": "/static/assets/tabbar/plugin.png",
         "selectedIconPath": "/static/assets/tabbar/plugin_cur.png",
-        "text": "扩展",
-        "usingComponents": {}
+        "text": "扩展"
       },
       {
         "pagePath": "pages/about/index",
         "iconPath": "/static/assets/tabbar/about.png",
         "selectedIconPath": "/static/assets/tabbar/about_cur.png",
-        "text": "关于",
-        "usingComponents": {}
+        "text": "关于"
       }
     ]
   },
+  "usingComponents": {},
   "subPackages": [
     {
       "root": "subPackagesA",

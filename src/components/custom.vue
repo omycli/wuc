@@ -14,7 +14,7 @@
         v-show="!isBar"
       >
         <text v-show="!isBar" class="icon-back"></text>
-        {{name}}
+        <text>{{name}}</text>
       </navigator>
       <div class="content" v-show="isBar">
         <image :src="nameImg" mode="widthFix" />

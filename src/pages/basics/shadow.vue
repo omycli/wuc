@@ -2,7 +2,7 @@
   <div>
     <custom name="边框阴影" bg-color="bg-gradual-blue"></custom>
 
-    <div class="cu-bar solid-bottom">
+    <div class="cu-bar bg-white  solid-bottom">
       <div class="action">
         <text class="icon-title text-blue"></text>边框
       </div>
@@ -17,7 +17,7 @@
       <div class="padding margin-top" :class="'solid'+(size?'s':'')+'-bottom'">下</div>
       <div class="padding margin-top" :class="'solid'+(size?'s':'')+'-left'">左</div>
     </div>
-    <div class="cu-bar margin-top">
+    <div class="cu-bar bg-white  margin-top">
       <div class="action">
         <text class="icon-title text-blue"></text>阴影
       </div>

@@ -2,7 +2,7 @@
   <div>
     <custom name="标签" bg-color="bg-gradual-blue"></custom>
     <div>
-      <div class="cu-bar">
+      <div class="cu-bar bg-white ">
         <div class="action">
           <text class="icon-title text-blue"></text>标签形状
         </div>
@@ -15,7 +15,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white  margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>标签尺寸
         </div>
@@ -27,7 +27,7 @@
     </div>
 
     <div>
-      <div class="cu-bar margin-top">
+      <div class="cu-bar bg-white  margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>标签颜色
         </div>
@@ -43,7 +43,7 @@
     </div>
 
     <div>
-      <view class="cu-bar margin-top">
+      <view class="cu-bar bg-white  margin-top">
         <view class="action">
           <text class="icon-title text-blue"></text>镂空标签
         </view>
@@ -56,7 +56,7 @@
     </div>
 
     <div>
-      <view class="cu-bar margin-top">
+      <view class="cu-bar bg-white  margin-top">
         <view class="action">
           <text class="icon-title text-blue"></text>胶囊样式
         </view>
@@ -94,7 +94,7 @@
     </div>
 
     <div>
-      <view class="cu-bar margin-top">
+      <view class="cu-bar bg-white  margin-top">
         <view class="action">
           <text class="icon-title text-blue"></text>数字标签
         </view>

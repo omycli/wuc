@@ -1,7 +1,7 @@
 <template>
   <div>
     <custom name="文本" bg-color="bg-gradual-blue"></custom>
-    <div class="cu-bar solid-bottom">
+    <div class="cu-bar bg-white solid-bottom">
       <div class="action">
         <text class="icon-title text-blue"></text>文字大小
       </div>
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="cu-bar solid-bottom margin-top">
+    <div class="cu-bar bg-white  solid-bottom margin-top">
       <div class="action">
         <text class="icon-title text-blue"></text>文字颜色
       </div>
@@ -88,7 +88,7 @@
         <div class="text-center" :class="'text-'+item.name">{{item.title}}</div>
       </div>
     </div>
-    <div class="cu-bar solid-bottom margin-top">
+    <div class="cu-bar bg-white  solid-bottom margin-top">
       <div class="action">
         <text class="icon-title text-blue"></text>文字截断
       </div>
@@ -99,7 +99,7 @@
         style="width:220px"
       >我于杀戮之中绽放 ,亦如黎明中的花朵</div>
     </div>
-    <div class="cu-bar solid-bottom margin-top">
+    <div class="cu-bar bg-white  solid-bottom margin-top">
       <div class="action">
         <text class="icon-title text-blue"></text>文字对齐
       </div>
@@ -109,7 +109,7 @@
       <div class="text-center padding">我于杀戮之中绽放 ,亦如黎明中的花朵</div>
       <div class="text-right padding">我于杀戮之中绽放 ,亦如黎明中的花朵</div>
     </div>
-    <div class="cu-bar solid-bottom margin-top">
+    <div class="cu-bar bg-white  solid-bottom margin-top">
       <div class="action">
         <text class="icon-title text-blue"></text>特殊文字
       </div>

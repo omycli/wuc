@@ -3,7 +3,7 @@
     <custom name="背景颜色" bg-color="bg-gradual-blue"></custom>
 
     <div>
-      <div class="cu-bar solid-bottom">
+      <div class="cu-bar bg-white  solid-bottom">
         <div class="action">
           <text class="icon-title text-blue"></text>进度条形状
         </div>
@@ -22,7 +22,7 @@
     </div>
 
     <div>
-      <div class="cu-bar solid-bottom margin-top">
+      <div class="cu-bar bg-white  solid-bottom margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>进度条尺寸
         </div>
@@ -41,7 +41,7 @@
     </div>
 
     <div>
-      <div class="cu-bar solid-bottom margin-top" @click="showModal">
+      <div class="cu-bar bg-white  solid-bottom margin-top" @click="showModal">
         <div class="action">
           <text class="icon-title text-blue"></text>进度条颜色
         </div>
@@ -57,7 +57,7 @@
     </div>
 
     <div>
-      <div class="cu-bar solid-bottom margin-top">
+      <div class="cu-bar bg-white  solid-bottom margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>进度条条纹
         </div>
@@ -77,7 +77,7 @@
     </div>
 
     <div>
-      <div class="cu-bar solid-bottom margin-top">
+      <div class="cu-bar bg-white  solid-bottom margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>进度条比例
         </div>
@@ -92,7 +92,7 @@
     </div>
 
     <div>
-      <div class="cu-bar solid-bottom margin-top">
+      <div class="cu-bar bg-white  solid-bottom margin-top">
         <div class="action">
           <text class="icon-title text-blue"></text>进度条布局
         </div>
@@ -115,7 +115,7 @@
 
     <div class="cu-modal" :class="modalName === 'ColorModal' ? 'show' : ''">
       <div class="cu-dialog">
-        <div class="cu-bar justify-end">
+        <div class="cu-bar bg-white  justify-end">
           <div class="content">选择颜色</div>
           <div class="action" @click="hideModal">
             <text class="icon-close text-red"></text>

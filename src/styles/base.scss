@@ -1,0 +1,66 @@
+//******布局样式******/
+.row {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+}
+.row-center {
+  @extend .row;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.row-between {
+  @extend .row;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.row-around {
+  @extend .row;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+.row-end {
+  @extend .row;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+.row-wrap {
+  @extend .row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.row-nowrap {
+  @extend .row;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+}
+
+.column {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+.column-center {
+  @extend .column;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.column-around {
+  @extend .column;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+.column-between {
+  @extend .column;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.flex-center {
+  @extend .row;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}

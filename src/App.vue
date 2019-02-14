@@ -37,6 +37,7 @@ export default {
 </script>
 <style lang='scss'>
 @import "~@/styles/colorui.scss";
+@import "~@/styles/base.scss";
 @import "~@/styles/icon.scss";
 .nav-list {
   display: flex;

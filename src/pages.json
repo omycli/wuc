@@ -79,6 +79,12 @@
       }
     },
     {
+      "path": "pages/component/nav",
+      "style": {
+        "navigationBarTitleText": "导航栏"
+      }
+    },
+    {
       "path": "pages/plugin/index",
       "style": {
         "navigationBarTitleText": "扩展"

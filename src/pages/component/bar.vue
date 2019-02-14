@@ -331,7 +331,7 @@
               type="text"
               placeholder="搜索图片、文章、视频"
               confirm-type="search"
-            ></input>
+            />
           </div>
           <div class='action'>
             <button class='cu-btn bg-green shadow-blur round'>搜索</button>
@@ -348,7 +348,7 @@
               type="text"
               placeholder="搜索图片、文章、视频"
               confirm-type="search"
-            ></input>
+            />
           </div>
           <div class='action'>
             <text>广州</text>
@@ -366,7 +366,7 @@
               type="text"
               placeholder="搜索图片、文章、视频"
               confirm-type="search"
-            ></input>
+            />
           </div>
           <div class='action'>
             <text>广州</text>
@@ -380,7 +380,7 @@
               type="text"
               placeholder="搜索图片、文章、视频"
               confirm-type="search"
-            ></input>
+            />
           </div>
           <div class='action'>
             <text class='icon-close'></text>
@@ -428,7 +428,7 @@
             class='solid-bottom'
             maxlength="300"
             cursor-spacing="10"
-          ></input>
+          />
           <div class='action'>
             <text class='icon-emojifill text-grey'></text>
           </div>
@@ -447,7 +447,7 @@
             class='solid-bottom'
             maxlength="300"
             cursor-spacing="10"
-          ></input>
+          />
           <div class='action'>
             <text class='icon-emojifill text-grey'></text>
           </div>

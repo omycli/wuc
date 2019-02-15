@@ -66,6 +66,38 @@
         color="#666666"
       ></tab>
     </div>
+
+    <div>
+      <div class="cu-bar bg-white margin-top  solid-bottom">
+        <div class='action'>
+          <text class='icon-title text-orange '></text> 背景
+        </div>
+      </div>
+      <tab
+        :tab-list="tabList2"
+        :TabCur.sync="TabCur"
+        :text-center="true"
+        SelectColor="text-white"
+        bg-color="#e54d42"
+        color="#ffffff"
+      ></tab>
+    </div>
+
+    <div>
+      <div class="cu-bar bg-white margin-top  solid-bottom">
+        <div class='action'>
+          <text class='icon-title text-orange '></text> 图标
+        </div>
+      </div>
+      <tab
+        :tab-list="tabList3"
+        :TabCur.sync="TabCur"
+        :text-center="true"
+        SelectColor="text-white"
+        bg-color="#39b54a"
+        color="#ffffff"
+      ></tab>
+    </div>
   </div>
 </template>
 
@@ -75,8 +107,22 @@ import tab from "@/components/tab";
 export default {
   data() {
     return {
-      tabList: ["tab0", "tab1", "tab2", "tab3", "tab4", "tab5", "tab6", "tab7"],
-      tabList2: ["tab0", "tab1", "tab2"],
+      tabList: [
+        { name: "tab0" },
+        { name: "tab1" },
+        { name: "tab2" },
+        { name: "tab3" },
+        { name: "tab4" },
+        { name: "tab5" },
+        { name: "tab6" },
+        { name: "tab7" }
+      ],
+      tabList2: [{ name: "tab0" }, { name: "tab1" }, { name: "tab2" }],
+      tabList3: [
+        { name: "数码", icon: "icon-camerafill" },
+        { name: "tab1", icon: "icon-upstagefill" },
+        { name: "tab2", icon: "icon-clothesfill" }
+      ],
       TabCur: 0
     };
   },

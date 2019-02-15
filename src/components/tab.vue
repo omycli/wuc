@@ -15,7 +15,8 @@
       :id="index"
       @tap="tabSelect(index,$event)"
     >
-      <span>{{item}}</span>
+    <text :class="item.icon"></text>
+      <span>{{item.name}}</span>
     </div>
   </scroll-view>
 </template>

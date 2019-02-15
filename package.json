@@ -19,14 +19,13 @@
     "lint": "cross-env UNI_PLATFORM=h5 vue-cli-service lint"
   },
   "dependencies": {
-    "@dcloudio/uni-h5": "0.0.19",
+    "@dcloudio/uni-h5": "^0.2.2",
     "@dcloudio/uni-mp-alipay": "*",
     "@dcloudio/uni-mp-baidu": "*",
-    "@dcloudio/uni-mp-weixin": "*",
+    "@dcloudio/uni-mp-weixin": "^0.0.5",
     "flyio": "^0.6.2",
     "vue": "^2.5.22",
-    "vuex": "^3.0.1",
-    "xmlstring2json": "^0.1.9"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@dcloudio/uni-cli-shared": "0.2.4",
@@ -43,10 +42,10 @@
     "eslint-plugin-vue": "^5.1.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "sass-loader": "^7.1.0",
     "node-sass": "^4.11.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.22"
   },
   "browserslist": [

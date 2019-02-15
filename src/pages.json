@@ -85,6 +85,18 @@
       }
     },
     {
+      "path": "pages/component/list",
+      "style": {
+        "navigationBarTitleText": "列表"
+      }
+    },
+    {
+      "path": "pages/component/modal",
+      "style": {
+        "navigationBarTitleText": "模态窗口"
+      }
+    },
+    {
       "path": "pages/plugin/index",
       "style": {
         "navigationBarTitleText": "扩展"

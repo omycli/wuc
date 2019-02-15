@@ -109,7 +109,7 @@
         <div class="cu-dialog">
           <div
             class="bg-img"
-            style="background-image: url('https://image.weilanwl.com/color2.0/zanCode.jpg');height:544rpx;"
+            style="background-image: url('http://www.bbvdd.com/d/20190215105128ccj.jpeg');height:544rpx;"
           >
             <div class="cu-bar justify-end none-bg text-white">
               <div
@@ -169,8 +169,8 @@ export default {
     },
     showQrcode() {
       uni.previewImage({
-        urls: ["https://image.weilanwl.com/color2.0/zanCode.jpg"],
-        current: "https://image.weilanwl.com/color2.0/zanCode.jpg" // 当前显示图片的http链接
+        urls: ["http://www.bbvdd.com/d/20190215105128ccj.jpeg"],
+        current: "http://www.bbvdd.com/d/20190215105128ccj.jpeg" // 当前显示图片的http链接
       });
     }
   },

@@ -7,7 +7,7 @@
           <text class="icon-title text-blue"></text>标签形状
         </div>
       </div>
-      <div class="padding">
+      <div class="padding bg-white solid-bottom">
         <div class="cu-tag">默认</div>
         <div class="cu-tag round">椭圆</div>
         <div class="cu-tag radius">圆角</div>
@@ -20,7 +20,7 @@
           <text class="icon-title text-blue"></text>标签尺寸
         </div>
       </div>
-      <div class="padding">
+      <div class="padding bg-white solid-bottom">
         <div class="cu-tag radius sm">小尺寸</div>
         <div class="cu-tag radius">普通尺寸</div>
       </div>

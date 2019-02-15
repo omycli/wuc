@@ -1,5 +1,5 @@
 <template  lang='pug'>
-Custom(isBar noneBg nameImg="/static/assets/images/cjkz.png")
+Custom(isBar noneBg nameImg="http://www.bbvdd.com/d/20190215110318xwq.png")
 </template>
 
 <script>

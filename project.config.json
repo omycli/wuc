@@ -31,12 +31,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "模态窗口",
 					"pathName": "pages/component/modal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "轮播图",
+					"pathName": "pages/component/swiper",
 					"scene": null
 				}
 			]

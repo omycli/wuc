@@ -19,6 +19,6 @@
 
 
 ## 文档
-[colorUi](https://github.com/weilanwl/ColorUI)  
+[Vue](https://vuejs.org)   
 [uni-app](https://uniapp.dcloud.io)  
-[Vue.js](https://vuejs.org) 
+[colorUi](https://github.com/weilanwl/ColorUI)  

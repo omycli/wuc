@@ -91,6 +91,30 @@
       }
     },
     {
+      "path": "pages/component/card",
+      "style": {
+        "navigationBarTitleText": "卡片"
+      }
+    },
+    {
+      "path": "pages/component/form",
+      "style": {
+        "navigationBarTitleText": "表单"
+      }
+    },
+    {
+      "path": "pages/component/timeline",
+      "style": {
+        "navigationBarTitleText": "时间轴"
+      }
+    },
+    {
+      "path": "pages/component/swiper",
+      "style": {
+        "navigationBarTitleText": "轮播图"
+      }
+    },
+    {
       "path": "pages/component/modal",
       "style": {
         "navigationBarTitleText": "模态窗口"
@@ -193,20 +217,20 @@
   ],
   "preloadRule": {
     "subPackagesA/about/home": {
-      "network": "wifi",
-      "packages": ["subPackagesA"]
+      "network": "all",
+      "packages": ["__APP__"]
     },
     "subPackagesA/about/log": {
-      "network": "wifi",
-      "packages": ["subPackagesA"]
+      "network": "all",
+      "packages": ["__APP__"]
     },
     "subPackagesT/test/list": {
-      "network": "wifi",
-      "packages": ["subPackagesA"]
+      "network": "all",
+      "packages": ["__APP__"]
     },
     "subPackagesT/test/filter": {
       "network": "wifi",
-      "packages": ["subPackagesA"]
+      "packages": ["__APP__"]
     }
   }
 }

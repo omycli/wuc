@@ -123,7 +123,13 @@
     {
       "path": "pages/component/modal",
       "style": {
-        "navigationBarTitleText": "模态窗口"
+        "navigationBarTitleText": "模态框"
+      }
+    },
+    {
+      "path": "pages/component/chat",
+      "style": {
+        "navigationBarTitleText": "聊天"
       }
     },
     {
@@ -235,7 +241,7 @@
       "packages": ["__APP__"]
     },
     "subPackagesT/test/filter": {
-      "network": "wifi",
+      "network": "all",
       "packages": ["__APP__"]
     }
   }

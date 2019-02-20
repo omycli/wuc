@@ -6,7 +6,7 @@
         class="png"
         mode="widthFix"
       />
-      <div class="text-xl">ColorUI组件库vue版
+      <div class="text-xl">基于ColorUI的组件库
         <text class="text-df">v2.0</text>
       </div>
       <div class="margin-top-sm">

@@ -1,18 +1,30 @@
 <template>
   <div>
-    <custom
-      name="日志"
-      bg-color="bg-gradual-green"
-    ></custom>
+    <custom name="日志" bg-color="bg-gradual-orange"></custom>
 
     <div class="cu-timeline">
-      <div class='cu-item text-green'>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.0.61</div>
+            <div class="cu-tag line-white">2019/02/20</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.增加发布更新提示，仅在微信小程序中生效（详见App.vue中#ifdef-#endif那段）</div>
+            <div>2.增加分包(分包分别为:通用分包--subPackagesA和Bug测试专用分包--subPackagesT)</div>
+            <div>3.增加头部操作条插件形式使用（/src/components/custom.vue）</div>
+            <div>4.增加导航栏插件形式使用,并支持滑动内容切换（/src/components/tab.vue）</div>
+            <div>5.增加精确到分的日期选择插件（/src/components/pickerDate.vue）</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-green">
         <div class="bg-gradual-green content shadow-blur">
           <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-green">v2.0.6</div>
             <div class="cu-tag line-white">2019/02/09</div>
           </div>
-          <div class='margin-top-sm text-content'>
+          <div class="margin-top-sm text-content">
             <div>1.修复行距带来的垂直不居中问题</div>
             <div>2.优化操作条组件，新增多种样式</div>
             <div>3.优化背景颜色（某些组件的默认背景调整,移除一些important）</div>
@@ -21,13 +33,13 @@
           </div>
         </div>
       </div>
-      <div class='cu-item text-green'>
+      <div class="cu-item text-green">
         <div class="bg-green content shadow-blur">
           <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-green">v2.0.5</div>
             <div class="cu-tag line-white">2019/01/13</div>
           </div>
-          <div class='margin-top-sm text-content'>
+          <div class="margin-top-sm text-content">
             <div>1.修复时间线图标显示问题</div>
             <div>2.switch、radio、checkbox单位改成px，抛弃小尺寸</div>
             <div>3.更新多种窗口组件</div>
@@ -38,13 +50,13 @@
           </div>
         </div>
       </div>
-      <div class='cu-item text-green'>
+      <div class="cu-item text-green">
         <div class="bg-green content shadow-blur">
           <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-green">v2.0.4</div>
             <div class="cu-tag line-white">2019/01/10</div>
           </div>
-          <div class='margin-top-sm text-content'>
+          <div class="margin-top-sm text-content">
             <div>1.抛弃标签选择器，改成类名选择器</div>
             <div>2.动画改成Gif，并新增动画</div>
             <div>3.修复一些图标错位问题</div>
@@ -53,13 +65,13 @@
           </div>
         </div>
       </div>
-      <div class='cu-item text-green'>
+      <div class="cu-item text-green">
         <div class="bg-green content shadow-blur">
           <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-green">v2.0.3</div>
             <div class="cu-tag line-white">2019/01/06</div>
           </div>
-          <div class='margin-top-sm text-content'>
+          <div class="margin-top-sm text-content">
             <div>1.修复一些单位错误（带输入框的操作条）</div>
             <div>2.纠正一些单词拼写...</div>
             <div>3.抛弃icon标签，改回text标签的写法</div>
@@ -69,13 +81,13 @@
           </div>
         </div>
       </div>
-      <div class='cu-item text-green'>
+      <div class="cu-item text-green">
         <div class="bg-green content shadow-blur">
           <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-green">v2.0.2</div>
             <div class="cu-tag line-white">2018/12/24</div>
           </div>
-          <div class='margin-top-sm text-content'>
+          <div class="margin-top-sm text-content">
             <div>1.首页增加分享</div>
             <div>2.卡片页修复switch开关问题</div>
             <div>3.优化首页动画效果（ios表现不佳）</div>
@@ -87,13 +99,13 @@
           </div>
         </div>
       </div>
-      <div class='cu-item text-green'>
+      <div class="cu-item text-green">
         <div class="bg-green content shadow-blur">
           <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-green">v2.0.1</div>
             <div class="cu-tag line-white">2018/12/20</div>
           </div>
-          <div class='margin-top-sm text-content'>2.0新版本上线</div>
+          <div class="margin-top-sm text-content">2.0新版本上线</div>
         </div>
       </div>
     </div>

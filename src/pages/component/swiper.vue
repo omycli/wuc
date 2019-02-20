@@ -43,8 +43,6 @@
         autoplay="true"
         interval="5000"
         duration="500"
-        previous-margin="20rpx"
-        next-margin="160rpx"
         @change="cardSwiper"
         indicator-color="#8799a3"
         indicator-active-color="#0081ff"

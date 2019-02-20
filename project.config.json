@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -44,6 +44,20 @@
 					"id": -1,
 					"name": "轮播图",
 					"pathName": "pages/component/swiper",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "步骤条",
+					"pathName": "pages/component/steps",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "日志",
+					"pathName": "subPackagesA/about/log",
 					"scene": null
 				}
 			]

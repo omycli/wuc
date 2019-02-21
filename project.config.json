@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -58,6 +58,13 @@
 					"id": -1,
 					"name": "日志",
 					"pathName": "subPackagesA/about/log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "索引",
+					"pathName": "pages/plugin/indexes",
 					"scene": null
 				}
 			]

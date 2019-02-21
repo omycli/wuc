@@ -1,24 +1,52 @@
 <template  lang='pug'>
-Custom(isBar noneBg nameImg="http://www.bbvdd.com/d/20190215110318xwq.png")
+div
+  Custom(isBar noneBg bgImage="https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg" nameImg="http://www.bbvdd.com/d/20190215110318xwq.png")
+  .cu-card
+    div(
+      class='cu-item bg-img shadow-blur' 
+      :style="'background-image:url('+item.img +');'" 
+      @tap="toChild" :data-url="item.url" 
+      v-for="item in list" 
+      :key="item.title")
+        .cardTitle {{item.title}}
 </template>
 
 <script>
 import Custom from "@/components/custom";
 export default {
   data() {
-    return {};
+    return {
+      list: [
+        {
+          title: "索引列表",
+          img: "https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg",
+          url: "../plugin/indexes"
+        },
+        {
+          title: "微动画",
+          img: "https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg",
+          url: "../plugin/animation"
+        }
+      ]
+    };
   },
 
   components: { Custom },
 
   computed: {},
 
-  methods: {},
+  methods: {
+    toChild(e) {
+      wx.navigateTo({
+        url: e.currentTarget.dataset.url
+      });
+    }
+  },
 
   mounted() {},
   onShareAppMessage() {
     return {
-      title: "(vue版)ColorUI-高颜值的小程序UI组件库",
+      title: "ColorUI-uni的组件库",
       imageUrl: "https://image.weilanwl.com/color2.0/share2215.jpg",
       path: "/pages/basics/index"
     };

@@ -139,6 +139,12 @@
       }
     },
     {
+      "path": "pages/plugin/indexes",
+      "style": {
+        "navigationBarTitleText": "索引"
+      }
+    },
+    {
       "path": "pages/auth/index",
       "style": {
         "navigationBarTitleText": "登录"

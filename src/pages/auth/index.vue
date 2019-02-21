@@ -6,11 +6,11 @@
         class='png'
         mode='widthFix'
       />
-      <div class='text-xl'>基于colorUI的组件库
-        <text class='text-df'>v2.0</text>
+      <div class='text-xl'>ColorUI-Uniapp的组件库
+        <text class='text-df'>v2.0.61</text>
       </div>
       <div class='margin-top-sm'>
-        <text>By:云中大鹏</text>
+        <text>By:云中大鹏、文晓港</text>
       </div>
     </div>
     <div class='padding-xl'>

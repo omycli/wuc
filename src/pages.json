@@ -212,6 +212,12 @@
           "style": {
             "navigationBarTitleText": "日志"
           }
+        },
+        {
+          "path": "animation/index",
+          "style": {
+            "navigationBarTitleText": "动画"
+          }
         }
       ]
     },
@@ -234,6 +240,10 @@
     }
   ],
   "preloadRule": {
+    "subPackagesA/animation/index": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
     "subPackagesA/about/home": {
       "network": "all",
       "packages": ["__APP__"]

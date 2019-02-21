@@ -25,7 +25,7 @@ export default {
         {
           title: "微动画",
           img: "https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg",
-          url: "../plugin/animation"
+          url: "/subPackagesA/animation/index"
         }
       ]
     };

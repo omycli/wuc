@@ -17,7 +17,33 @@
       </div>
     </div>
 
-    <indexes></indexes>
+    <indexes :key-list="KeyList">
+      <div v-for="(item, index) in KeyList" :key="index">
+        <div
+          class="padding"
+          :class="'indexItem-'+KeyList[index]"
+          :id="'indexes-'+KeyList[index]"
+          :data-index="KeyList[index]"
+        >{{KeyList[index]}}</div>
+        <div class="cu-list menu menu-avatar no-padding">
+          <div
+            class="cu-item"
+            v-for="(item, sub) in conList"
+            :key="sub"
+            :for-index="sub"
+          >
+            <div class="cu-avatar round lg">{{KeyList[index]}}</div>
+            <div class="content">
+              <div class="text-grey">
+                {{KeyList[index]}}
+                <text class="text-abc">{{KeyList[sub]}}</text>君
+              </div>
+              <div class="text-gray text-sm">有{{sub+2}}个主子需要伺候</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </indexes>
   </div>
 </template>
 
@@ -27,7 +53,10 @@ import Indexes from "@/components/indexes";
 import { obj2style } from "@/utils/index";
 export default {
   data() {
-    return {};
+    return {
+      KeyList: [],
+      conList: []
+    };
   },
 
   components: { Custom, Indexes },
@@ -42,7 +71,14 @@ export default {
 
   methods: {},
 
-  mounted() {}
+  mounted() {
+    let list = [];
+    for (let i = 0; i < 26; i++) {
+      list[i] = String.fromCharCode(65 + i);
+    }
+    this.KeyList = list;
+    this.conList = 2;
+  }
 };
 </script>
 <style lang='scss'>

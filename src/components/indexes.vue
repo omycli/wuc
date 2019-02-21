@@ -8,31 +8,7 @@
       :scroll-with-animation="true"
       :enable-back-to-top="true"
     >
-      <div v-for="(item, index) in list" :key="index">
-        <div
-          class="padding"
-          :class="'indexItem-'+list[index]"
-          :id="'indexes-'+list[index]"
-          :data-index="list[index]"
-        >{{list[index]}}</div>
-        <div class="cu-list menu menu-avatar no-padding">
-          <div
-            class="cu-item"
-            v-for="(item, sub) in 2"
-            :key="sub"
-            :for-index="sub"
-          >
-            <div class="cu-avatar round lg">{{list[index]}}</div>
-            <div class="content">
-              <div class="text-grey">
-                {{list[index]}}
-                <text class="text-abc">{{list[sub]}}</text>君
-              </div>
-              <div class="text-gray text-sm">有{{sub+2}}个主子需要伺候</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <slot></slot>
     </scroll-view>
 
     <div class="indexBar" :style="scrollBar">
@@ -65,15 +41,33 @@ export default {
     return {
       hidden: false,
       boxTop: 0,
-      list: [],
       listCur: "",
       listCurID: ""
     };
+  },
+  props: {
+    KeyList: {
+      type: Array
+    },
+    ConList: {
+      type: Array
+    }
   },
 
   components: {},
 
   computed: {
+    list() {
+      if (this.KeyList.length > 0) {
+        return this.KeyList;
+      } else {
+        let list = [];
+        for (let i = 0; i < 26; i++) {
+          list[i] = String.fromCharCode(65 + i);
+        }
+        return list;
+      }
+    },
     scrollBar() {
       let style = {};
       const { screenHeight } = uni.getSystemInfoSync();
@@ -109,14 +103,7 @@ export default {
     }
   },
 
-  mounted() {
-    let list = [];
-    for (let i = 0; i < 26; i++) {
-      list[i] = String.fromCharCode(65 + i);
-    }
-    this.list = list;
-    this.listCur = list[0];
-  },
+  mounted() {},
 
   onReady() {
     let self = this;

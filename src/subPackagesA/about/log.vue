@@ -15,6 +15,7 @@
             <div>3.增加头部操作条插件形式使用（/src/components/custom.vue）</div>
             <div>4.增加导航栏插件形式使用,并支持滑动内容切换（/src/components/tab.vue）</div>
             <div>5.增加精确到分的日期选择插件（/src/components/pickerDate.vue）</div>
+            <div>6.增加索引插件（/src/components/indexes.vue）</div>
           </div>
         </div>
       </div>

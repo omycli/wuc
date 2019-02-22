@@ -4,7 +4,7 @@ div
   .cu-card
     div(
       class='cu-item bg-img shadow-blur' 
-      :style="'background-image:url('+item.img +');'" 
+      :style="'background-image:url('+item.img +');background-size:cover'" 
       @tap="toChild" :data-url="item.url" 
       v-for="item in list" 
       :key="item.title")
@@ -20,7 +20,7 @@ export default {
         {
           title: "索引列表",
           img: "https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg",
-          url: "../plugin/indexes"
+          url: "/pages/plugin/indexes"
         },
         {
           title: "微动画",
@@ -29,8 +29,15 @@ export default {
         },
         {
           title: "停车键盘",
-          img: "https://goss4.veer.com/creative/vcg/veer/612/veer-304717812.jpg",
+          img:
+            "https://goss4.veer.com/creative/vcg/veer/612/veer-304717812.jpg",
           url: "/pages/plugin/keyboard"
+        },
+        {
+          title: "图表库",
+          img:
+            "https://goss2.veer.com/creative/vcg/veer/612/veer-302194474.jpg",
+          url: "/pages/plugin/echarts"
         }
       ]
     };

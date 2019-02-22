@@ -52,9 +52,7 @@
           <div v-if="index < gridCol*2">
             <div :class="['icon-'+item.icon, 'text-'+ item.color]">
               <div class="cu-tag badge" v-if="item.badge !== 0">
-                <block
-                  v-if="item.badge !== 1"
-                >{{item.badge>99?'99+':item.badge}}</block>
+                <div v-if="item.badge !== 1">{{item.badge>99?'99+':item.badge}}</div>
               </div>
             </div>
             <text>{{item.name}}</text>

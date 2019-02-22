@@ -151,6 +151,12 @@
       }
     },
     {
+      "path": "pages/plugin/echarts",
+      "style": {
+        "navigationBarTitleText": "图表"
+      }
+    },
+    {
       "path": "pages/auth/index",
       "style": {
         "navigationBarTitleText": "登录"
@@ -223,6 +229,12 @@
           "path": "animation/index",
           "style": {
             "navigationBarTitleText": "动画"
+          }
+        },
+        {
+          "path": "echarts/bar",
+          "style": {
+            "navigationBarTitleText": "柱状图"
           }
         }
       ]

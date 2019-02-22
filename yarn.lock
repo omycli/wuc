@@ -4904,6 +4904,10 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
+mpvue-keyboard@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/mpvue-keyboard/-/mpvue-keyboard-1.1.2.tgz#0ff00209c02507975c800770368527b834b4b476"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"

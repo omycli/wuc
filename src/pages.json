@@ -145,6 +145,12 @@
       }
     },
     {
+      "path": "pages/plugin/keyboard",
+      "style": {
+        "navigationBarTitleText": "停车键盘"
+      }
+    },
+    {
       "path": "pages/auth/index",
       "style": {
         "navigationBarTitleText": "登录"

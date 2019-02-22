@@ -2,6 +2,13 @@
 .container
     img.png.tit-img(src="http://www.bbvdd.com/d/20190214163102nk4.png", mode="widthFix")
 
+    Scrollmsg(
+      :msg="content"
+      :base-style="'margin:14px'"
+      logo="https://static.veer.com/veer/static/resources/Titles/2019-01-09/55270f79febb487fbcdb5b00118f91f7.jpg"
+      @onevent="showModal"
+    )
+
     .nav-list
       navigator(
       open-type="navigate" 
@@ -19,6 +26,7 @@
 </template>
 
 <script>
+import Scrollmsg from "@/components/scrollmsg";
 export default {
   data() {
     return {
@@ -39,20 +47,38 @@ export default {
         { title: "边框阴影", name: "shadow", color: "olive", icon: "copy" },
         { title: "加载", name: "loading", color: "green", icon: "loading2" }
       ],
-      modalName: ""
+      content: [
+        {
+          content: "告诉你个小秘密，该组件库可以生成各端代码",
+          link: "/subPackagesA/about/home"
+        },
+        { content: "为了少折腾而折腾", link: "/subPackagesA/about/log" }
+      ]
     };
   },
 
-  components: {},
+  components: { Scrollmsg },
 
   computed: {},
 
   methods: {
-    showModal(e) {
-      this.modalName = e.currentTarget.dataset.target;
-    },
-    hideModal(e) {
-      this.modalName = null;
+    showModal(item) {
+      uni.showModal({
+        title: "提示",
+        content: item.content,
+        success: function(res) {
+          if (res.confirm) {
+            if (!item.link) {
+              return false;
+            }
+            uni.navigateTo({
+              url: item.link
+            });
+          } else if (res.cancel) {
+            console.log("用户点击取消");
+          }
+        }
+      });
     }
   },
 

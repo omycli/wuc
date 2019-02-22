@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -72,6 +72,13 @@
 					"id": -1,
 					"name": "微动画",
 					"pathName": "subPackagesA/animation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "停车键盘",
+					"pathName": "pages/plugin/keyboard",
 					"scene": null
 				}
 			]

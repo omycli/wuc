@@ -19,6 +19,8 @@ module.exports = {
     curly: [0],
     'semi-spacing': 0,
     'no-labels': 0,
+    'vue/valid-v-else': 0,
+    'vue/no-use-v-if-with-v-for': 0,
     'space-before-function-paren': [0],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'

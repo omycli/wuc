@@ -26,6 +26,11 @@ export default {
           title: "微动画",
           img: "https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg",
           url: "/subPackagesA/animation/index"
+        },
+        {
+          title: "停车键盘",
+          img: "https://goss4.veer.com/creative/vcg/veer/612/veer-304717812.jpg",
+          url: "/pages/plugin/keyboard"
         }
       ]
     };

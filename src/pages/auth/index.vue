@@ -6,7 +6,7 @@
         class='png'
         mode='widthFix'
       />
-      <div class='text-xl'>ColorUI-Uniapp的组件库
+      <div class='text-xl'>欢迎使用组件库
         <text class='text-df'>v2.0.61</text>
       </div>
       <div class='margin-top-sm'>

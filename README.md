@@ -22,3 +22,5 @@
 [Vue](https://vuejs.org)   
 [uni-app](https://uniapp.dcloud.io)  
 [colorUi](https://github.com/weilanwl/ColorUI)  
+[mpvue-echarts](https://www.npmjs.com/package/mpvue-echarts)  
+[echarts](https://echarts.baidu.com/builder.html)  

@@ -1,26 +1,15 @@
 <template>
-  <div
-    class="cu-modal"
-    :class="[!show ? '' : 'show', type === 'bottomModal' ? 'bottom-modal':'']"
-  >
+  <div class="cu-modal" :class="!show ? '' : 'show'">
     <div class="cu-modal-cover" @tap="hideModal"></div>
-    <div v-if="type === 'Modal'" class="cu-dialog">
+    <div class="cu-dialog">
       <div class="cu-bar bg-white justify-end">
         <slot name="title"></slot>
         <div class="action" @tap="hideModal">
-          <text class="icon-close text-red"></text>
+          <text v-if="CloseTag" class="icon-close" :class="CloseTag"></text>
         </div>
       </div>
       <slot name="content"></slot>
       <slot name="buttom"></slot>
-    </div>
-
-    <div v-if="type === 'bottomModal'" class="cu-dialog">
-      <div class="cu-bar bg-white">
-        <div class="action text-green" @tap="leftEvent">{{leftName}}</div>
-        <div class="action text-blue" @tap="RightEvent">{{rightName}}</div>
-      </div>
-      <slot name="bottomContent"></slot>
     </div>
   </div>
 </template>
@@ -36,11 +25,7 @@ export default {
       type: String,
       default: ""
     },
-    leftName: {
-      type: String,
-      default: ""
-    },
-    rightName: {
+    CloseTag: {
       type: String,
       default: ""
     }
@@ -50,7 +35,7 @@ export default {
 
   computed: {
     show() {
-      if (!this.type) {
+      if (!this.type || this.type !== 'center') {
         return false;
       } else {
         return true;
@@ -62,12 +47,6 @@ export default {
     hideModal() {
       this.$emit("update:type", null);
       this.$emit("hideModal", null);
-    },
-    leftEvent() {
-      this.$emit("leftEvent", null);
-    },
-    RightEvent() {
-      this.$emit("RightEvent", null);
     }
   },
 

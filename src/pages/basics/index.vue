@@ -66,6 +66,7 @@ export default {
       uni.showModal({
         title: "提示",
         content: item.content,
+        confirmText: "查看详情",
         success: function(res) {
           if (res.confirm) {
             if (!item.link) {

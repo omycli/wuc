@@ -236,6 +236,48 @@
           "style": {
             "navigationBarTitleText": "柱状图"
           }
+        },
+        {
+          "path": "echarts/scatter",
+          "style": {
+            "navigationBarTitleText": "散点图"
+          }
+        },
+        {
+          "path": "echarts/pie",
+          "style": {
+            "navigationBarTitleText": "饼图"
+          }
+        },
+        {
+          "path": "echarts/line",
+          "style": {
+            "navigationBarTitleText": "折线图"
+          }
+        },
+        {
+          "path": "echarts/funnel",
+          "style": {
+            "navigationBarTitleText": "漏斗图"
+          }
+        },
+        {
+          "path": "echarts/gauge",
+          "style": {
+            "navigationBarTitleText": "仪表盘"
+          }
+        },
+        {
+          "path": "echarts/k",
+          "style": {
+            "navigationBarTitleText": "线图"
+          }
+        },
+        {
+          "path": "echarts/radar",
+          "style": {
+            "navigationBarTitleText": "雷达图"
+          }
         }
       ]
     },

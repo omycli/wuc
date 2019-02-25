@@ -11,11 +11,11 @@
           <button
             class="cu-btn bg-green shadow"
             @tap="showModal"
-            data-target="Modal"
+            data-target="center"
           >Modal</button>
         </div>
       </div>
-      <modal v-if="modalName === 'Modal'" :type.sync="modalName">
+      <modal :type.sync="modalName">
         <div slot="title">
           <div class="content">Modal标题</div>
         </div>

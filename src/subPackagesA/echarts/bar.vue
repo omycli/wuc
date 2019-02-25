@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <custom name="柱状图" bg-color="bg-gradual-purple"></custom>
     <div class="wrap">
       <echarts :echarts="echarts" :onInit="onInit"/>
@@ -9,7 +9,7 @@
 
 <script>
 import Custom from "@/components/custom";
-import * as echarts from "echarts/dist/echarts.simple.min";
+import * as echarts from "a_echarts/echarts.min";
 import Echarts from "@/components/echarts/echarts";
 
 let chart = null;
@@ -151,9 +151,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .wrap {
   width: 100%;
-  height: 300px;
+  height: 80vh;
 }
 </style>

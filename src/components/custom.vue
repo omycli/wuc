@@ -1,28 +1,38 @@
 <template>
   <div class="cu-custom" :style="CustomBar">
     <div
-      v-show="!noneBg"
+      v-if="!noneBg"
       class="cu-bar fixed"
       :class="bgColor"
       :style="StatusBar"
     >
+      <slot name="freebar"></slot>
       <navigator
         class="action"
+        :class="leftMore ? 'border-custom' : ''"
         open-type="navigateBack"
         :delta="1"
         hover-class="none"
-        v-show="!isBar"
+        v-if="!isBar"
+        :style="navCustom"
       >
-        <text v-show="!isBar" class="icon-back"></text>
-        <text>{{name}}</text>
+        <text v-if="!isBar" class="icon-back"></text>
+        <slot name="bar"></slot>
+        <text v-if="!leftMore && !noCusBar">{{name}}</text>
+        <text v-if="noCusBar">{{noCusBarLeftName}}</text>
       </navigator>
-      <div class="content" v-show="isBar">
-        <image :src="nameImg" mode="widthFix" />
+      <div
+        v-if="leftMore || noCusBar"
+        class="content"
+        :style="leftMoreBar"
+      >{{name}}</div>
+      <div class="content" v-if="isBar">
+        <img :src="nameImg" mode="widthFix">
       </div>
     </div>
 
     <div
-      v-show="noneBg"
+      v-if="noneBg"
       class="cu-bar fixed none-bg text-white bg-img"
       :style="imageBar"
     >
@@ -31,13 +41,13 @@
         open-type="navigateBack"
         delta="1"
         hover-class="none"
-        v-show="!isBar"
+        v-if="!isBar"
       >
-        <text v-show="!isBar" class="icon-back"></text>
+        <text v-if="!isBar" class="icon-back"></text>
         {{name}}
       </navigator>
-      <div class="content" v-show="isBar">
-        <image :src="nameImg" mode="widthFix" />
+      <div class="content" v-if="isBar">
+        <img :src="nameImg" mode="widthFix">
       </div>
     </div>
   </div>
@@ -83,6 +93,24 @@ export default {
       default() {
         return "";
       }
+    },
+    leftMore: {
+      type: Boolean,
+      default() {
+        return false;
+      }
+    },
+    noCusBar: {
+      type: Boolean,
+      default() {
+        return false;
+      }
+    },
+    noCusBarLeftName: {
+      type: String,
+      default() {
+        return "返回";
+      }
     }
   },
   data() {
@@ -91,7 +119,9 @@ export default {
   computed: {
     CustomBar() {
       let style = {};
-      style["height"] = uni.getStorageSync("CustomBar") + "px";
+      if (!this.noCusBar) {
+        style["height"] = uni.getStorageSync("CustomBar") + "px";
+      }
       return obj2style(style);
     },
     StatusBar() {
@@ -100,11 +130,26 @@ export default {
       style["padding-top"] = uni.getStorageSync("StatusBar") + "px";
       return obj2style(style);
     },
+    leftMoreBar() {
+      let style = {};
+      style["top"] = uni.getStorageSync("StatusBar") + "px";
+      return obj2style(style);
+    },
     imageBar() {
       let style = {};
       style["height"] = uni.getStorageSync("CustomBar") + "px";
       style["padding-top"] = uni.getStorageSync("StatusBar") + "px";
       style["background-image"] = `url(${this.bgImage})`;
+      return obj2style(style);
+    },
+    navCustom() {
+      let style = {};
+      if (this.leftMore) {
+        let Custom = wx.getMenuButtonBoundingClientRect();
+        style["width"] = Custom.width + "px";
+        style["height"] = Custom.height + "px";
+        style["margin-left"] = `calc(750rpx - (${Custom.right})px`;
+      }
       return obj2style(style);
     }
   },

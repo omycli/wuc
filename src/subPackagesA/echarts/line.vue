@@ -9,7 +9,7 @@
 
 <script>
 import Custom from "@/components/custom";
-import * as echarts from "a_echarts/echarts.min";
+import * as echarts from "omycli-npm/echarts.min";
 import Echarts from "@/components/echarts/echarts";
 
 function initChart(canvas, width, height) {

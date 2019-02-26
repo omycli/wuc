@@ -9,7 +9,7 @@
 
 <script>
 import Custom from "@/components/custom";
-import * as echarts from "a_echarts/echarts.min";
+import * as echarts from "omycli-npm/echarts.min";
 import Echarts from "@/components/echarts/echarts";
 
 function initChart(canvas, width, height) {
@@ -20,46 +20,75 @@ function initChart(canvas, width, height) {
   canvas.setChart(chart);
 
   var option = {
-    backgroundColor: "#ffffff",
-    color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#FFDB5C", "#FF9F7F"],
+    backgroundColor: "#2c343c",
+
+    title: {
+      text: "Customized Pie",
+      left: "center",
+      top: 20,
+      textStyle: {
+        color: "#ccc"
+      }
+    },
+
+    tooltip: {
+      trigger: "item",
+      formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+
+    visualMap: {
+      show: false,
+      min: 80,
+      max: 600,
+      inRange: {
+        colorLightness: [0, 1]
+      }
+    },
     series: [
       {
+        name: "访问来源",
+        type: "pie",
+        radius: "55%",
+        center: ["50%", "50%"],
+        data: [
+          { value: 335, name: "直接访问" },
+          { value: 310, name: "邮件营销" },
+          { value: 274, name: "联盟广告" },
+          { value: 235, name: "视频广告" },
+          { value: 400, name: "搜索引擎" }
+        ].sort(function(a, b) {
+          return a.value - b.value;
+        }),
+        roseType: "radius",
         label: {
           normal: {
-            fontSize: 14
+            textStyle: {
+              color: "rgba(255, 255, 255, 0.3)"
+            }
           }
         },
-        type: "pie",
-        center: ["50%", "50%"],
-        radius: [0, "60%"],
-        data: [
-          {
-            value: 55,
-            name: "北京"
-          },
-          {
-            value: 20,
-            name: "武汉"
-          },
-          {
-            value: 10,
-            name: "杭州"
-          },
-          {
-            value: 20,
-            name: "广州"
-          },
-          {
-            value: 38,
-            name: "上海"
+        labelLine: {
+          normal: {
+            lineStyle: {
+              color: "rgba(255, 255, 255, 0.3)"
+            },
+            smooth: 0.2,
+            length: 10,
+            length2: 20
           }
-        ],
+        },
         itemStyle: {
-          emphasis: {
-            shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: "rgba(0, 2, 2, 0.3)"
+          normal: {
+            color: "#c23531",
+            shadowBlur: 200,
+            shadowColor: "rgba(0, 0, 0, 0.5)"
           }
+        },
+
+        animationType: "scale",
+        animationEasing: "elasticOut",
+        animationDelay: function(idx) {
+          return Math.random() * 200;
         }
       }
     ]
@@ -80,7 +109,6 @@ export default {
 
   methods: {
     echartInit(e) {
-      console.log(e);
       initChart(e.canvas, e.width, e.height);
     }
   },
@@ -91,6 +119,6 @@ export default {
 <style>
 .wrap {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
 }
 </style>

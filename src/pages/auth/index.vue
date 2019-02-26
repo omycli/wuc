@@ -7,7 +7,7 @@
         mode='widthFix'
       />
       <div class='text-xl'>欢迎使用组件库
-        <text class='text-df'>v2.0.61</text>
+        <text class='text-df'>v2.0.7</text>
       </div>
       <div class='margin-top-sm'>
         <text>By:云中大鹏</text>

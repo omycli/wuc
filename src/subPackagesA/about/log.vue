@@ -6,6 +6,20 @@
       <div class="cu-item text-orange">
         <div class="bg-gradual-orange content shadow-blur">
           <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.0.7</div>
+            <div class="cu-tag line-white">2019/02/26</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.增加停车键盘插件</div>
+            <div>2.增加图表库插件</div>
+            <div>3.增加垂直导航插件</div>
+            <div>4.增加全屏抽屉插件</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-orange">v2.0.61</div>
             <div class="cu-tag line-white">2019/02/20</div>
           </div>
@@ -16,6 +30,21 @@
             <div>4.增加导航栏插件形式使用,并支持滑动内容切换（/src/components/tab.vue）</div>
             <div>5.增加精确到分的日期选择插件（/src/components/pickerDate.vue）</div>
             <div>6.增加索引插件（/src/components/indexes.vue）</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-green">
+        <div class="bg-gradual-green content shadow-blur">
+          <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-green">v2.0.7</div>
+            <div class="cu-tag line-white">2019/02/25</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.新增操作条胶囊样式，优化全屏操作条</div>
+            <div>2.优化iPhone X的Tabbar样式</div>
+            <div>3.新增全屏抽屉插件</div>
+            <div>4.更新动画扩展</div>
+            <div>4.新增垂直导航插件</div>
           </div>
         </div>
       </div>

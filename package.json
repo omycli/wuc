@@ -1,6 +1,6 @@
 {
   "name": "mpvuebase",
-  "version": "2.0.0",
+  "version": "2.0.7",
   "description": "基于 uniapp 的起始项目",
   "author": "Mr.Ypeng",
   "private": true,
@@ -25,6 +25,7 @@
     "@dcloudio/uni-mp-weixin": "^0.0.5",
     "flyio": "^0.6.2",
     "mpvue-keyboard": "^1.1.2",
+    "omycli-npm": "^0.0.1",
     "vue": "^2.5.22",
     "vuex": "^3.0.1"
   },

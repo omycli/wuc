@@ -6,7 +6,7 @@
       bgImage="https://goss4.veer.com/creative/vcg/veer/612/veer-141525427.jpg"
     ></custom>
 
-    <div class="cu-bar bg-white solid-bottom margin-top">
+    <div class="cu-bar bg-white solid-bottom">
       <div class="action">
         <text class="icon-title text-orange"></text>使用说明
       </div>
@@ -67,13 +67,6 @@ export default {
     return {
       iconList: [
         {
-          icon: "rankfill",
-          color: "red",
-          badge: 0,
-          title: "柱状图",
-          name: "bar"
-        },
-        {
           icon: "cascades",
           color: "orange",
           badge: 0,
@@ -95,13 +88,6 @@ export default {
           name: "line"
         },
         {
-          icon: "usefull",
-          color: "blue",
-          badge: 0,
-          title: "漏斗图",
-          name: "funnel"
-        },
-        {
           icon: "countdownfill",
           color: "cyan",
           badge: 0,
@@ -109,18 +95,25 @@ export default {
           name: "gauge"
         },
         {
-          icon: "all",
-          color: "cyan",
-          badge: 0,
-          title: "线图",
-          name: "k"
-        },
-        {
           icon: "discover",
           color: "purple",
           badge: 0,
           title: "雷达图",
           name: "radar"
+        },
+        {
+          icon: "loading",
+          color: "red",
+          badge: 0,
+          title: "延迟加载图表",
+          name: "lazyLoad"
+        },
+        {
+          icon: "barcode",
+          color: "blue",
+          badge: 0,
+          title: "多个图表",
+          name: "multiCharts"
         }
       ],
       gridCol: 3,

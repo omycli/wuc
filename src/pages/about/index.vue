@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class="UCenter-bg">
-      <image
+      <img
         src="/static/assets/images/logo.png"
         class="png"
         mode="widthFix"
       />
       <div class="text-xl">欢迎使用组件库
-        <text class="text-df">v2.0.61</text>
+        <text class="text-df">v2.0.7</text>
       </div>
       <div class="margin-top-sm">
         <text>By:云中大鹏</text>
       </div>
-      <image
+      <img
         src="https://image.weilanwl.com/gif/wave.gif"
         mode="scaleToFill"
         class="gif-wave"
@@ -55,7 +55,7 @@
           url="/subPackagesA/about/home"
           hover-class="none"
         >
-          <image
+          <img
             src="/static/assets/images/logo.png"
             class="png"
             mode="aspectFit"
@@ -100,33 +100,6 @@
           <text class="icon-creativefill text-orange"></text>
           <text class="text-grey">Bug测试</text>
         </navigator>
-      </div>
-
-      <div
-        class="cu-modal"
-        :class="modalName=='QrcodeModal'?'show':''"
-      >
-        <div class="cu-dialog">
-          <div
-            class="bg-img"
-            style="background-image: url('http://www.bbvdd.com/d/20190215105128ccj.jpeg');height:544rpx;"
-          >
-            <div class="cu-bar justify-end none-bg text-white">
-              <div
-                class="action"
-                click="hideModal"
-              >
-                <text class="icon-close"></text>
-              </div>
-            </div>
-          </div>
-          <div class="cu-bar">
-            <div
-              class="justify-center flex-sub"
-              click="SaveQrcode"
-            >保存到相册</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

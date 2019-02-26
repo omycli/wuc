@@ -38,6 +38,16 @@ export default {
           img:
             "https://goss2.veer.com/creative/vcg/veer/612/veer-302194474.jpg",
           url: "/pages/plugin/echarts"
+        },
+        {
+          title: "垂直导航",
+          img: "https://image.weilanwl.com/color2.0/plugin/qpczdh2307.jpg",
+          url: "/subPackagesA/plugin/verticalnav"
+        },
+        {
+          title: "全屏抽屉",
+          img: "https://image.weilanwl.com/color2.0/plugin/qpct2148.jpg",
+          url: "/subPackagesA/plugin/drawer"
         }
       ]
     };

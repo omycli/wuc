@@ -1,6 +1,10 @@
 <template>
   <div>
-    <custom name="操作条" bg-color="bg-gradual-pink"></custom>
+    <custom name="操作条" bg-color="bg-gradual-pink" leftMore>
+      <div slot="bar">
+        <text class="icon-homefill"></text>
+      </div>
+    </custom>
 
     <div>
       <div class="cu-bar bg-white margin-top">

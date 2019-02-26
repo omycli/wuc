@@ -232,12 +232,6 @@
           }
         },
         {
-          "path": "echarts/bar",
-          "style": {
-            "navigationBarTitleText": "柱状图"
-          }
-        },
-        {
           "path": "echarts/scatter",
           "style": {
             "navigationBarTitleText": "散点图"
@@ -256,27 +250,39 @@
           }
         },
         {
-          "path": "echarts/funnel",
-          "style": {
-            "navigationBarTitleText": "漏斗图"
-          }
-        },
-        {
           "path": "echarts/gauge",
           "style": {
             "navigationBarTitleText": "仪表盘"
           }
         },
         {
-          "path": "echarts/k",
+          "path": "echarts/lazyLoad",
           "style": {
-            "navigationBarTitleText": "线图"
+            "navigationBarTitleText": "延迟加载图表"
           }
         },
         {
           "path": "echarts/radar",
           "style": {
             "navigationBarTitleText": "雷达图"
+          }
+        },
+        {
+          "path": "echarts/multiCharts",
+          "style": {
+            "navigationBarTitleText": "多个图表"
+          }
+        },
+        {
+          "path": "plugin/verticalnav",
+          "style": {
+            "navigationBarTitleText": "垂直导航"
+          }
+        },
+        {
+          "path": "plugin/drawer",
+          "style": {
+            "navigationBarTitleText": "全屏抽屉"
           }
         }
       ]
@@ -300,6 +306,14 @@
     }
   ],
   "preloadRule": {
+    "subPackagesA/plugin/drawer": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
+    "subPackagesA/plugin/verticalnav": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
     "subPackagesA/animation/index": {
       "network": "all",
       "packages": ["__APP__"]

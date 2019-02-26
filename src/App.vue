@@ -39,6 +39,11 @@ export default {
 @import "~@/styles/colorui.scss";
 @import "~@/styles/base.scss";
 @import "~@/styles/icon.scss";
+
+.cu-modal.show {
+  z-index: 99999;
+}
+
 .nav-list {
   display: flex;
   flex-wrap: wrap;

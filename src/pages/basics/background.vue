@@ -108,12 +108,12 @@
     </div>
 
     <div>
-      <view class="cu-bar bg-white margin-top">
-        <view class="action">
+      <div class="cu-bar bg-white margin-top">
+        <div class="action">
           <text class="icon-title text-blue"></text>视频背景
-        </view>
-      </view>
-      <view class="bg-video bg-mask">
+        </div>
+      </div>
+      <div class="bg-video bg-mask">
         <video
           src="https://www.weilanwl.com/theme/wl/assets/images/slider1.mp4"
           :autoplay="true"
@@ -123,13 +123,13 @@
           :controls="false"
           objectFit="cover"
         ></video>
-        <cover-view class="padding-xl text-white">
-          <cover-view class="padding-xs text-xl">开源是创新的动力之源</cover-view>
-          <cover-view
+        <cover-div class="padding-xl text-white">
+          <cover-div class="padding-xs text-xl">开源是创新的动力之源</cover-div>
+          <cover-div
             class="padding-xs"
-          >Open Source is the Power Source of Innovation</cover-view>
-        </cover-view>
-      </view>
+          >Open Source is the Power Source of Innovation</cover-div>
+        </cover-div>
+      </div>
     </div>
 
     <div>
@@ -144,7 +144,7 @@
             class="bg-img padding-bottom-xl"
             style="background-image: url('https://image.weilanwl.com/img/square-3.jpg')"
           >
-            <view class="bg-shadeTop padding padding-bottom-xl">上面开始</view>
+            <div class="bg-shadeTop padding padding-bottom-xl">上面开始</div>
           </div>
         </div>
         <div class="padding-sm">

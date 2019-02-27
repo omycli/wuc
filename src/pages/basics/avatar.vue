@@ -3,21 +3,21 @@
     <custom name="头像" bg-color="bg-gradual-blue"></custom>
 
     <div>
-      <view class="cu-bar bg-white">
-        <view class="action">
+      <div class="cu-bar bg-white">
+        <div class="action">
           <text class="icon-title text-blue"></text>头像形状
-        </view>
-      </view>
-      <view class="padding">
-        <view
+        </div>
+      </div>
+      <div class="padding">
+        <div
           class="cu-avatar round"
           style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
-        ></view>
-        <view
+        ></div>
+        <div
           class="cu-avatar radius margin-left"
           style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
-        ></view>
-      </view>
+        ></div>
+      </div>
     </div>
 
     <div>
@@ -75,21 +75,21 @@
     </div>
 
     <div>
-      <view class="cu-bar bg-white margin-top">
-        <view class="action">
+      <div class="cu-bar bg-white margin-top">
+        <div class="action">
           <text class="icon-title text-blue"></text>头像颜色
-        </view>
-      </view>
-      <view class="padding-sm">
-        <view
+        </div>
+      </div>
+      <div class="padding-sm">
+        <div
           class="cu-avatar round lg margin-xs"
           :class="'bg-'+item.name"
           v-for="(item,index) in ColorList"
           :key="index"
         >
           <text class='avatar-text'>{{item.name}}</text>
-        </view>
-      </view>
+        </div>
+      </div>
     </div>
 
     <div>

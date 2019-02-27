@@ -10,7 +10,7 @@
       </div>
       <div class="padding bg-white">
         <div class="cu-progress">
-          <view class="bg-red" :style="loadNum">61.8%</view>
+          <div class="bg-red" :style="loadNum">61.8%</div>
         </div>
         <div class="cu-progress radius margin-top">
           <div class="bg-red" :style="loadNum">61.8%</div>
@@ -29,7 +29,7 @@
       </div>
       <div class="padding bg-white">
         <div class="cu-progress round">
-          <view class="bg-red" :style="loadNum"></view>
+          <div class="bg-red" :style="loadNum"></div>
         </div>
         <div class="cu-progress round margin-top sm">
           <div class="bg-red" :style="loadNum"></div>

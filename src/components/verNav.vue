@@ -7,13 +7,13 @@
       :scroll-top="VerticalNavTop"
       style="height:calc(100vh - 375rpx)"
     >
-      <view
+      <div
         class="cu-item"
         :class="index === TabCur ? leftClass + ' cur' : ''"
         v-for="(item, index) in leftData"
         :key="item"
         @tap="tabSelect(item,index)"
-      >Tab{{index +1}}</view>
+      >Tab{{index +1}}</div>
     </scroll-view>
     <scroll-view
       class="VerticalMain"

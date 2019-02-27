@@ -43,80 +43,80 @@
     </div>
 
     <div>
-      <view class="cu-bar bg-white  margin-top">
-        <view class="action">
+      <div class="cu-bar bg-white  margin-top">
+        <div class="action">
           <text class="icon-title text-blue"></text>镂空标签
-        </view>
-      </view>
-      <view class="padding-sm flex flex-wrap">
-        <view class="padding-xs" v-for="(item,index) in ColorList" :key="index">
-          <view class="cu-tag" :class="'line-'+item.name">{{item.title}}</view>
-        </view>
-      </view>
+        </div>
+      </div>
+      <div class="padding-sm flex flex-wrap">
+        <div class="padding-xs" v-for="(item,index) in ColorList" :key="index">
+          <div class="cu-tag" :class="'line-'+item.name">{{item.title}}</div>
+        </div>
+      </div>
     </div>
 
     <div>
-      <view class="cu-bar bg-white  margin-top">
-        <view class="action">
+      <div class="cu-bar bg-white  margin-top">
+        <div class="action">
           <text class="icon-title text-blue"></text>胶囊样式
-        </view>
-      </view>
-      <view class="padding">
-        <view class="cu-capsule">
-          <view class="cu-tag bg-red">
+        </div>
+      </div>
+      <div class="padding">
+        <div class="cu-capsule">
+          <div class="cu-tag bg-red">
             <text class="icon-likefill"></text>
-          </view>
-          <view class="cu-tag line-red">12</view>
-        </view>
-        <view class="cu-capsule round">
-          <view class="cu-tag bg-blue">
+          </div>
+          <div class="cu-tag line-red">12</div>
+        </div>
+        <div class="cu-capsule round">
+          <div class="cu-tag bg-blue">
             <text class="icon-likefill"></text>
-          </view>
-          <view class="cu-tag line-blue">23</view>
-        </view>
-        <view class="cu-capsule round">
-          <view class="cu-tag bg-blue">说明</view>
-          <view class="cu-tag line-blue">123</view>
-        </view>
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-grey">
+          </div>
+          <div class="cu-tag line-blue">23</div>
+        </div>
+        <div class="cu-capsule round">
+          <div class="cu-tag bg-blue">说明</div>
+          <div class="cu-tag line-blue">123</div>
+        </div>
+        <div class="cu-capsule radius">
+          <div class="cu-tag bg-grey">
             <text class="icon-likefill"></text>
-          </view>
-          <view class="cu-tag line-grey">23</view>
-        </view>
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-brown sm">
+          </div>
+          <div class="cu-tag line-grey">23</div>
+        </div>
+        <div class="cu-capsule radius">
+          <div class="cu-tag bg-brown sm">
             <text class="icon-likefill"></text>
-          </view>
-          <view class="cu-tag line-brown sm">23</view>
-        </view>
-      </view>
+          </div>
+          <div class="cu-tag line-brown sm">23</div>
+        </div>
+      </div>
     </div>
 
     <div>
-      <view class="cu-bar bg-white  margin-top">
-        <view class="action">
+      <div class="cu-bar bg-white  margin-top">
+        <div class="action">
           <text class="icon-title text-blue"></text>数字标签
-        </view>
-      </view>
-      <view class="padding flex justify-between align-center">
-        <view class="cu-avatar xl radius">港
-          <view class="cu-tag badge">99+</view>
-        </view>
-        <view
+        </div>
+      </div>
+      <div class="padding flex justify-between align-center">
+        <div class="cu-avatar xl radius">港
+          <div class="cu-tag badge">99+</div>
+        </div>
+        <div
           class="cu-avatar xl radius"
           style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
         >
-          <view class="cu-tag badge">9</view>
-        </view>
-        <view class="cu-avatar xl radius">
-          <view class="cu-tag badge">99</view>
+          <div class="cu-tag badge">9</div>
+        </div>
+        <div class="cu-avatar xl radius">
+          <div class="cu-tag badge">99</div>
           <text class="icon-people"></text>
-        </view>
-        <view class="cu-avatar xl radius">
-          <view class="cu-tag badge">99+</view>
-        </view>
-      </view>
+        </div>
+        <div class="cu-avatar xl radius">
+          <div class="cu-tag badge">99+</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

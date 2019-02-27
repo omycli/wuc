@@ -135,54 +135,54 @@
     </div>
 
     <div>
-      <view class="cu-form-group margin-top">
-        <view class="title">复选选操作(checkbox)</view>
+      <div class="cu-form-group margin-top">
+        <div class="title">复选选操作(checkbox)</div>
         <checkbox></checkbox>
-      </view>
-      <view class="cu-form-group">
-        <view class="title">定义形状</view>
+      </div>
+      <div class="cu-form-group">
+        <div class="title">定义形状</div>
         <checkbox class="round" checked></checkbox>
-      </view>
-      <view class="cu-form-group">
-        <view class="title">定义颜色</view>
+      </div>
+      <div class="cu-form-group">
+        <div class="title">定义颜色</div>
         <checkbox class="round blue" checked></checkbox>
-      </view>
-      <view class="cu-form-group margin-top">
-        <view class="grid col-3 grid-square flex-sub">
-          <view
+      </div>
+      <div class="cu-form-group margin-top">
+        <div class="grid col-3 grid-square flex-sub">
+          <div
             class="padding-xs bg-img"
             style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
-          ></view>
-          <view
+          ></div>
+          <div
             class="padding-xs bg-img"
             style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
           >
-            <view class="cu-tag bg-red">
+            <div class="cu-tag bg-red">
               <text class="icon-close"></text>
-            </view>
-          </view>
-          <view class="padding-xs solids">
+            </div>
+          </div>
+          <div class="padding-xs solids">
             <text class="icon-cameraadd"></text>
-          </view>
-        </view>
-      </view>
-      <view class="cu-form-group margin-top" v-show="modalName !== null">
+          </div>
+        </div>
+      </div>
+      <div class="cu-form-group margin-top" v-show="modalName !== null">
         <textarea
           placeholder="多行文本输入框"
           maxlength="-1"
           :disabled="modalName!=null"
           placeholder-class="placeholder"
         ></textarea>
-      </view>
-      <view class="cu-form-group top" v-show="modalName !== null">
-        <view class="title">点文本框</view>
+      </div>
+      <div class="cu-form-group top" v-show="modalName !== null">
+        <div class="title">点文本框</div>
         <textarea
           placeholder="多行文本输入框"
           maxlength="-1"
           :disabled="modalName!=null"
           placeholder-class="placeholder"
         ></textarea>
-      </view>
+      </div>
     </div>
   </div>
 </template>

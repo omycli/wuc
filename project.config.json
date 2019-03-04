@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -100,6 +100,20 @@
 					"id": -1,
 					"name": "垂直导航",
 					"pathName": "subPackagesA/plugin/drawer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "表单",
+					"pathName": "pages/component/form",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "日历",
+					"pathName": "pages/component/calendar",
 					"scene": null
 				}
 			]

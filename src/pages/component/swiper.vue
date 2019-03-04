@@ -53,9 +53,11 @@
           :class="cardCur === i?'cur':''"
         >
           <div
+          v-if="i!==1"
             class="bg-img shadow-blur"
             :style=" 'background-image:url(https://image.weilanwl.com/img/4x3-' + (i+1) + '.jpg)'"
           ></div>
+          <video src='https://www.weilanwl.com/theme/wl/assets/images/slider1.mp4' autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-else></video>
         </swiper-item>
       </swiper>
     </div>

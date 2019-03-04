@@ -48,6 +48,12 @@ export default {
           name: "steps",
           color: "cyan",
           icon: "roundcheckfill"
+        },
+        {
+          title: "日历",
+          name: "calendar",
+          color: "blue",
+          icon: "calendar"
         }
       ],
       modalName: ""

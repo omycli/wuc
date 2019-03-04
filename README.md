@@ -24,3 +24,4 @@
 [colorUi](https://github.com/weilanwl/ColorUI)  
 [mpvue-echarts](https://www.npmjs.com/package/mpvue-echarts)  
 [echarts](https://echarts.baidu.com/builder.html)  
+[mpvue-calendar](https://github.com/Hzy0913/mpvue-calendar)  

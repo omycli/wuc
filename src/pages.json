@@ -121,6 +121,12 @@
       }
     },
     {
+      "path": "pages/component/calendar",
+      "style": {
+        "navigationBarTitleText": "日历"
+      }
+    },
+    {
       "path": "pages/component/modal",
       "style": {
         "navigationBarTitleText": "模态框"

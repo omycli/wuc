@@ -1,6 +1,6 @@
 <template  lang='pug'>
 .container
-    img.png.tit-img(src="http://www.bbvdd.com/d/20190214163102nk4.png", mode="widthFix")
+    img.png.tit-img(src="https://goss3.veer.com/creative/vcg/veer/612/veer-307636679.jpg", mode="widthFix")
 
     Scrollmsg(
       :msg="content"

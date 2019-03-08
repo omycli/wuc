@@ -1,6 +1,6 @@
 <template  lang='pug'>
 .container
-    img.png.tit-img(src="http://www.bbvdd.com/d/20190214163216ti7.png", mode="widthFix")
+    img.png.tit-img(src="https://goss.veer.com/creative/vcg/veer/612/veer-149948484.jpg", mode="widthFix")
 
     .nav-list
       navigator(

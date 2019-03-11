@@ -28,11 +28,7 @@
         </div>
       </div>
       <div class="grid col-3 bg-white padding-sm">
-        <div
-          class="padding-sm"
-          v-for="(item,index) in ColorList"
-          :key="index"
-        >
+        <div class="padding-sm" v-for="(item,index) in ColorList" :key="index">
           <div
             class="padding radius text-center light"
             :class="'bg-'+item.name"
@@ -96,15 +92,14 @@
           <text class="icon-title text-blue"></text>图片背景
         </div>
       </div>
-      <div
-        class="bg-img bg-mask padding-tb-xl"
-        style="background-image: url('https://albedo-theme.com/wp-content/uploads/2016/08/pexels-photo-26180.jpg')"
+      <bg-image
+        img="https://goss3.veer.com/creative/vcg/veer/612/veer-158729052.jpg"
       >
         <div class="padding-xl text-white">
           <div class="padding-xs text-xl">我和春天有个约会</div>
           <div class="padding-xs">I Have a Date with Spring</div>
         </div>
-      </div>
+      </bg-image>
     </div>
 
     <div>
@@ -162,6 +157,7 @@
 
 <script>
 import Custom from "@/components/custom";
+import BgImage from "@/components/basics/bgImage";
 export default {
   data() {
     return {
@@ -245,7 +241,7 @@ export default {
     };
   },
 
-  components: { Custom },
+  components: { Custom, BgImage },
 
   computed: {},
 

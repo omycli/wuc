@@ -49,7 +49,7 @@ export default {
 </script>
 <style lang='scss'>
 .UCenter-bg {
-  background-image: url(https://static.veer.com/veer/static/resources/Titles/2019-01-09/55270f79febb487fbcdb5b00118f91f7.jpg);
+  background-image: url(https://goss3.veer.com/creative/vcg/veer/612/veer-137104879.jpg);
   background-size: 100%;
   height: 700rpx;
   display: flex;

@@ -123,12 +123,12 @@
           :controls="false"
           objectFit="cover"
         ></video>
-        <cover-div class="padding-xl text-white">
-          <cover-div class="padding-xs text-xl">开源是创新的动力之源</cover-div>
-          <cover-div
+        <cover-view class="padding-xl text-white">
+          <cover-view class="padding-xs text-xl">开源是创新的动力之源</cover-view>
+          <cover-view
             class="padding-xs"
-          >Open Source is the Power Source of Innovation</cover-div>
-        </cover-div>
+          >Open Source is the Power Source of Innovation</cover-view>
+        </cover-view>
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 <template  lang='pug'>
 div
-  Custom(isBar noneBg bgImage="https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg" nameImg="http://www.bbvdd.com/d/20190215110318xwq.png")
+  Custom(isBar noneBg bgImage="https://goss1.veer.com/creative/vcg/veer/612/veer-134033678.jpg" nameImg="http://www.bbvdd.com/d/20190215110318xwq.png")
   .cu-card
     div(
       class='cu-item bg-img shadow-blur' 

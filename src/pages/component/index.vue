@@ -1,22 +1,21 @@
 <template  lang='pug'>
 .container
-    img.png.tit-img(src="https://goss.veer.com/creative/vcg/veer/612/veer-149948484.jpg", mode="widthFix")
+    img.png.tit-img(src="https://goss2.veer.com/creative/vcg/veer/612/veer-309560021.jpg", mode="widthFix")
 
-    .nav-list
-      navigator(
-      open-type="navigate" 
-      hover-class='none' 
-      :url = "'/pages/component/' + item.name"
-      class='nav-li' 
-      :class="'bg-'+item.color"
-      :style="'animation: show '+((index+1)*0.2+1)+'s 1'"
-      v-for="(item,index) in elements"
-      :key="index")
-        .nav-title {{item.title}}
-        .nav-name {{item.name}}
-        text(
-          :class="'icon-'+item.icon"
-        )
+    div(class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg")
+      div(
+        class='cu-item arrow' 
+        v-for="(item,index) in elements"
+        :key="index")
+          navigator(
+          open-type="navigate" 
+          hover-class='none' 
+          :url = "'/pages/component/' + item.name"
+          class='content')
+            text(
+              :class="['icon-'+item.icon,'text-'+item.color]"
+            )
+            text(class="text-grey") {{item.title}}
 </template>
 
 <script>
@@ -76,8 +75,8 @@ export default {
   mounted() {},
   onShareAppMessage() {
     return {
-      title: "ColorUI-uni的组件库",
-      imageUrl: "https://image.weilanwl.com/color2.0/share2215.jpg",
+      title: "WUC",
+      imageUrl: "https://goss3.veer.com/creative/vcg/veer/612/veer-309563777.jpg",
       path: "/pages/basics/index"
     };
   }

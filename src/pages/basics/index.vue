@@ -1,28 +1,28 @@
 <template  lang='pug'>
 .container
-    img.png.tit-img(src="https://goss3.veer.com/creative/vcg/veer/612/veer-307636679.jpg", mode="widthFix")
+    img.png.tit-img(src="https://goss2.veer.com/creative/vcg/veer/612/veer-309562693.jpg", mode="widthFix")
 
     Scrollmsg(
       :msg="content"
       :base-style="'margin:14px'"
-      logo="https://static.veer.com/veer/static/resources/Titles/2019-01-09/55270f79febb487fbcdb5b00118f91f7.jpg"
+      logo="https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg"
       @onevent="showModal"
     )
 
-    .nav-list
-      navigator(
-      open-type="navigate" 
-      hover-class='none' 
-      :url = "'/pages/basics/' + item.name"
-      class='nav-li' 
-      :class="'bg-'+item.color" 
-      v-for="(item,index) in elements"
-      :key="index")
-        .nav-title {{item.title}}
-        .nav-name {{item.name}}
-        text(
-          :class="'icon-'+item.icon"
-        )
+    div(class="cu-list menu card-menu margin-bottom-xl shadow-lg")
+      div(
+        class='cu-item arrow' 
+        v-for="(item,index) in elements"
+        :key="index")
+          navigator(
+          open-type="navigate" 
+          hover-class='none' 
+          :url = "'/pages/basics/' + item.name"
+          class='content')
+            text(
+              :class="['icon-'+item.icon,'text-'+item.color]"
+            )
+            text(class="text-grey") {{item.title}}
 </template>
 
 <script>
@@ -106,8 +106,8 @@ export default {
   },
   onShareAppMessage() {
     return {
-      title: "ColorUI-uni的组件库",
-      imageUrl: "https://image.weilanwl.com/color2.0/share2215.jpg",
+      title: "WUC",
+      imageUrl: "https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg",
       path: "/pages/basics/index"
     };
   }

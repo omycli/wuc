@@ -3,7 +3,7 @@
 
 ## 运行步骤
 
-* 安装依赖 `$ yarn`
+* 安装依赖 `$ npm install -g @vue/cli`
 
 * 编译运行
   - 小程序 `$ yarn dev`

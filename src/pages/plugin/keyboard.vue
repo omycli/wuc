@@ -6,7 +6,7 @@
       bgImage="https://goss4.veer.com/creative/vcg/veer/612/veer-304717812.jpg"
     ></custom>
     <div class="p-i" :style="bgheight">
-      <div class="column-center">
+      <div class="column">
         <img
           class="p-i__img"
           src="/static/assets/images/parking-logo.png"
@@ -18,22 +18,22 @@
           base-border="38f8f8f"
         ></keyboard>
       </div>
-      <div class="p-i__con row-center column">
-        <div class="p-i__info row-center">提示：请确保您填写车牌号的正确性，以免后续</div>
-        <div class="p-i__info row-center">误交费给您造成不必要的麻烦。</div>
+      <div class="p-i__con column text-center">
+        <div class="p-i__info text-center">提示：请确保您填写车牌号的正确性，以免后续</div>
+        <div class="p-i__info text-center">误交费给您造成不必要的麻烦。</div>
 
-        <div class="p-i__ben row-center" @click="TapScale">停车缴费标准</div>
+        <div class="p-i__ben text-center" @click="TapScale">停车缴费标准</div>
 
         <div class="p-i__over">
           <img src="/static/assets/images/p-circle.png" class="p-i__over-img">
-          <div class="column-center">
+          <div class="text-center">
             <div class="p-i__over-name">剩余停车位</div>
             <div class="p-i__over-value">{{space}}</div>
           </div>
         </div>
       </div>
 
-      <div class="p-i__footer row-center" @click="call()">
+      <div class="p-i__footer flex-center" @click="call()">
         <img src="/static/assets/images/p-phone.png" class="p-i__footer-img">
         <div class="p-i__footer-text">客服电话：{{tel}}</div>
       </div>
@@ -95,6 +95,8 @@ $gend: #0c2c5c; // 渐变色结束颜色
   width: 100%;
   overflow: hidden;
   &__img {
+    position: relative;
+    margin:0 auto;
     margin-top: 130rpx;
     width: 323rpx;
     height: 58rpx;

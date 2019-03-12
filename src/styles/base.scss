@@ -6,8 +6,8 @@
 }
 .row-center {
   @extend .row;
-  justify-content: center;
-  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
 }
 .row-between {
   @extend .row;
@@ -43,8 +43,8 @@
 }
 .column-center {
   @extend .column;
-  align-items: center;
-  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
 }
 .column-around {
   @extend .column;

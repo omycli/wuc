@@ -102,6 +102,41 @@
           <div class="bg-grey padding-sm margin-xs radius">center</div>
         </div>
       </div>
+
+      <div class="cu-bar bg-white margin-top solid-bottom">
+        <div class="action">
+          <text class="icon-title text-blue"></text>垂直布局
+        </div>
+      </div>
+      <div class="bg-white">
+        <div class="column solids-bottom" style="height:200rpx">
+          <div class="bg-grey padding-sm margin-xs radius w50">column</div>
+          <div class="bg-grey padding-sm margin-xs radius w50">column</div>
+        </div>
+        <div class="column-center solids-bottom" style="height:200rpx">
+          <div class="bg-grey padding-sm margin-xs radius w50">column-center</div>
+          <div class="bg-grey padding-sm margin-xs radius w50">column-center</div>
+        </div>
+        <div class="column-between solids-bottom padding" style="height:300rpx">
+          <div class="bg-grey padding-sm radius w50">column-between</div>
+          <div class="bg-grey padding-sm radius w50">column-between</div>
+        </div>
+        <div class="column-around solids-bottom padding" style="height:300rpx">
+          <div class="bg-grey padding-sm radius w50">column-around</div>
+          <div class="bg-grey padding-sm radius w50">column-around</div>
+        </div>
+      </div>
+
+      <div class="cu-bar bg-white margin-top solid-bottom">
+        <div class="action">
+          <text class="icon-title text-blue"></text>水平垂直均居中布局
+        </div>
+      </div>
+      <div class="bg-white">
+        <div class="flex-center solids-bottom" style="height:200rpx">
+          <div class="bg-grey padding-sm margin-xs radius w50">flex-center</div>
+        </div>
+      </div>
     </div>
 
     <div v-if="TabCur === 1">
@@ -247,5 +282,8 @@ export default {
 <style lang='scss'>
 page {
   padding-top: 45px;
+}
+.w50{
+  width: 50%;
 }
 </style>

@@ -19,10 +19,10 @@
     "lint": "cross-env UNI_PLATFORM=h5 vue-cli-service lint"
   },
   "dependencies": {
-    "@dcloudio/uni-h5": "^0.2.2",
+    "@dcloudio/uni-h5": "^0.3.4",
     "@dcloudio/uni-mp-alipay": "*",
     "@dcloudio/uni-mp-baidu": "*",
-    "@dcloudio/uni-mp-weixin": "^0.0.5",
+    "@dcloudio/uni-mp-weixin": "^0.0.9",
     "flyio": "^0.6.2",
     "mpvue-keyboard": "^1.1.2",
     "omycli-npm": "^0.0.1",

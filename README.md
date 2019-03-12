@@ -18,10 +18,13 @@
   - 网页 通过浏览器访问 `localhost:9998`
 
 
-## 文档
-[Vue](https://vuejs.org)   
+## 参考与使用
+[vue](https://vuejs.org)   
+[mpvue](https://github.com/Meituan-Dianping/mpvue)   
 [uni-app](https://uniapp.dcloud.io)  
 [colorUi](https://github.com/weilanwl/ColorUI)  
 [mpvue-echarts](https://www.npmjs.com/package/mpvue-echarts)  
-[echarts](https://echarts.baidu.com/builder.html)  
 [mpvue-calendar](https://github.com/Hzy0913/mpvue-calendar)  
+[mpvue-keyboard](https://github.com/weiyunpeng/mpvue-keyboard)  
+[echarts](https://echarts.baidu.com/builder.html)  
+[pug](https://github.com/pugjs/pug)  

@@ -1,7 +1,7 @@
 {
-  "name": "mpvuebase",
-  "version": "2.0.7",
-  "description": "基于 uniapp 的起始项目",
+  "name": "wuc",
+  "version": "2.0.8",
+  "description": "移动端项目基础库",
   "author": "Mr.Ypeng",
   "private": true,
   "scripts": {

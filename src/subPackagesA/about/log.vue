@@ -6,6 +6,20 @@
       <div class="cu-item text-orange">
         <div class="bg-gradual-orange content shadow-blur">
           <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.0.8</div>
+            <div class="cu-tag line-white">2019/03/12</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.修复h5兼容问题（https://github.com/dcloudio/uni-app/issues/235）</div>
+            <div>2.增加背景图片组件</div>
+            <div>3.首页样式修改</div>
+            <div>4.轮播图video样式调整</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-orange">v2.0.7</div>
             <div class="cu-tag line-white">2019/02/26</div>
           </div>

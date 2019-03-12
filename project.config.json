@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -114,6 +114,14 @@
 					"id": -1,
 					"name": "日历",
 					"pathName": "pages/component/calendar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "背景颜色",
+					"pathName": "pages/basics/background",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -92,14 +92,15 @@
           <text class="icon-title text-blue"></text>图片背景
         </div>
       </div>
-      <bg-image
-        img="https://goss3.veer.com/creative/vcg/veer/612/veer-158729052.jpg"
+      <bg-render
+        link="https://goss3.veer.com/creative/vcg/veer/612/veer-158729052.jpg"
+        extend-class="bg-mask padding-tb-xl"
       >
         <div class="padding-xl text-white">
           <div class="padding-xs text-xl">我和春天有个约会</div>
           <div class="padding-xs">I Have a Date with Spring</div>
         </div>
-      </bg-image>
+      </bg-render>
     </div>
 
     <div>
@@ -108,23 +109,18 @@
           <text class="icon-title text-blue"></text>视频背景
         </div>
       </div>
-      <div class="bg-video bg-mask">
-        <video
-          src="https://www.weilanwl.com/theme/wl/assets/images/slider1.mp4"
-          :autoplay="true"
-          :loop="true"
-          :muted="true"
-          :show-play-btn="false"
-          :controls="false"
-          objectFit="cover"
-        ></video>
+      <bg-render
+        type="video"
+        link="https://www.weilanwl.com/theme/wl/assets/images/slider1.mp4"
+        extend-class="bg-mask"
+      >
         <cover-view class="padding-xl text-white">
           <cover-view class="padding-xs text-xl">开源是创新的动力之源</cover-view>
           <cover-view
             class="padding-xs"
           >Open Source is the Power Source of Innovation</cover-view>
         </cover-view>
-      </div>
+      </bg-render>
     </div>
 
     <div>
@@ -135,20 +131,20 @@
       </div>
       <div class="grid col-2 padding-sm">
         <div class="padding-sm">
-          <div
-            class="bg-img padding-bottom-xl"
-            style="background-image: url('https://image.weilanwl.com/img/square-3.jpg')"
+          <bg-render
+            link="https://image.weilanwl.com/img/square-3.jpg"
+            extend-class="padding-bottom-xl"
           >
             <div class="bg-shadeTop padding padding-bottom-xl">上面开始</div>
-          </div>
+          </bg-render>
         </div>
         <div class="padding-sm">
-          <div
-            class="bg-img padding-top-xl"
-            style="background-image: url('https://image.weilanwl.com/img/square-3.jpg')"
+          <bg-render
+            link="https://image.weilanwl.com/img/square-3.jpg"
+            extend-class="padding-top-xl"
           >
             <div class="bg-shadeBottom padding padding-top-xl">下面开始</div>
-          </div>
+          </bg-render>
         </div>
       </div>
     </div>
@@ -157,7 +153,7 @@
 
 <script>
 import Custom from "@/components/custom";
-import BgImage from "@/components/basics/bgImage";
+import BgRender from "@/components/basics/bgRender";
 export default {
   data() {
     return {
@@ -241,7 +237,7 @@ export default {
     };
   },
 
-  components: { Custom, BgImage },
+  components: { Custom, BgRender },
 
   computed: {},
 

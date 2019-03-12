@@ -60,7 +60,7 @@
       <tab
         :tab-list="tabList2"
         :TabCur.sync="TabCur"
-        :text-center="true"
+        :text-flex="true"
         SelectColor="text-orange"
         bg-color="#ffffff"
         color="#666666"

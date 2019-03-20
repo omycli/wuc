@@ -1,9 +1,9 @@
 <template>
   <div>
     <custom name="操作条" bg-color="bg-gradual-pink" leftMore>
-      <div slot="bar">
+      <text slot="bar">
         <text class="icon-homefill"></text>
-      </div>
+      </text>
     </custom>
 
     <div>

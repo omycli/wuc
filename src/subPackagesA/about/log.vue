@@ -6,6 +6,22 @@
       <div class="cu-item text-orange">
         <div class="bg-gradual-orange content shadow-blur">
           <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.0.9</div>
+            <div class="cu-tag line-white">2019/03/20</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.日历组件更换为uni官方组件</div>
+            <div>2.更新uni-app到新的重构框架版本</div>
+            <div>3.增加对头条小程序的支持</div>
+            <div>4.修复多图标顶部操作栏样式问题</div>
+            <div>5.边框阴影效果调整</div>
+            <div>6.tab组件兼容新版uni-app处理</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-orange">v2.0.8</div>
             <div class="cu-tag line-white">2019/03/12</div>
           </div>

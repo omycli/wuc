@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 16,
 			"list": [
 				{
 					"id": -1,
@@ -97,8 +97,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "垂直导航",
+					"id": 9,
+					"name": "全屏抽屉",
 					"pathName": "subPackagesA/plugin/drawer",
 					"query": "",
 					"scene": null
@@ -128,6 +128,28 @@
 					"id": -1,
 					"name": "布局",
 					"pathName": "pages/basics/layout",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "操作条",
+					"pathName": "pages/component/bar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "边框阴影",
+					"pathName": "pages/basics/shadow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "导航栏",
+					"pathName": "pages/component/nav",
+					"query": "",
 					"scene": null
 				}
 			]

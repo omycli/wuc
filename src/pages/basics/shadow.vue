@@ -28,10 +28,10 @@
       <div class="padding-xl radius shadow-warp bg-white margin-top">翘边阴影</div>
       <div class="padding-xl radius shadow-blur bg-red margin-top">根据背景颜色而改变的阴影</div>
       <div
-        class="padding-xl radius shadow-blur bg-red margin-top bg-img"
-        style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+        class="padding-xl radius shadow-blur margin-top bg-img"
+        style="background-image:url(https://goss.veer.com/creative/vcg/veer/612/veer-309169255.jpg);"
       >
-        <div>根据背景颜色而改变的阴影</div>
+        <div>根据背景图片颜色而改变的阴影</div>
       </div>
     </div>
   </div>

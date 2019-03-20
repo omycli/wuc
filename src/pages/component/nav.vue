@@ -1,9 +1,6 @@
 <template>
   <div>
-    <custom
-      name="导航栏"
-      bg-color="bg-gradual-pink"
-    ></custom>
+    <custom name="导航栏" bg-color="bg-gradual-pink"></custom>
 
     <swiper
       :current="TabCur"
@@ -11,99 +8,94 @@
       duration="300"
       @change="swiperChange"
     >
-      <swiper-item
-        v-for="(item,index) in tabList"
-        :key="index"
-      >
-        <div class='bg-grey padding margin text-center'>
-          Tab{{index}}
-        </div>
+      <swiper-item v-for="(item,index) in tabList" :key="index">
+        <div class="bg-grey padding margin text-center">Tab{{index}}</div>
       </swiper-item>
     </swiper>
 
     <div>
       <div class="cu-bar bg-white solid-bottom">
-        <div class='action'>
-          <text class='icon-titles text-orange '></text> 默认
+        <div class="action">
+          <text class="icon-titles text-orange"></text>默认
         </div>
       </div>
-      <tab
-        :tab-list="tabList"
+      <mu-tab
+        :TabList="tabList"
         :TabCur.sync="TabCur"
-        bg-color="#ffffff"
-        color="#666666"
-      ></tab>
+        BgColor="#ffffff"
+        Color="#666666"
+      ></mu-tab>
     </div>
 
     <div>
-      <div class="cu-bar bg-white margin-top  solid-bottom">
-        <div class='action'>
-          <text class='icon-title text-orange '></text> 居中
+      <div class="cu-bar bg-white margin-top solid-bottom">
+        <div class="action">
+          <text class="icon-title text-orange"></text>居中
         </div>
       </div>
-      <tab
-        :tab-list="tabList2"
+      <mu-tab
+        :TabList="tabList2"
         :TabCur.sync="TabCur"
-        :text-center="true"
+        TextCenter="true"
         SelectColor="text-blue"
-        bg-color="#ffffff"
-        color="#666666"
-      ></tab>
+        BgColor="#ffffff"
+        Color="#666666"
+      ></mu-tab>
     </div>
 
     <div>
-      <div class="cu-bar bg-white margin-top  solid-bottom">
-        <div class='action'>
-          <text class='icon-title text-orange '></text> 平分
+      <div class="cu-bar bg-white margin-top solid-bottom">
+        <div class="action">
+          <text class="icon-title text-orange"></text>平分
         </div>
       </div>
-      <tab
-        :tab-list="tabList2"
+      <mu-tab
+        :TabList="tabList2"
         :TabCur.sync="TabCur"
-        :text-flex="true"
+        :TextFlex="true"
         SelectColor="text-orange"
-        bg-color="#ffffff"
-        color="#666666"
-      ></tab>
+        BgColor="#ffffff"
+        Color="#666666"
+      ></mu-tab>
     </div>
 
     <div>
-      <div class="cu-bar bg-white margin-top  solid-bottom">
-        <div class='action'>
-          <text class='icon-title text-orange '></text> 背景
+      <div class="cu-bar bg-white margin-top solid-bottom">
+        <div class="action">
+          <text class="icon-title text-orange"></text>背景
         </div>
       </div>
-      <tab
-        :tab-list="tabList2"
+      <mu-tab
+        :TabList="tabList2"
         :TabCur.sync="TabCur"
-        :text-center="true"
+        :TextCenter="true"
         SelectColor="text-white"
-        bg-color="#e54d42"
-        color="#ffffff"
-      ></tab>
+        BgColor="#e54d42"
+        Color="#ffffff"
+      ></mu-tab>
     </div>
 
     <div>
-      <div class="cu-bar bg-white margin-top  solid-bottom">
-        <div class='action'>
-          <text class='icon-title text-orange '></text> 图标
+      <div class="cu-bar bg-white margin-top solid-bottom">
+        <div class="action">
+          <text class="icon-title text-orange"></text>图标
         </div>
       </div>
-      <tab
-        :tab-list="tabList3"
+      <mu-tab
+        :TabList="tabList3"
         :TabCur.sync="TabCur"
-        :text-center="true"
+        :TextCenter="true"
         SelectColor="text-white"
-        bg-color="#39b54a"
-        color="#ffffff"
-      ></tab>
+        BgColor="#39b54a"
+        Color="#ffffff"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import Custom from "@/components/custom";
-import tab from "@/components/tab";
+import MuTab from "@/components/tab";
 export default {
   data() {
     return {
@@ -127,7 +119,7 @@ export default {
     };
   },
 
-  components: { Custom, tab },
+  components: { Custom, MuTab },
 
   computed: {},
 

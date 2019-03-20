@@ -2,234 +2,37 @@
   <div>
     <custom name="日历" bg-color="bg-gradual-pink"></custom>
 
-    <div class="calendar-wrapper">
-      <div class="calendar">
-        <Calendar
-          :clean="clean"
-          :lunar="lunar"
-          ref="calendar"
-          :range="isrange"
-          :multi="ismulti"
-          :almanacs="almanacs"
-          :tileContent="tileContent"
-          @select="select"
-          @next="next"
-          @prev="prev"
-          :value="value"
-          :disabled="disabledArray"
-          :weekSwitch="weekSwitch"
-          :events="events"
-        />
-      </div>
-      <div>
-        <div class="cu-bar bg-white solid-bottom">
-          <div class="action">
-            <text class="icon-title text-blue"></text>事件
-          </div>
-        </div>
-        <div class="padding flex flex-wrap align-center bg-white">
-          <button class="cu-btn round bg-olive shadow" @click="rangeMode">范围模式</button>
-          <button class="cu-btn round bg-green shadow margin-left-xs" @click="multiMode">多选模式</button>
-          <button class="cu-btn round bg-cyan shadow margin-left-xs" @click="valueMode">单选模式</button>
-        </div>
-        <div class="padding flex flex-wrap align-center bg-white">
-          <button class="cu-btn round bg-red shadow" @click="setToday">返回今日</button>
-          <button
-            class="cu-btn round bg-cyan shadow margin-left-xs"
-            @click="switchMode"
-          >按{{weekSwitch ? '月' : '周'}}切换</button>
-        </div>
-        <div class="padding flex flex-wrap align-center bg-white">
-          <button
-            class="cu-btn round bg-yellow shadow"
-            @click="renderer"
-          >指定月份(2018-8)</button>
-          <button
-            class="cu-btn round bg-orange shadow margin-left-xs"
-            @click="dateInfo"
-          >日期信息(2018-8-23)</button>
-        </div>
-      </div>
-      <div class="data-info" v-if="!!dataInfo.cYear">
-        <p>
-          <span>公历日期:</span>
-          {{dataInfo.cYear}}-{{dataInfo.cMonth}}-{{dataInfo.cDay}}
-        </p>
-        <p>
-          <span>星期:</span>
-          {{dataInfo.ncWeek}}
-        </p>
-        <p>
-          <span>星座:</span>
-          {{dataInfo.astro}}
-        </p>
-        <p>
-          <span>属相:</span>
-          {{dataInfo.Animal}}
-        </p>
-        <p>
-          <span>农历日期:</span>
-          {{dataInfo.lYear}}-{{dataInfo.lMonth}}-{{dataInfo.lDay}}
-        </p>
-        <p>
-          <span>农历写法:</span>
-          {{dataInfo.IMonthCn}}{{dataInfo.IDayCn}}
-        </p>
-        <p>
-          <span>传统历法:</span>
-          {{dataInfo.gzYear}}年 {{dataInfo.gzMonth}}月 {{dataInfo.gzDay}}日
-        </p>
-        <p>
-          <span>节气:</span>
-          {{dataInfo.Term}}
-        </p>
-      </div>
-    </div>
+    <calendar
+      :date="date"
+      :lunar="true"
+      :disable-before="true"
+      :fixed-height="true"
+      :start-date="'2019-3-2'"
+      @change="change"
+      @to-click="toClick"
+    />
   </div>
 </template>
 
 <script>
-import Calendar from "@/components/calendar/calendar";
+import Calendar from "@/components/uni-calendar/uni-calendar";
 import Custom from "@/components/custom";
-const year = new Date().getFullYear();
-const month = new Date().getMonth() + 1;
 export default {
-  data() {
-    return {
-      value: [[year, month, 16], [year, month, 22]],
-      isrange: true,
-      weekSwitch: false,
-      ismulti: false,
-      dataInfo: {},
-      monFirst: true,
-      clean: false,
-      lunar: true,
-      events: { "2019-2-7": "今日备注", "2019-2-8": "一条很长的明日备注" },
-      tileContent: [
-        { date: "2019-2-4", className: "xiu", content: "休" },
-        { date: "2019-2-5", className: "xiu", content: "休" },
-        { date: "2019-2-6", className: "xiu", content: "休" },
-        { date: "2019-2-7", className: "xiu", content: "休" },
-        { date: "2019-2-8", className: "xiu", content: "休" },
-        { date: "2019-2-9", className: "xiu", content: "休" },
-        { date: "2019-2-10", className: "xiu", content: "休" },
-        { date: "2019-4-5", className: "xiu", content: "休" },
-        { date: "2019-4-6", className: "xiu", content: "休" },
-        { date: "2019-4-7", className: "xiu", content: "休" },
-        { date: "2019-4-29", className: "xiu", content: "休" },
-        { date: "2019-4-30", className: "xiu", content: "休" },
-        { date: "2019-5-1", className: "xiu", content: "休" },
-        { date: "2019-6-7", className: "xiu", content: "休" },
-        { date: "2019-6-8", className: "xiu", content: "休" },
-        { date: "2019-6-9", className: "xiu", content: "休" },
-        { date: "2019-9-13", className: "xiu", content: "休" },
-        { date: "2019-9-14", className: "xiu", content: "休" },
-        { date: "2019-9-15", className: "xiu", content: "休" },
-        { date: "2019-10-1", className: "xiu", content: "休" },
-        { date: "2019-10-2", className: "xiu", content: "休" },
-        { date: "2019-10-3", className: "xiu", content: "休" },
-        { date: "2019-10-4", className: "xiu", content: "休" },
-        { date: "2019-10-5", className: "xiu", content: "休" },
-        { date: "2019-10-6", className: "xiu", content: "休" },
-        { date: "2019-10-7", className: "xiu", content: "休" },
-        { date: "2018-12-29", className: "ban", content: "班" },
-        { date: "2019-2-2", className: "ban", content: "班" },
-        { date: "2019-2-3", className: "ban", content: "班" },
-        { date: "2019-4-27", className: "ban", content: "班" },
-        { date: "2019-4-28", className: "ban", content: "班" },
-        { date: "2019-9-29", className: "ban", content: "班" },
-        { date: "2019-10-12", className: "ban", content: "班" }
-      ],
-      renderValues: [],
-      disabledArray: ["2019-1-27", "2019-2-25"],
-      almanacs: { "11-14": "学生日", "11-22": "感恩日" }
-    };
-  },
   components: {
     Calendar,
     Custom
   },
-  mounted() {
-    this.handelRenderValues();
+  data() {
+    return {
+      date: "2019-03-10"
+    };
   },
   methods: {
-    switchMode(data) {
-      this.weekSwitch = !this.weekSwitch;
-      setTimeout(() => {
-        this.$refs.calendar.renderer(2019, 1);
-      }, 0);
+    change(e) {
+      console.log(e);
     },
-    handelRenderValues(data) {
-      if (this.ismulti) {
-        this.renderValues = this.value.map(v => v.join("-"));
-      } else if (this.isrange) {
-        const values = [];
-        // const valueData = data || this.value;
-        this.value.forEach((v, i) => {
-          values.push(v.join("-"));
-          if (!i) {
-            values.push("~");
-          }
-        });
-        this.renderValues = values;
-      } else {
-        this.renderValues = [this.value.join("-")];
-      }
-    },
-    multiMode(value) {
-      this.ismulti = true;
-      this.isrange = false;
-      this.value = [[year, month, 16], [year, month, 18]];
-      this.handelRenderValues();
-      this.$refs.calendar.renderer(year, month);
-    },
-    rangeMode(value) {
-      this.ismulti = false;
-      this.isrange = true;
-      this.value = [[year, month, 16], [year, month, 22]];
-      this.handelRenderValues();
-      this.$refs.calendar.renderer(year, month);
-    },
-    valueMode(value) {
-      this.ismulti = false;
-      this.isrange = false;
-      this.value = [year, month, 16];
-      this.handelRenderValues();
-      this.$refs.calendar.renderer(year, month);
-    },
-    selectMonth(month, year) {
-      console.log(year, month);
-    },
-    prev(y, m, w) {
-      console.log(y, m, w);
-    },
-    next(year, month, week) {
-      console.log(year, month, week);
-    },
-    selectYear(year) {
-      console.log(year);
-    },
-    setToday() {
-      this.$refs.calendar.setToday();
-    },
-    dateInfo() {
-      const info = this.$refs.calendar.dateInfo(2018, 8, 23);
-      this.dataInfo = info;
-      console.log(info);
-    },
-    renderer() {
-      this.$refs.calendar.renderer(2018, 8);
-    },
-    select(val, val2) {
-      if (this.isrange) {
-        this.handelRenderValues([val, val2]);
-      } else if (this.ismulti) {
-        this.handelRenderValues(val);
-      } else {
-        this.handelRenderValues([val]);
-      }
-      console.log(val);
-      console.log(val2);
+    toClick(e) {
+      console.log(e);
     }
   }
 };

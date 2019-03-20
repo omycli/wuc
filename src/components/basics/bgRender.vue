@@ -7,7 +7,7 @@
   >
     <slot></slot>
   </div>
-  <div class="bg-video" v-else="type === 'video'">
+  <div class="bg-video" v-else-if="type === 'video'">
     <video
       :src="link"
       :autoplay="true"
@@ -31,8 +31,7 @@ export default {
     },
     link: {
       type: String,
-      default:
-        ""
+      default: ""
     },
     extendClass: {
       type: String

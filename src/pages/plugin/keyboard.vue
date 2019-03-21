@@ -14,6 +14,7 @@
         >
         <keyboard
           @keyboard="keyboardChange"
+          :show.sync="show"
           active-border="#0deafe"
           base-border="38f8f8f"
         ></keyboard>
@@ -49,7 +50,8 @@ export default {
   data() {
     return {
       tel: 888888,
-      space: 999
+      space: 999,
+      show: true
     };
   },
 
@@ -96,7 +98,7 @@ $gend: #0c2c5c; // 渐变色结束颜色
   overflow: hidden;
   &__img {
     position: relative;
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: 130rpx;
     width: 323rpx;
     height: 58rpx;

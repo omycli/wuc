@@ -1,93 +1,85 @@
 <template>
   <div class="kb">
-    <div v-if="title" class="kb-input flex-center">
-      <text class="flex-center kb-input__text">{{title}}</text>
-    </div>
     <div class="flex-center">
-      <ul class="kb-input kb-input__ul row-around" @tap="showKeyboard">
+      <ul class="kb-input kb-input__ul" @tap="showKeyboard">
         <li
           v-for="(item, index) in textBaseArr"
-          :key="index"
-          @click="energy(index)"
-          class="flex-center kb-input__li"
+          :key="item"
+          @tap="energy(index)"
           :style="index === textArr.length ? 'border-color:'+activeBorder : 'border-color:'+baseBorder"
-          :class="index === 7 && isEnergy? 'kb-input__new-energy' : '' "
+          :class="[index === 7 && isEnergy? energyClass : '' , inputClass]"
         >{{item}}</li>
       </ul>
     </div>
 
     <div class="kb-keyboard">
-      <div class="kb-keyboard__over row-wrap" v-if="show" @tap="closeKeyboard"></div>
-      <div class="kb-keyboard__panle row-wrap" v-if="show">
+      <div
+        class="kb-keyboard__over row-wrap"
+        v-show="show"
+        @tap="closeKeyboard"
+      ></div>
+      <div
+        class="kb-keyboard__panle row-wrap"
+        :class="keyboardClass"
+        v-show="show"
+      >
         <!--省份简写键盘-->
         <div
-          v-if="!isAlph"
-          v-for="(proItem, i) in '京津沪冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤川青藏琼宁渝' "
+          v-show="!isAlph"
+          v-for="(proItem, i) in province "
           :key="i"
-          @tap="tapKeyboard"
-          :data-index="i"
-          :data-val="proItem"
-          class="kb-keyboard__td kb-keyboard__td-theme flex-center"
+          @tap="tapKeyboard(proItem)"
+          class="kb-keyboard__td"
+          :class="keycapClass"
           hover-class="kb-keyboard__td-tap-theme"
           hover-start-time="0"
           hover-stay-time="40"
         >{{proItem}}</div>
 
         <!--数字字母键盘-->
-        <div
-          v-if="isAlph && isNum"
-          v-for="(numItem, j) in '1234567890' "
+        <button
+          v-show="isAlph"
+          v-for="(numItem, j) in natural "
           :key="j"
-          @tap="tapKeyboard"
-          :data-index="j"
-          :data-val="numItem"
-          class="kb-keyboard__td-num kb-keyboard__td-theme flex-center"
+          @tap="tapKeyboard(numItem)"
+          class="kb-keyboard__td-num"
+          :class="naturalClass"
           hover-class="kb-keyboard__td-tap-theme"
           hover-start-time="0"
           hover-stay-time="40"
-        >{{numItem}}</div>
-        <div
-          v-if="isAlph && !isNum"
-          v-for="(numItem, q) in '1234567890' "
-          :key="q"
-          class="kb-keyboard__td-num kb-keyboard__td-tap-theme flex-center"
-        >{{numItem}}</div>
+          :disabled="!isNum"
+        >{{numItem}}</button>
 
         <!--字母键盘-->
         <div
-          v-if="isAlph"
+          v-show="isAlph"
           v-for="(alItem , k) in 'QWERTYUPASDFGHJKLZX巛CVBNM' "
           :key="k"
-          @tap="tapKeyboard"
-          :data-index="k"
-          :data-val="alItem"
-          class="kb-keyboard__td-num kb-keyboard__td-theme flex-center"
+          @tap="tapKeyboard(alItem)"
+          class="kb-keyboard__td-num"
+          :class="alphClass"
           hover-class="kb-keyboard__td-tap-theme"
           hover-start-time="0"
           hover-stay-time="40"
         >
-          <div
-            :data-index="k"
-            :data-val="alItem"
-            v-if="alItem === '巛'"
-            class="kb-keyboard__del"
-          ></div>
-          <div :data-index="k" :data-val="alItem" v-else="k !== '巛'">{{alItem}}</div>
+          <text v-if="alItem === '巛'" :class="delClass"></text>
+          <text v-else-if="k !== '巛'">{{alItem}}</text>
         </div>
 
         <!-- 完成按钮 -->
         <div
           v-if="isAlph && textArr.length > 6"
           @tap="tapFinished"
-          :style="finishedStyle"
-          class="kb-keyboard__td kb-keyboard__finished flex-center"
+          class="kb-keyboard__td-finished"
+          :class="finishedClass"
           hover-class="kb-keyboard__td-tap-fin-theme"
           hover-start-time="0"
           hover-stay-time="60"
         >{{extraKey}}</div>
         <div
           v-if="isAlph && textArr.length < 7"
-          class="kb-keyboard__td kb-keyboard__finished-base flex-center"
+          class="kb-keyboard__td-finished"
+          :class="finishedBaseClass"
         >{{extraKey}}</div>
       </div>
     </div>
@@ -97,9 +89,45 @@
 <script>
 export default {
   props: {
-    title: {
+    show: {
+      type: Boolean,
+      default: false
+    },
+    inputClass: {
       type: String,
-      default: ""
+      default: "kb-input__li flex-center"
+    },
+    energyClass: {
+      type: String,
+      default: "kb-input__new-energy"
+    },
+    keyboardClass: {
+      type: String,
+      default: "kb-keyboard__panle-style"
+    },
+    province: {
+      type: String,
+      default: "京津沪冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤川青藏琼宁渝"
+    },
+    keycapClass: {
+      type: String,
+      default: "kb-keyboard__td-theme"
+    },
+    natural: {
+      type: String,
+      default: "1234567890"
+    },
+    naturalClass: {
+      type: String,
+      default: "kb-keyboard__td-theme"
+    },
+    alphClass: {
+      type: String,
+      default: "kb-keyboard__td-theme"
+    },
+    delClass: {
+      type: String,
+      default: "kb-keyboard__del"
     },
     baseBorder: {
       type: String,
@@ -109,10 +137,6 @@ export default {
       type: String,
       default: "#ff7149"
     },
-    show: {
-      type: Boolean,
-      default: false
-    },
     extraKey: {
       type: String,
       default: "完成"
@@ -121,9 +145,13 @@ export default {
       type: String,
       default: ""
     },
-    finishedStyle: {
+    finishedClass: {
       type: String,
-      default: ""
+      default: "kb-keyboard__finished"
+    },
+    finishedBaseClass: {
+      type: String,
+      default: "kb-keyboard__finished-base"
     }
   },
   data() {
@@ -146,8 +174,8 @@ export default {
       this.show = false;
       this.$emit("update:show", false);
     },
-    tapKeyboard(e) {
-      this.tapVal = e.target.dataset.val;
+    tapKeyboard(tapval) {
+      this.tapVal = tapval;
 
       if (this.tapVal === "巛") {
         this.textArr.pop();
@@ -164,11 +192,8 @@ export default {
           this.$emit("update:plateNum", this.textArr.join(""));
           return false;
         }
-        this.textArr.push(this.tapVal);
-        for (let index = 0; index < this.textArr.length; index++) {
-          const element = this.textArr[index];
-          this.textBaseArr.splice(index, 1, element);
-        }
+        this.textArr.splice(this.textArr.length, 0, this.tapVal);
+        this.textBaseArr.splice(this.textArr.length - 1, 1, this.tapVal);
       }
 
       if (this.textArr.length === 1) {
@@ -207,15 +232,11 @@ export default {
   position: relative;
   top: 50px;
 }
-.kb-input__text {
-  width: 90%;
-  height: 50px;
-  padding: 10px;
-  border-radius: 3px;
-  color: #bdc3c7;
-  z-index: 10;
-}
 .kb-input__ul {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
   width: 92%;
   height: 61px;
   z-index: 999;
@@ -223,7 +244,7 @@ export default {
 .kb-input__li {
   width: 36px;
   height: 52px;
-  border: 1px solid #cccccc;
+  border: 2px solid #cccccc;
   border-radius: 4px;
   background-color: #ffffff;
 }
@@ -253,16 +274,22 @@ export default {
   overflow: hidden;
 }
 .kb-keyboard__panle {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   position: absolute;
   bottom: 0;
-  left: 2px;
-  height: 232px;
+  left: 0;
   width: 100vw;
   z-index: 999;
-  padding: 0 5px;
+}
+.kb-keyboard__panle-style {
   border-bottom: 8px solid #eaf1f9;
   border-top: 10px solid #eaf1f9;
 
@@ -273,17 +300,25 @@ export default {
   background: -webkit-linear-gradient(130deg, var(--from), var(--to));
 }
 .kb-keyboard__td {
-  flex-grow: 1;
-  -webkit-flex-grow: 1;
-  flex: 1 1 10%;
-  -webkit-flex: 1 1 10%;
-  max-width: 9.7vw;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  width: calc(100vw / 10);
   font-size: 18px;
   height: 48px;
   margin: 2px;
   border-radius: 5px;
 }
 .kb-keyboard__td-num {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
   flex-grow: 1;
   -webkit-flex-grow: 1;
   flex: 1 1 10%;
@@ -294,6 +329,20 @@ export default {
   margin: 2px;
   border-radius: 5px;
 }
+.kb-keyboard__td-finished {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  width: 110px;
+  height: 48px;
+  margin-top: 2px;
+  margin-left: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
 .kb-keyboard__del {
   width: 100%;
   height: 100%;
@@ -301,21 +350,11 @@ export default {
   background-size: 100% 100%;
 }
 .kb-keyboard__finished {
-  position: relative;
-  height: 48px;
-  top: 2px;
-  max-width: 100% !important;
-  margin-left: 6px;
   border: 1px solid #2f62ed;
   background-color: #2f62ed;
   color: #ffffff;
 }
 .kb-keyboard__finished-base {
-  position: relative;
-  height: 48px;
-  top: 2px;
-  max-width: 100% !important;
-  margin-left: 6px;
   border: 1px solid #cdd0d5;
   background-color: #cdd0d5;
   color: #1e1e1e;
@@ -344,5 +383,25 @@ export default {
 
   background: linear-gradient(130deg, var(--from), var(--to));
   background: -webkit-linear-gradient(130deg, var(--from), var(--to));
+}
+
+.flex-center {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.row-wrap {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
 }
 </style>

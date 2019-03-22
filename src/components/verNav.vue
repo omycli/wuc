@@ -11,9 +11,9 @@
         class="cu-item"
         :class="index === TabCur ? leftClass + ' cur' : ''"
         v-for="(item, index) in leftData"
-        :key="item"
+        :key="item.name"
         @tap="tabSelect(item,index)"
-      >Tab{{index +1}}</div>
+      >{{item.name}}</div>
     </scroll-view>
     <scroll-view
       class="VerticalMain"
@@ -43,7 +43,10 @@ export default {
       default: "text-green"
     },
     leftData: {
-      type: String
+      type: Array,
+      default() {
+        return [];
+      }
     }
   },
 
@@ -57,7 +60,9 @@ export default {
       this.VerticalNavTop = (index - 1) * 50;
       this.$emit("tabLeft", item);
     },
-    VerticalRight(e) {}
+    VerticalRight(e) {
+      console.log(e);
+    }
   },
 
   mounted() {}

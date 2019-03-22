@@ -2,7 +2,7 @@
   <div>
     <drawer :show.sync="modalName">
       <div slot="head">
-        <custom bg-color="bg-black" isBar>
+        <custom bg-color="bg-black" noneBg>
           <div slot="freebar">
             <div class="cu-avatar round" @tap="showModal">
               <text class="text-black">云</text>

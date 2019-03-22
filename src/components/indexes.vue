@@ -103,14 +103,15 @@ export default {
     }
   },
 
-  mounted() {},
-
   onReady() {
-    let self = this;
-    wx.createSelectorQuery()
+    uni
+      .createSelectorQuery()
+      .in(this)
       .select(".indexBar-box")
-      .boundingClientRect(function(res) {
-        self.boxTop = res.top;
+      .boundingClientRect(res => {
+        if (res) {
+          this.boxTop = res.top;
+        }
       })
       .exec();
   }

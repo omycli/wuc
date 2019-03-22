@@ -169,7 +169,7 @@ export default {
       canlender: {
         weeks: []
       },
-      domHeihgt: 264,
+      domHeihgt: 396,
       swiperData: [],
       currentIndex: 0,
       currentSelDate: "",

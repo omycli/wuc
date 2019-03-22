@@ -1,52 +1,26 @@
 <template>
   <div class="cu-custom" :style="CustomBar">
     <div
-      v-if="!noneBg"
       class="cu-bar fixed"
-      :class="bgColor"
-      :style="StatusBar"
+      :class="noneBg ? 'none-bg bg-img text-white' : bgColor"
+      :style="noneBg ? imageBar : StatusBar"
     >
       <slot name="freebar"></slot>
       <navigator
+        v-if="!noneBg"
         class="action"
         :class="leftMore ? 'border-custom' : ''"
-        open-type="navigateBack"
-        :delta="1"
+        :open-type="openType"
+        :delta="delta"
+        :url="url"
         hover-class="none"
-        v-if="!isBar"
         :style="navCustom"
       >
-        <text v-if="!isBar" class="icon-back"></text>
+        <text v-if="openType === 'navigateBack'" class="icon-back"></text>
+        <text v-if="!leftMore">{{name}}</text>
         <slot name="bar"></slot>
-        <text v-if="!leftMore && !noCusBar">{{name}}</text>
-        <text v-if="noCusBar">{{noCusBarLeftName}}</text>
       </navigator>
-      <div
-        v-if="leftMore || noCusBar"
-        class="content"
-        :style="leftMoreBar"
-      >{{name}}</div>
-      <div class="content" v-if="isBar">
-        <img :src="nameImg" mode="widthFix">
-      </div>
-    </div>
-
-    <div
-      v-if="noneBg"
-      class="cu-bar fixed none-bg text-white bg-img"
-      :style="imageBar"
-    >
-      <navigator
-        class="action"
-        open-type="navigateBack"
-        delta="1"
-        hover-class="none"
-        v-if="!isBar"
-      >
-        <text v-if="!isBar" class="icon-back"></text>
-        {{name}}
-      </navigator>
-      <div class="content" v-if="isBar">
+      <div class="content" v-if="nameImg" :style="noCusBar ? leftMoreBar : ''">
         <img :src="nameImg" mode="widthFix">
       </div>
     </div>
@@ -56,36 +30,12 @@
 <script>
 import { obj2style } from "@/utils/index";
 export default {
-  name: "custom",
+  name: "navigationBar",
   props: {
     name: {
       type: String,
       default() {
         return "";
-      }
-    },
-    bgColor: {
-      type: String,
-      default() {
-        return "bg-gradual-green";
-      }
-    },
-    noneBg: {
-      type: Boolean,
-      default() {
-        return false;
-      }
-    },
-    bgImage: {
-      type: String,
-      default() {
-        return "https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg";
-      }
-    },
-    isBar: {
-      type: Boolean,
-      default() {
-        return false;
       }
     },
     nameImg: {
@@ -94,10 +44,40 @@ export default {
         return "";
       }
     },
+    bgImage: {
+      type: String,
+      default() {
+        return "https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg";
+      }
+    },
+    bgColor: {
+      type: String,
+      default() {
+        return "bg-gradual-green";
+      }
+    },
     leftMore: {
       type: Boolean,
       default() {
         return false;
+      }
+    },
+    openType: {
+      type: String,
+      default() {
+        return "navigateBack";
+      }
+    },
+    delta: {
+      type: Number,
+      default() {
+        return 1;
+      }
+    },
+    url: {
+      type: String,
+      default() {
+        return "/pages/basics/index";
       }
     },
     noCusBar: {
@@ -106,10 +86,10 @@ export default {
         return false;
       }
     },
-    noCusBarLeftName: {
-      type: String,
+    noneBg: {
+      type: Boolean,
       default() {
-        return "返回";
+        return false;
       }
     }
   },

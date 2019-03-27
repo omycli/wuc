@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": false,
 		"postcss": false,
 		"minified": false,
@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 19,
 			"list": [
 				{
 					"id": -1,
@@ -157,6 +157,19 @@
 					"name": "顶部操作栏",
 					"pathName": "pages/component/custom",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "星级评价",
+					"pathName": "pages/component/rater",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "手风琴",
+					"pathName": "pages/component/accordion",
 					"scene": null
 				}
 			]

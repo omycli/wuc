@@ -24,6 +24,8 @@ export default {
     return {
       elements: [
         { title: "顶部操作栏", name: "custom", color: "blue", icon: "more" },
+        { title: "手风琴", name: "accordion", color: "cyan", icon: "unfold" },
+        { title: "星级评价", name: "rater", color: "olive", icon: "favor" },
         { title: "操作条", name: "bar", color: "purple", icon: "vipcard" },
         { title: "导航栏 ", name: "nav", color: "mauve", icon: "formfill" },
         { title: "列表", name: "list", color: "pink", icon: "list" },

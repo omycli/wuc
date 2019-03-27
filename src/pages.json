@@ -79,6 +79,18 @@
       }
     },
     {
+      "path": "pages/component/accordion",
+      "style": {
+        "navigationBarTitleText": "手风琴"
+      }
+    },
+    {
+      "path": "pages/component/rater",
+      "style": {
+        "navigationBarTitleText": "星级评价"
+      }
+    },
+    {
       "path": "pages/component/bar",
       "style": {
         "navigationBarTitleText": "操作条"

@@ -1,28 +1,27 @@
 <template>
   <div class="cu-custom" :style="CustomBar">
     <div
-      class="cu-bar fixed"
-      :class="noneBg ? 'none-bg bg-img text-white' : bgColor"
+      class="cu-bar"
+      :class="[noneBg ? 'none-bg bg-img text-white' : '', bgColor]"
       :style="noneBg ? imageBar : StatusBar"
     >
       <slot name="freebar"></slot>
-      <navigator
-        v-if="!noneBg"
-        class="action"
-        :class="leftMore ? 'border-custom' : ''"
-        :open-type="openType"
-        :delta="delta"
-        :url="url"
-        hover-class="none"
-        :style="navCustom"
-      >
-        <text v-if="openType === 'navigateBack'" class="icon-back"></text>
-        <text v-if="!leftMore">{{name}}</text>
-        <slot name="bar"></slot>
-      </navigator>
-      <div class="content" v-if="nameImg" :style="noCusBar ? leftMoreBar : ''">
-        <img :src="nameImg" mode="widthFix">
+      <div v-if="!freebar">
+        <navigator
+          class="action"
+          :class="leftMore ? 'border-custom' : ''"
+          :open-type="openType"
+          :delta="delta"
+          :url="url"
+          hover-class="none"
+          :style="navCustom"
+        >
+          <text v-if="openType === 'navigateBack'" class="icon-back"></text>
+          <text v-if="!leftMore">{{name}}</text>
+          <slot name="leftMore"></slot>
+        </navigator>
       </div>
+      <slot name="moreCon" v-if="leftMore"></slot>
     </div>
   </div>
 </template>
@@ -38,13 +37,7 @@ export default {
         return "";
       }
     },
-    nameImg: {
-      type: String,
-      default() {
-        return "";
-      }
-    },
-    bgImage: {
+    bgImg: {
       type: String,
       default() {
         return "https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg";
@@ -53,7 +46,7 @@ export default {
     bgColor: {
       type: String,
       default() {
-        return "bg-gradual-green";
+        return "bg-gradual-green fixed";
       }
     },
     leftMore: {
@@ -77,16 +70,16 @@ export default {
     url: {
       type: String,
       default() {
-        return "/pages/basics/index";
+        return "";
       }
     },
-    noCusBar: {
+    noneBg: {
       type: Boolean,
       default() {
         return false;
       }
     },
-    noneBg: {
+    freebar: {
       type: Boolean,
       default() {
         return false;
@@ -99,7 +92,9 @@ export default {
   computed: {
     CustomBar() {
       let style = {};
-      if (!this.noCusBar) {
+      if (this.bgColor.includes("bg-shadeTop") > 0) {
+        style["height"] = 0 + "px";
+      } else {
         style["height"] = uni.getStorageSync("CustomBar") + "px";
       }
       return obj2style(style);
@@ -119,7 +114,7 @@ export default {
       let style = {};
       style["height"] = uni.getStorageSync("CustomBar") + "px";
       style["padding-top"] = uni.getStorageSync("StatusBar") + "px";
-      style["background-image"] = `url(${this.bgImage})`;
+      style["background-image"] = `url(${this.bgImg})`;
       return obj2style(style);
     },
     navCustom() {

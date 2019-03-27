@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="图标" bg-color="bg-gradual-blue"></custom>
+    <custom name="图标" bg-color="bg-gradual-blue fixed"></custom>
 
     <div class="cu-bar bg-white search fixed" :style="CustomBar">
       <div class="search-form round">

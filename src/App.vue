@@ -36,15 +36,8 @@ export default {
 };
 </script>
 <style lang='scss'>
-@import "~@/styles/colorui.scss";
+@import "~@/styles/main.scss";
 @import "~@/styles/base.scss";
 @import "~@/styles/icon.scss";
-
-.cu-modal.show {
-  z-index: 99999;
-}
-
-.text-light {
-  font-weight: 300;
-}
+@import "~@/styles/animation.scss";
 </style>

@@ -2,7 +2,7 @@
   <div>
     <custom
       name="加载"
-      bg-color="bg-gradual-blue"
+      bg-color="bg-gradual-blue fixed"
     ></custom>
 
     <div class="cu-bar bg-white">

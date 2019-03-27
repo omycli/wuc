@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="列表" bg-color="bg-gradual-pink"></custom>
+    <custom name="列表" bg-color="bg-gradual-pink fixed"></custom>
 
     <div>
       <div class="cu-bar bg-white solid-bottom margin-top">

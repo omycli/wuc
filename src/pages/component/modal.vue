@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="模态窗口" bg-color="bg-gradual-pink"></custom>
+    <custom name="模态窗口" bg-color="bg-gradual-pink fixed"></custom>
 
     <div>
       <div class="cu-bar bg-white">

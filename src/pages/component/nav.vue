@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="导航栏" bg-color="bg-gradual-pink"></custom>
+    <custom name="导航栏" bg-color="bg-gradual-pink fixed"></custom>
 
     <swiper
       :current="TabCur"

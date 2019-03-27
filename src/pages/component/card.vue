@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="卡片" bg-color="bg-gradual-pink"></custom>
+    <custom name="卡片" bg-color="bg-gradual-pink fixed"></custom>
     <div>
       <div class="cu-bar bg-white solid-bottom">
         <div class="action">

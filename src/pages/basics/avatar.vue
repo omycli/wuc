@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="头像" bg-color="bg-gradual-blue"></custom>
+    <custom name="头像" bg-color="bg-gradual-blue fixed"></custom>
 
     <div>
       <div class="cu-bar bg-white">

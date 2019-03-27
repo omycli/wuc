@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="聊天" bg-color="bg-gradual-pink"></custom>
+    <custom name="聊天" bg-color="bg-gradual-pink fixed"></custom>
 
     <div>
       <div class="cu-chat">

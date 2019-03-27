@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="表单" bg-color="bg-gradual-pink"></custom>
+    <custom name="表单" bg-color="bg-gradual-pink fixed"></custom>
     <div>
       <div class="cu-form-group margin-top">
         <div class="title">邮件</div>

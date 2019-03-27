@@ -3,7 +3,7 @@
     <custom
       noneBg
       name="索引"
-      bgImage="https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg"
+      bg-img="https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg"
     ></custom>
     <div>
       <div class="cu-bar bg-white search fixed" :style="CustomBar">
@@ -83,6 +83,6 @@ export default {
 </script>
 <style lang='scss'>
 page {
-  padding-top: 50px;
+  padding-top: 100upx;
 }
 </style>

@@ -3,7 +3,7 @@
     <custom
       noneBg
       name="微动画"
-      bgImage="https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg"
+      bg-img="https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg"
     ></custom>
 
     <div>
@@ -189,7 +189,11 @@ export default {
 
   computed: {
     ani() {
-      return this.anmiaton;
+      if (this.anmiaton) {
+        return this.anmiaton;
+      } else {
+        return "";
+      }
     }
   },
 
@@ -198,7 +202,6 @@ export default {
       this.anmiaton = e.currentTarget.dataset.class;
       setTimeout(_ => {
         this.anmiaton = "";
-        this.ani = "";
       }, 1000);
     },
     toggleDelayChange() {

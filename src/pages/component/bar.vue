@@ -1,9 +1,12 @@
 <template>
   <div>
-    <custom name="操作条" bg-color="bg-gradual-pink" leftMore>
-      <text slot="bar">
+    <custom bg-color="bg-gradual-pink fixed" leftMore>
+      <text slot="leftMore">
         <text class="icon-homefill"></text>
       </text>
+      <div slot="moreCon">
+        <div class="content" :style="conTop">操作条</div>
+      </div>
     </custom>
 
     <div>
@@ -397,6 +400,7 @@
 
 <script>
 import Custom from "@/components/custom";
+import { obj2style } from "@/utils/index";
 export default {
   data() {
     return {};
@@ -404,7 +408,13 @@ export default {
 
   components: { Custom },
 
-  computed: {},
+  computed: {
+    conTop() {
+      let style = {};
+      style["top"] = uni.getStorageSync("StatusBar") + "px";
+      return obj2style(style);
+    }
+  },
 
   methods: {},
 

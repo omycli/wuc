@@ -1,6 +1,8 @@
 <template  lang='pug'>
 div
-  Custom(isBar noneBg bgImage="https://goss1.veer.com/creative/vcg/veer/612/veer-134033678.jpg" nameImg="http://www.bbvdd.com/d/20190215110318xwq.png")
+  Custom(freebar noneBg bg-img="https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg")
+    div(slot='freebar')
+      div(class="content" :style="conTop") {{name}}
   .cu-card
     div(
       class='cu-item bg-img shadow-blur' 
@@ -13,9 +15,11 @@ div
 
 <script>
 import Custom from "@/components/custom";
+import { obj2style } from "@/utils/index";
 export default {
   data() {
     return {
+      name: "扩展",
       list: [
         {
           title: "索引列表",
@@ -55,7 +59,13 @@ export default {
 
   components: { Custom },
 
-  computed: {},
+  computed: {
+    conTop() {
+      let style = {};
+      style["top"] = uni.getStorageSync("StatusBar") + "px";
+      return obj2style(style);
+    }
+  },
 
   methods: {
     toChild(e) {

@@ -16,20 +16,20 @@
         class="indexBar-box"
         @touchstart="tStart"
         @touchend="tEnd"
-        @touchmove="tMove"
+        @touchmove.stop="tMove"
       >
         <div
           class="indexBar-item"
           v-for="(item, index) in list"
           :key="index"
-          :id="index"
+          :id="'indexes-' + item"
           @touchstart="getCur"
           @touchend="setCur"
-        >{{list[index]}}</div>
+        >{{item}}</div>
       </div>
     </div>
 
-    <div v-if="hidden" class="indexToast">{{listCur}}</div>
+    <div v-show="hidden" class="indexToast">{{listCur}}</div>
   </div>
 </template>
 
@@ -126,36 +126,37 @@ export default {
   position: fixed;
   right: 0px;
   bottom: 0px;
-  padding: 10px 10px 10px 30px;
+  padding: 20upx 20upx 20upx 60upx;
   display: flex;
   align-items: center;
 }
 
 .indexBar .indexBar-box {
-  width: 20px;
+  width: 40upx;
   height: auto;
   background: #fff;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20upx rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
 .indexBar-item {
   flex: 1;
-  width: 20px;
-  height: 20px;
+  width: 40upx;
+  height: 40upx;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 24upx;
   color: #888;
 }
 
 movable-view.indexBar-item {
-  width: 20px;
-  height: 20px;
+  width: 40upx;
+  height: 40upx;
   z-index: 9;
+  position: relative;
 }
 
 movable-view.indexBar-item::before {
@@ -163,24 +164,25 @@ movable-view.indexBar-item::before {
   display: block;
   position: absolute;
   left: 0;
-  top: 5px;
-  height: 10px;
-  width: 2px;
+  top: 10upx;
+  height: 20upx;
+  width: 4upx;
   background-color: #f37b1d;
 }
+
 .indexToast {
   position: fixed;
   top: 0;
-  right: 40px;
+  right: 80upx;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
+  width: 100upx;
+  height: 100upx;
+  border-radius: 10upx;
   margin: auto;
   color: #fff;
-  line-height: 50px;
+  line-height: 100upx;
   text-align: center;
-  font-size: 24px;
+  font-size: 48upx;
 }
 </style>

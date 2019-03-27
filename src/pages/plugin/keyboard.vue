@@ -3,7 +3,7 @@
     <custom
       noneBg
       name="停车键盘"
-      bgImage="https://goss4.veer.com/creative/vcg/veer/612/veer-304717812.jpg"
+      bg-img="https://goss4.veer.com/creative/vcg/veer/612/veer-304717812.jpg"
     ></custom>
     <div class="p-i" :style="bgheight">
       <div class="column">

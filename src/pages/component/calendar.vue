@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="日历" bg-color="bg-gradual-pink"></custom>
+    <custom name="日历" bg-color="bg-gradual-pink fixed"></custom>
 
     <calendar
       :date="date"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="按钮" bg-color="bg-gradual-blue"></custom>
+    <custom name="按钮" bg-color="bg-gradual-blue fixed"></custom>
 
     <div>
       <div class="cu-bar bg-white solid-bottom">

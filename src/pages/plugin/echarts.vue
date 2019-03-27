@@ -3,7 +3,7 @@
     <custom
       noneBg
       name="图表"
-      bgImage="https://goss4.veer.com/creative/vcg/veer/612/veer-141525427.jpg"
+      bg-img="https://goss4.veer.com/creative/vcg/veer/612/veer-141525427.jpg"
     ></custom>
 
     <div class="cu-bar bg-white solid-bottom">

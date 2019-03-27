@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="时间轴" bg-color="bg-gradual-pink"></custom>
+    <custom name="时间轴" bg-color="bg-gradual-pink fixed"></custom>
     <div>
       <div class="cu-timeline">
         <div class="cu-time">昨天</div>

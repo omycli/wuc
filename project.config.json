@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 16,
+			"current": 17,
 			"list": [
 				{
 					"id": -1,
@@ -149,6 +149,13 @@
 					"id": -1,
 					"name": "导航栏",
 					"pathName": "pages/component/nav",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "顶部操作栏",
+					"pathName": "pages/component/custom",
 					"query": "",
 					"scene": null
 				}

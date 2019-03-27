@@ -6,6 +6,19 @@
       <div class="cu-item text-orange">
         <div class="bg-gradual-orange content shadow-blur">
           <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.1.0</div>
+            <div class="cu-tag line-white">2019/03/27</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.增加顶部操作栏组件</div>
+            <div>2.优化索引组件性能</div>
+            <div>2.更新主要样式和库到最新版本</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-orange">v2.0.9</div>
             <div class="cu-tag line-white">2019/03/20</div>
           </div>

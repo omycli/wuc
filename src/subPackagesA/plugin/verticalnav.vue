@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="Tab索引" bg-color="bg-shadeTop" noCusBar></custom>
+    <custom name="Tab索引" bg-color="bg-shadeTop fixed"></custom>
 
     <div>
       <swiper

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="布局" bg-color="bg-gradual-blue"></custom>
+    <custom name="布局" bg-color="bg-gradual-blue fixed"></custom>
 
     <scroll-view
       scroll-x

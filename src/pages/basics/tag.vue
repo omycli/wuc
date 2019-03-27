@@ -1,6 +1,6 @@
 <template>
   <div>
-    <custom name="标签" bg-color="bg-gradual-blue"></custom>
+    <custom name="标签" bg-color="bg-gradual-blue fixed"></custom>
     <div>
       <div class="cu-bar bg-white ">
         <div class="action">

@@ -73,6 +73,12 @@
       }
     },
     {
+      "path": "pages/component/custom",
+      "style": {
+        "navigationBarTitleText": "顶部操作栏"
+      }
+    },
+    {
       "path": "pages/component/bar",
       "style": {
         "navigationBarTitleText": "操作条"

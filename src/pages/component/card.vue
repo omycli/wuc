@@ -11,25 +11,31 @@
         </div>
       </div>
       <div class="cu-card case" :class="isCard?'no-card':''">
-        <div v-for="(item,index) in 1" :key="index" class="cu-item shadow">
+        <div class="cu-item shadow">
           <div class="image">
-            <img src="https://image.weilanwl.com/img/4x3-1.jpg" mode="widthFix">
-            <div class="cu-tag bg-blue">福利</div>
-            <div class="cu-bar bg-shadeBottom">我和制服不得不说的那些事！</div>
+            <img
+              src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg"
+              mode="widthFix"
+            >
+            <div class="cu-tag bg-blue">史诗</div>
+            <div
+              class="cu-bar bg-shadeBottom"
+            >我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</div>
           </div>
           <div class="cu-list menu menu-avatar">
             <div class="cu-item">
               <div
                 class="cu-avatar round lg"
-                style="background-image:url(https://image.weilanwl.com/img/square-4.jpg);"
+                style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
               ></div>
               <div class="content flex-sub">
-                <div class="text-grey">猪皮蛋</div>
-                <div class="text-gray text-sm flex justify-between">十天前
+                <div class="text-grey">正义天使 凯尔</div>
+                <div class="text-gray text-sm flex justify-between">
+                  十天前
                   <div class="text-gray text-sm">
-                    <text class="icon-attentionfill"></text>10
-                    <text class="icon-appreciatefill"></text>20
-                    <text class="icon-messagefill"></text>30
+                    <text class="icon-attentionfill margin-lr-xs"></text>10
+                    <text class="icon-appreciatefill margin-lr-xs"></text>20
+                    <text class="icon-messagefill margin-lr-xs"></text>30
                   </div>
                 </div>
               </div>
@@ -40,31 +46,33 @@
     </div>
 
     <div>
-      <div class="cu-bar bg-white solid-bottom" :class="isCard?'no-card':''">
+      <div class="cu-bar bg-white solid-bottom" :class="isCard?'margin-top':''">
         <div class="action">
           <text class="icon-titles text-orange"></text>动态类卡片
         </div>
         <div class="action">
-          <switch class="sm" :checked="isCard" @change="cardChange"></switch>
+          <switch
+            :class="isCard?'checked':''"
+            :checked="isCard"
+            @change="cardChange"
+          ></switch>
         </div>
       </div>
       <div class="cu-card dynamic" :class="isCard?'no-card':''">
-        <div v-for="item in 1" :key="item" class="cu-item shadow">
+        <div class="cu-item shadow padding">
           <div class="cu-list menu menu-avatar">
             <div class="cu-item">
               <div
                 class="cu-avatar round lg"
-                style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+                style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
               ></div>
               <div class="content flex-sub">
-                <div>晓晓萌</div>
-                <div class="text-gray text-sm flex justify-between">2018年12月3日</div>
+                <div>凯尔</div>
+                <div class="text-gray text-sm flex justify-between">2019年03月28日</div>
               </div>
             </div>
           </div>
-          <div
-            class="text-content"
-          >你们的铲屎官是不是经常突然对手机傻笑？我家铲屎官常常坐沙发上笑的发抖！（暗中观察.jpg）</div>
+          <div class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！</div>
           <div
             class="grid flex-sub padding-lr"
             :class="isCard?'col-3 grid-square':'col-1'"
@@ -72,37 +80,29 @@
             <div
               class="bg-img"
               :class="isCard?'':'only-img'"
-              style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+              style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
               v-for="(item,i) in isCard?9:1"
               :key="i"
             ></div>
           </div>
           <div class="text-gray text-sm text-right padding">
-            <text class="icon-attentionfill"></text>10
-            <text class="icon-appreciatefill"></text>20
-            <text class="icon-messagefill"></text>30
+            <text class="icon-attentionfill margin-lr-xs"></text>10
+            <text class="icon-appreciatefill margin-lr-xs"></text>20
+            <text class="icon-messagefill margin-lr-xs"></text>30
           </div>
           <div class="cu-list menu menu-avatar comment solids-top">
-            <div class="cu-item" v-for="(item,j) in 2" :key="j">
+            <div class="cu-item">
               <div
                 class="cu-avatar round"
-                style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+                style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);"
               ></div>
               <div class="content">
-                <div class="text-grey">猪皮蛋</div>
-                <div class="text-gray text-content text-df">我家铲屎官不舔毛，还抠脚！</div>
-                <div
-                  class="bg-grey padding-sm radius margin-top-sm text-sm"
-                  v-if="index === 1"
-                >
-                  <div
-                    class="flex"
-                    :class="index !== 0 ? 'margin-top-sm':'' "
-                    v-for="(item,k) in 2"
-                    :key="k"
-                  >
-                    <div>我：</div>
-                    <div class="flex-sub">我家的铲屎官也不舔毛！</div>
+                <div class="text-grey">莫甘娜</div>
+                <div class="text-gray text-content text-df">凯尔，你被自己的光芒变的盲目。</div>
+                <div class="bg-grey padding-sm radius margin-top-sm  text-sm">
+                  <div class="flex">
+                    <div>凯尔：</div>
+                    <div class="flex-sub">妹妹，你在帮他们给黑暗找借口吗?</div>
                   </div>
                 </div>
                 <div class="margin-top-sm flex justify-between">
@@ -125,24 +125,28 @@
           <text class="icon-titles text-orange"></text>文章类卡片
         </div>
         <div class="action">
-          <switch class="sm" :checked="isCard" @change="cardChange"></switch>
+          <switch
+            :class="isCard?'checked':''"
+            :checked="isCard"
+            @change="cardChange"
+          ></switch>
         </div>
       </div>
       <div class="cu-card article" :class="isCard?'no-card':''">
-        <div v-for="item in 1" :key="item" class="cu-item shadow">
-          <div class="title">这里有个戏精铲屎官，主子了解一下？</div>
+        <div class="cu-item shadow">
+          <div class="title text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</div>
           <div class="content">
             <img
-              src="https://image.weilanwl.com/img/4x3-3.jpg"
+              src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg"
               mode="aspectFill"
             >
             <div class="desc">
               <div
                 class="text-content"
-              >这是一个伪铲屎官为了给自己的程序凑字数瞎几把乱写的一堆文字，了解一下就OK！ヾ(=･ω･=)o</div>
+              >折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</div>
               <div>
-                <div class="cu-tag bg-red light sm round">假装有猫系列</div>
-                <div class="cu-tag bg-green light sm round">戏精系列</div>
+                <div class="cu-tag bg-red light sm round">正义天使</div>
+                <div class="cu-tag bg-green light sm round">史诗</div>
               </div>
             </div>
           </div>

@@ -151,19 +151,19 @@
             <div class="cu-avatar-group">
               <div
                 class="cu-avatar round sm"
-                style="background-image:url(https://image.weilanwl.com/img/square-4.jpg);"
+                style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
               ></div>
               <div
                 class="cu-avatar round sm"
-                style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+                style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"
               ></div>
               <div
                 class="cu-avatar round sm"
-                style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
+                style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"
               ></div>
               <div
                 class="cu-avatar round sm"
-                style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+                style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);"
               ></div>
             </div>
             <text class="text-grey text-sm">4 人</text>
@@ -226,7 +226,7 @@
         <div class="cu-item">
           <div
             class="cu-avatar round lg"
-            style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
           ></div>
           <div class="content">
             <div class="text-grey">文晓港</div>
@@ -242,7 +242,7 @@
         <div class="cu-item">
           <div
             class="cu-avatar round lg"
-            style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);"
           >
             <div class="cu-tag badge">99+</div>
           </div>
@@ -262,7 +262,7 @@
         <div class="cu-item">
           <div
             class="cu-avatar radius lg"
-            style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);"
           ></div>
           <div class="content">
             <div>喵星人互动群</div>
@@ -276,7 +276,7 @@
         <div class="cu-item grayscale">
           <div
             class="cu-avatar radius lg"
-            style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);"
           ></div>
           <div class="content">
             <div>喵星人互动群</div>
@@ -290,7 +290,7 @@
         <div class="cu-item cur">
           <div
             class="cu-avatar radius lg"
-            style="background-image:url(https://image.weilanwl.com/img/square-4.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg);"
           >
             <div class="cu-tag badge"></div>
           </div>
@@ -329,7 +329,7 @@
         >
           <div
             class="cu-avatar round lg"
-            :style="'background-image:url(https://image.weilanwl.com/img/square-'+(index+1)+'.jpg)'"
+            :style="'background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100'+(index+2)+'.jpg)'"
           ></div>
           <div class="content">
             <div class="text-grey">文晓港</div>

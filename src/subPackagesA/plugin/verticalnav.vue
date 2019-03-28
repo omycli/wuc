@@ -5,15 +5,15 @@
     <div>
       <swiper
         class="screen-swiper round-dot"
-        indicator-dots="true"
-        circular="true"
-        autoplay="true"
+        :indicator-dots="true"
+        :circular="true"
+        :autoplay="true"
         interval="5000"
         duration="500"
       >
         <swiper-item v-for="item in 4" :key="item">
           <img
-            :src="'https://image.weilanwl.com/img/4x3-'+(index+1)+'.jpg'"
+            :src="'https://ossweb-img.qq.com/images/lol/web201310/skin/big3900'+index+'.jpg'"
             mode="aspectFill"
           >
         </swiper-item>
@@ -27,7 +27,7 @@
             class="padding-top padding-lr"
             v-for="(item, index) in ColorList"
             :key="index"
-            :id="'main-id-'+index"
+            :id="'main-'+index"
           >
             <div class="cu-bar solid-bottom bg-white">
               <div class="action">
@@ -39,12 +39,14 @@
               <div class="cu-item">
                 <div
                   class="cu-avatar round lg"
-                  style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+                  style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
                 ></div>
                 <div class="content">
-                  <div class="text-grey">文晓港</div>
-                  <div class="text-gray text-sm">
-                    <text class="icon-infofill text-red"></text>消息未送达
+                  <div class="text-grey">凯尔</div>
+                  <div class="text-gray text-sm flex">
+                    <text class="text-cut">
+                      <text class="icon-infofill text-red margin-right-xs"></text>我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
+                    </text>
                   </div>
                 </div>
                 <div class="action">
@@ -55,17 +57,19 @@
               <div class="cu-item">
                 <div
                   class="cu-avatar round lg"
-                  style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
+                  style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);"
                 >
                   <div class="cu-tag badge">99+</div>
                 </div>
                 <div class="content">
                   <div class="text-grey">
-                    文晓港
-                    <div class="cu-tag round bg-orange sm">SVIP</div>
+                    瓦洛兰之盾-塔里克
+                    <div class="cu-tag round bg-orange sm">战士</div>
                   </div>
-                  <div class="text-gray text-sm">
-                    <text class="icon-redpacket_fill text-red"></text>收到红包
+                  <div class="text-gray text-sm flex">
+                    <text
+                      class="text-cut"
+                    >塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。</text>
                   </div>
                 </div>
                 <div class="action">
@@ -76,11 +80,11 @@
               <div class="cu-item">
                 <div
                   class="cu-avatar radius lg"
-                  style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+                  style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);"
                 ></div>
                 <div class="content">
-                  <div>喵星人互动群</div>
-                  <div class="text-gray text-sm">喵星酱：喵喵喵！</div>
+                  <div>莫甘娜</div>
+                  <div class="text-gray text-sm">凯尔，你被自己的光芒变的盲目！</div>
                 </div>
                 <div class="action">
                   <div class="text-grey text-xs">22:20</div>
@@ -90,11 +94,11 @@
               <div class="cu-item grayscale">
                 <div
                   class="cu-avatar radius lg"
-                  style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+                  style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);"
                 ></div>
                 <div class="content">
-                  <div>喵星人互动群</div>
-                  <div class="text-gray text-sm">喵星酱：喵喵喵！</div>
+                  <text class="text-cut">伊泽瑞尔</text>
+                  <div class="cu-tag round bg-orange sm">断开连接...</div>
                 </div>
                 <div class="action">
                   <div class="text-grey text-xs">22:20</div>

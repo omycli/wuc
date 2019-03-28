@@ -270,9 +270,9 @@
         <div class="cu-bar bg-black search">
           <div
             class="cu-avatar round"
-            style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);"
           ></div>
-          <div class="content">ColorUI</div>
+          <div class="content">WUC</div>
           <div class="action">
             <text class="icon-more"></text>
           </div>
@@ -291,7 +291,14 @@
         <div class="cu-bar search bg-white">
           <div class="search-form round">
             <text class="icon-search"></text>
-            <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search">
+            <input
+              @focus="InputFocus"
+              @blur="InputBlur"
+              :adjust-position="false"
+              type="text"
+              placeholder="搜索图片、文章、视频"
+              confirm-type="search"
+            >
           </div>
           <div class="action">
             <button class="cu-btn bg-green shadow-blur round">搜索</button>
@@ -300,11 +307,18 @@
         <div class="cu-bar search bg-white">
           <div
             class="cu-avatar round"
-            style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big11010.jpg);"
           ></div>
           <div class="search-form round">
             <text class="icon-search"></text>
-            <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search">
+            <input
+              @focus="InputFocus"
+              @blur="InputBlur"
+              :adjust-position="false"
+              type="text"
+              placeholder="搜索图片、文章、视频"
+              confirm-type="search"
+            >
           </div>
           <div class="action">
             <text>广州</text>
@@ -314,11 +328,18 @@
         <div class="cu-bar bg-red search">
           <div
             class="cu-avatar round"
-            style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big114004.jpg);"
           ></div>
           <div class="search-form radius">
             <text class="icon-search"></text>
-            <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search">
+            <input
+              @focus="InputFocus"
+              @blur="InputBlur"
+              :adjust-position="false"
+              type="text"
+              placeholder="搜索图片、文章、视频"
+              confirm-type="search"
+            >
           </div>
           <div class="action">
             <text>广州</text>
@@ -328,7 +349,14 @@
         <div class="cu-bar bg-cyan search">
           <div class="search-form radius">
             <text class="icon-search"></text>
-            <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search">
+            <input
+              @focus="InputFocus"
+              @blur="InputBlur"
+              :adjust-position="false"
+              type="text"
+              placeholder="搜索图片、文章、视频"
+              confirm-type="search"
+            >
           </div>
           <div class="action">
             <text class="icon-close"></text>
@@ -382,7 +410,7 @@
         <div class="cu-bar input">
           <div
             class="cu-avatar round"
-            style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+            style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);"
           ></div>
           <div class="action">
             <text class="icon-roundaddfill text-grey"></text>
@@ -403,7 +431,9 @@ import Custom from "@/components/custom";
 import { obj2style } from "@/utils/index";
 export default {
   data() {
-    return {};
+    return {
+      InputBottom: 0
+    };
   },
 
   components: { Custom },
@@ -416,14 +446,21 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    InputFocus(e) {
+      this.InputBottom = e.detail.height;
+    },
+    InputBlur(e) {
+      this.InputBottom = 0;
+    }
+  },
 
   mounted() {}
 };
 </script>
 <style lang='scss'>
 .box {
-  margin: 20rpx;
+  margin: 20rpx 0;
   .cu-bar {
     margin-top: 20rpx;
   }

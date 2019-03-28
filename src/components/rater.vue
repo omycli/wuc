@@ -2,14 +2,27 @@
   <div class="rate">
     <div
       class="rate-icon"
-      v-for="(star, index) in stars"
+      v-for="(item, index) in stars"
       :key="index"
       :style="{ marginLeft: margin + 'px' }"
       @click="_onClick(index)"
     >
-      <text class="icon-favor" :style="{ color: color, 'font-size': size + 'px' }"></text>
-      <div class="rate-icon-on" :style="{ width: star.activeWitch }">
-        <text class="icon-favorfill" :style="{ color: activeColor, 'font-size': size + 'px' }"></text>
+      <text
+        v-if="icon"
+        :class="icon"
+        :style="{ color: color, 'font-size': size + 'px' }"
+      ></text>
+      <text v-else :style="{ color: color, 'font-size': size + 'px' }">{{star}}</text>
+      <div class="rate-icon-on" :style="{ width: item.activeWitch }">
+        <text
+          v-if="icon"
+          :class="icon"
+          :style="{ color: activeColor, 'font-size': size + 'px' }"
+        ></text>
+        <text
+          v-else
+          :style="{ color: activeColor, 'font-size': size + 'px' }"
+        >{{star}}</text>
       </div>
     </div>
   </div>
@@ -20,11 +33,19 @@ export default {
   props: {
     color: {
       type: String,
-      default: "#ececec"
+      default: "#e5e5e5"
     },
     activeColor: {
       type: String,
       default: "#ffca3e"
+    },
+    icon: {
+      type: String,
+      default: ""
+    },
+    star: {
+      type: String,
+      default: "★"
     },
     size: {
       type: [Number, String],

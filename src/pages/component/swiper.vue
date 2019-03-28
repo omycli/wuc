@@ -8,23 +8,35 @@
           <text class="icon-title text-pink"></text>全屏限高轮播
         </div>
         <div class="action">
-          <switch class="sm" @change="DotStyle"></switch>
+          <switch
+            class="sm"
+            @change="DotStyle"
+            :class="dot?'checked':''"
+            :checked="dot?true:false"
+          ></switch>
         </div>
       </div>
       <swiper
         class="screen-swiper"
         :class="dot?'square-dot':'round-dot'"
-        indicator-dots="true"
-        circular="true"
-        autoplay="true"
+        :indicator-dots="true"
+        :circular="true"
+        :autoplay="true"
         interval="5000"
         duration="500"
       >
-        <swiper-item v-for="item in 4" :key="item">
-          <img
-            :src=" 'https://image.weilanwl.com/img/4x3-' + (index+1) + '.jpg'"
-            mode="aspectFill"
-          >
+        <swiper-item v-for="(item,index) in swiperList" :key="index">
+          <img :src="item.url" mode="aspectFill" v-if="item.type=='image'">
+          <video
+            :src="item.url"
+            autoplay
+            loop
+            muted
+            :show-play-btn="false"
+            :controls="false"
+            objectFit="cover"
+            v-if="item.type=='video'"
+          ></video>
         </swiper-item>
       </swiper>
     </div>
@@ -38,9 +50,9 @@
       <swiper
         class="card-swiper"
         :class="dot?'square-dot':'round-dot'"
-        indicator-dots="true"
-        circular="true"
-        autoplay="true"
+        :indicator-dots="true"
+        :circular="true"
+        :autoplay="true"
         interval="5000"
         duration="500"
         @change="cardSwiper"
@@ -48,26 +60,23 @@
         indicator-active-color="#0081ff"
       >
         <swiper-item
-          v-for="(item,i) in 4"
-          :key="item"
+          v-for="(item,i) in swiperList"
+          :key="i"
           :class="cardCur === i?'cur':''"
         >
-          <div
-            v-if="i!==1"
-            class="bg-img shadow-blur"
-            :style=" 'background-image:url(https://image.weilanwl.com/img/4x3-' + (i+1) + '.jpg)'"
-          ></div>
-          <video
-            class="bg-img shadow-blur"
-            src="https://www.weilanwl.com/theme/wl/assets/images/slider1.mp4"
-            autoplay
-            loop
-            muted
-            :show-play-btn="false"
-            :controls="false"
-            objectFit="cover"
-            v-else
-          ></video>
+          <div class="swiper-item">
+            <img :src="item.url" mode="aspectFill" v-if="item.type=='image'">
+            <video
+              :src="item.url"
+              autoplay
+              loop
+              muted
+              :show-play-btn="false"
+              :controls="false"
+              objectFit="cover"
+              v-if="item.type=='video'"
+            ></video>
+          </div>
         </swiper-item>
       </swiper>
     </div>
@@ -87,14 +96,24 @@
         <div
           class="tower-item"
           :class="item.zIndex === 1? 'none':''"
-          v-for="item in towerList"
+          v-for="item in swiperList"
           :key="item.id"
-          :style="'transform: scale(' + (0.5+item.zIndex/10) +');margin-left:' + (item.mLeft*100-150) + 'rpx;z-index:' + (item.zIndex)"
+          :style="[{'--index': item.zIndex,'--left':item.mLeft}]"
+          :data-direction="direction"
         >
-          <div
-            class="bg-img shadow-blur"
-            :style="'background-image:url(' + item.url + ')'"
-          ></div>
+          <view class="swiper-item">
+            <img :src="item.url" mode="aspectFill" v-if="item.type=='image'">
+            <video
+              :src="item.url"
+              autoplay
+              loop
+              muted
+              :show-play-btn="false"
+              :controls="false"
+              objectFit="cover"
+              v-if="item.type=='video'"
+            ></video>
+          </view>
         </div>
       </div>
     </div>
@@ -107,40 +126,52 @@ export default {
   data() {
     return {
       cardCur: 0,
-      tower: [
+      swiperList: [
         {
           id: 0,
-          url: "https://image.weilanwl.com/img/4x3-1.jpg"
+          type: "image",
+          url:
+            "https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"
         },
         {
           id: 1,
-          url: "https://image.weilanwl.com/img/4x3-2.jpg"
+          type: "video",
+          url: "https://yz.lol.qq.com/v1/assets/videos/aatrox-splashvideo.webm"
         },
         {
           id: 2,
-          url: "https://image.weilanwl.com/img/4x3-3.jpg"
+          type: "image",
+          url:
+            "https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg"
         },
         {
           id: 3,
-          url: "https://image.weilanwl.com/img/4x3-4.jpg"
+          type: "image",
+          url:
+            "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg"
         },
         {
           id: 4,
-          url: "https://image.weilanwl.com/img/4x3-2.jpg"
+          type: "image",
+          url:
+            "https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg"
         },
         {
           id: 5,
-          url: "https://image.weilanwl.com/img/4x3-4.jpg"
+          type: "image",
+          url:
+            "https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg"
         },
         {
           id: 6,
-          url: "https://image.weilanwl.com/img/4x3-2.jpg"
+          type: "image",
+          url:
+            "https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg"
         }
       ],
       dot: false,
       towerStart: null,
-      direction: null,
-      towerList: []
+      direction: null
     };
   },
 
@@ -155,8 +186,8 @@ export default {
     cardSwiper(e) {
       this.cardCur = e.target.current;
     },
-    towerData(name) {
-      let list = this.tower;
+    TowerSwiper(name) {
+      let list = this[name];
       for (let i = 0; i < list.length; i++) {
         list[i].zIndex =
           parseInt(list.length / 2) +
@@ -164,7 +195,7 @@ export default {
           Math.abs(i - parseInt(list.length / 2));
         list[i].mLeft = i - parseInt(list.length / 2);
       }
-      this.towerList = list;
+      this.swiperList = list;
     },
     towerStartChange(e) {
       this.towerStart = e.touches[0].pageX;
@@ -175,35 +206,40 @@ export default {
     },
     towerEnd(e) {
       let direction = this.direction;
-      let list = this.towerList;
+      let list = this.swiperList;
       if (direction === "right") {
         let mLeft = list[0].mLeft;
         let zIndex = list[0].zIndex;
-        for (let i = 1; i < list.length; i++) {
-          list[i - 1].mLeft = list[i].mLeft;
-          list[i - 1].zIndex = list[i].zIndex;
+        for (let i = 1; i < this.swiperList.length; i++) {
+          this.swiperList[i - 1].mLeft = this.swiperList[i].mLeft;
+          this.swiperList[i - 1].zIndex = this.swiperList[i].zIndex;
         }
-        list[list.length - 1].mLeft = mLeft;
-        list[list.length - 1].zIndex = zIndex;
-        this.towerList = list;
+        this.swiperList[list.length - 1].mLeft = mLeft;
+        this.swiperList[list.length - 1].zIndex = zIndex;
       } else {
         let mLeft = list[list.length - 1].mLeft;
         let zIndex = list[list.length - 1].zIndex;
-        for (let i = list.length - 1; i > 0; i--) {
-          list[i].mLeft = list[i - 1].mLeft;
-          list[i].zIndex = list[i - 1].zIndex;
+        for (let i = this.swiperList.length - 1; i > 0; i--) {
+          this.swiperList[i].mLeft = this.swiperList[i - 1].mLeft;
+          this.swiperList[i].zIndex = this.swiperList[i - 1].zIndex;
         }
-        list[0].mLeft = mLeft;
-        list[0].zIndex = zIndex;
-        this.towerList = list;
+        this.swiperList[0].mLeft = mLeft;
+        this.swiperList[0].zIndex = zIndex;
       }
+      this.direction = "";
+      this.swiperList = this.swiperList;
     }
   },
 
   mounted() {
-    this.towerData("tower");
+    this.TowerSwiper("swiperList");
   }
 };
 </script>
 <style lang='scss'>
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100upx - 150upx);
+  z-index: var(--index);
+}
 </style>

@@ -24,7 +24,7 @@ export default {
         {
           title: "索引列表",
           img: "https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg",
-          url: "/pages/plugin/indexes"
+          url: "/subPackagesA/plugin/indexes"
         },
         {
           title: "微动画",
@@ -35,13 +35,13 @@ export default {
           title: "停车键盘",
           img:
             "https://goss4.veer.com/creative/vcg/veer/612/veer-304717812.jpg",
-          url: "/pages/plugin/keyboard"
+          url: "/subPackagesA/plugin/keyboard"
         },
         {
           title: "图表库",
           img:
             "https://goss2.veer.com/creative/vcg/veer/612/veer-302194474.jpg",
-          url: "/pages/plugin/echarts"
+          url: "/subPackagesA/plugin/echarts"
         },
         {
           title: "垂直导航",
@@ -52,6 +52,11 @@ export default {
           title: "全屏抽屉",
           img: "https://image.weilanwl.com/color2.0/plugin/qpct2148.jpg",
           url: "/subPackagesA/plugin/drawer"
+        },
+        {
+          title: "外部网页",
+          img: "https://goss3.veer.com/creative/vcg/veer/612/veer-167598354.jpg",
+          url: "/subPackagesT/open/webview"
         }
       ]
     };

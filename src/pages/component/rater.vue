@@ -5,52 +5,42 @@
     <div>
       <div class="cu-bar bg-white margin-top">
         <div class="action">
-          <text class="icon-title text-green"></text>
-          <text>基本用法</text>
+          <text class="icon-title text-pink"></text>
+          <text>基础使用</text>
         </div>
       </div>
       <div class="padding bg-white">
-        <rater :value="2" @change="onChange"></rater>
+        <rater :size="32" :value="1" :margin="6" @change="onChange"></rater>
       </div>
 
       <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-green"></text>
-          <text>设置尺寸大小</text>
+          <text>设置图标</text>
         </div>
       </div>
       <div class="padding bg-white">
-        <rater :size="18" :value="5"></rater>
+        <rater icon="icon-emoji" :value="1" :size="32" :margin="6" color="#8799a3" active-color="#333333"></rater>
       </div>
 
       <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-green"></text>
-          <text>设置评分数</text>
+          <text>设置文字</text>
         </div>
       </div>
       <div class="padding bg-white">
-        <rater :max="10" :value="5"></rater>
+        <rater star="棒" :value="3" :size="32" :margin="6" color="#bbb" active-color="#9c26b0"></rater>
       </div>
 
       <div class="cu-bar bg-white margin-top">
         <div class="action">
           <text class="icon-title text-green"></text>
-          <text>设置星星间隔</text>
+          <text>设置评分数量</text>
         </div>
       </div>
       <div class="padding bg-white">
-        <rater :value="4" :margin="5"></rater>
-      </div>
-
-      <div class="cu-bar bg-white margin-top">
-        <div class="action">
-          <text class="icon-title text-green"></text>
-          <text>设置颜色</text>
-        </div>
-      </div>
-      <div class="padding bg-white">
-        <rater :value="3" color="#bbb" active-color="red"></rater>
+        <rater :max="10" :value="5" active-color="#e54d42"></rater>
       </div>
 
       <div class="cu-bar bg-white margin-top">
@@ -62,23 +52,13 @@
       <div class="padding bg-white">
         <rater :disabled="true" :value="3.5"></rater>
       </div>
-
-      <div class="cu-bar bg-white margin-top">
-        <div class="action">
-          <text class="icon-title text-green"></text>
-          <text>未选中的星星为镂空状态</text>
-        </div>
-      </div>
-      <div class="padding bg-white">
-        <rater :value="3" :isFill="false"></rater>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Custom from "@/components/custom";
-import Rater from "@/components/basics/rater";
+import Rater from "@/components/rater";
 export default {
   data() {
     return {};

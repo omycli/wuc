@@ -26,7 +26,6 @@
         <div class="p-i__ben text-center" @click="TapScale">停车缴费标准</div>
 
         <div class="p-i__over">
-          <img src="/static/assets/images/p-circle.png" class="p-i__over-img">
           <div class="text-center">
             <div class="p-i__over-name">剩余停车位</div>
             <div class="p-i__over-value">{{space}}</div>

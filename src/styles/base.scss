@@ -63,3 +63,17 @@
   justify-content: center;
   -webkit-justify-content: center;
 }
+
+
+.open-img {
+  position: relative;
+  top: -20rpx;
+  overflow: hidden;
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}

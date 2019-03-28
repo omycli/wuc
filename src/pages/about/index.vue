@@ -1,22 +1,17 @@
 <template>
   <div>
     <div class="UCenter-bg">
-      <img
-        src="/static/assets/images/logo.png"
-        class="png"
-        mode="widthFix"
-      />
-      <div class="text-xl">欢迎使用组件库
-        <text class="text-df">v2.0.7</text>
+      <div class="open-img">
+        <open-data type="userAvatarUrl"></open-data>
       </div>
-      <div class="margin-top-sm">
-        <text>By:云中大鹏</text>
+      <div class="margin-top-sm text-xl text-bold">
+        <open-data type="userNickName"></open-data>
       </div>
       <img
         src="https://image.weilanwl.com/gif/wave.gif"
         mode="scaleToFill"
         class="gif-wave"
-      />
+      >
     </div>
     <div class="padding flex text-center text-grey bg-white shadow-warp">
       <div class="flex flex-sub flex-direction solid-right">
@@ -38,7 +33,9 @@
         </div>
       </div>
     </div>
-    <div class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+    <div
+      class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg"
+    >
       <div class="cu-item arrow">
         <div
           class="content"
@@ -49,7 +46,7 @@
           <text class="text-grey">GitHub</text>
         </div>
       </div>
-      <div class="cu-item arrow">
+      <!-- <div class="cu-item arrow">
         <navigator
           class="content"
           url="/subPackagesA/about/home"
@@ -59,10 +56,10 @@
             src="/static/assets/images/logo.png"
             class="png"
             mode="aspectFit"
-          />
+          >
           <text class="text-grey">关于组件库</text>
         </navigator>
-      </div>
+      </div> -->
       <div class="cu-item arrow">
         <navigator
           class="content"
@@ -74,19 +71,13 @@
         </navigator>
       </div>
       <div class="cu-item arrow">
-        <div
-          class="content"
-          @click="showQrcode"
-        >
+        <div class="content" @click="showQrcode">
           <text class="icon-appreciatefill text-red"></text>
           <text class="text-grey">赞赏支持</text>
         </div>
       </div>
       <div class="cu-item arrow">
-        <button
-          class="cu-btn content"
-          open-type="feedback"
-        >
+        <button class="cu-btn content" open-type="feedback">
           <text class="icon-writefill text-cyan"></text>
           <text class="text-grey">意见反馈</text>
         </button>

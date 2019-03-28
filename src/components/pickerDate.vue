@@ -81,7 +81,6 @@ export default {
       // 传递给组件外使用
       this.placeholderShow = false;
       this.recentTimeStr = this.changeTime(_recentTime);
-      this.$emit("datechange", _recentTime, this.recentTimeStr);
     },
     /**
      * 年月日 三级联动
@@ -134,7 +133,7 @@ export default {
       this.recentTime = _data.recentTime;
       this.placeholderShow = false;
       this.recentTimeStr = this.changeTime(_recentTime);
-      this.$emit("datechange", _recentTime, this.recentTimeStr);
+      this.$emit("datechange", this.recentTimeStr);
     },
     changeTime: function(recentTime) {
       if (this.placeholderShow) {

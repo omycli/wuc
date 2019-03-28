@@ -163,24 +163,6 @@
       }
     },
     {
-      "path": "pages/plugin/indexes",
-      "style": {
-        "navigationBarTitleText": "索引"
-      }
-    },
-    {
-      "path": "pages/plugin/keyboard",
-      "style": {
-        "navigationBarTitleText": "停车键盘"
-      }
-    },
-    {
-      "path": "pages/plugin/echarts",
-      "style": {
-        "navigationBarTitleText": "图表"
-      }
-    },
-    {
       "path": "pages/auth/index",
       "style": {
         "navigationBarTitleText": "登录"
@@ -308,6 +290,24 @@
           "style": {
             "navigationBarTitleText": "全屏抽屉"
           }
+        },
+        {
+          "path": "plugin/indexes",
+          "style": {
+            "navigationBarTitleText": "索引"
+          }
+        },
+        {
+          "path": "plugin/echarts",
+          "style": {
+            "navigationBarTitleText": "图表"
+          }
+        },
+        {
+          "path": "plugin/keyboard",
+          "style": {
+            "navigationBarTitleText": "停车键盘"
+          }
         }
       ]
     },
@@ -325,12 +325,30 @@
           "style": {
             "navigationBarTitleText": "blur引起的ios花屏测试"
           }
+        },
+        {
+          "path": "open/webview",
+          "style": {
+            "navigationBarTitleText": "外部网页"
+          }
         }
       ]
     }
   ],
   "preloadRule": {
     "subPackagesA/plugin/drawer": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
+    "subPackagesA/plugin/keyboard": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
+    "subPackagesA/plugin/indexes": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
+    "subPackagesA/plugin/echarts": {
       "network": "all",
       "packages": ["__APP__"]
     },

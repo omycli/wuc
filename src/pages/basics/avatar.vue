@@ -3,6 +3,19 @@
     <custom name="头像" bg-color="bg-gradual-blue fixed"></custom>
 
     <div>
+      <div class="cu-bar bg-white margin-top">
+        <div class="action">
+          <text class="icon-title text-blue"></text>微信头像
+        </div>
+      </div>
+      <div class="padding">
+        <div class="open-img">
+          <open-data type="userAvatarUrl"></open-data>
+        </div>
+      </div>
+    </div>
+
+    <div>
       <div class="cu-bar bg-white">
         <div class="action">
           <text class="icon-title text-blue"></text>头像形状
@@ -11,11 +24,11 @@
       <div class="padding">
         <div
           class="cu-avatar round"
-          style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
         ></div>
         <div
           class="cu-avatar radius margin-left"
-          style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"
         ></div>
       </div>
     </div>
@@ -29,19 +42,19 @@
       <div class="padding">
         <div
           class="cu-avatar sm round margin-left"
-          style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
         ></div>
         <div
           class="cu-avatar round margin-left"
-          style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"
         ></div>
         <div
           class="cu-avatar lg round margin-left"
-          style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"
         ></div>
         <div
           class="cu-avatar xl round margin-left"
-          style="background-image:url(https://image.weilanwl.com/img/square-4.jpg);"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"
         ></div>
       </div>
       <div class="padding">
@@ -53,8 +66,12 @@
       <div class="padding">
         <div class="cu-avatar sm round margin-left bg-red">蔚</div>
         <div class="cu-avatar round margin-left bg-red">蓝</div>
-        <div class="cu-avatar lg round margin-left bg-red"><text>wl</text></div>
-        <div class="cu-avatar xl round margin-left bg-red"><text class='avatar-text'>网络</text></div>
+        <div class="cu-avatar lg round margin-left bg-red">
+          <text>wl</text>
+        </div>
+        <div class="cu-avatar xl round margin-left bg-red">
+          <text class="avatar-text">网络</text>
+        </div>
       </div>
     </div>
 
@@ -87,7 +104,7 @@
           v-for="(item,index) in ColorList"
           :key="index"
         >
-          <text class='avatar-text'>{{item.name}}</text>
+          <text class="avatar-text">{{item.name}}</text>
         </div>
       </div>
     </div>
@@ -102,9 +119,9 @@
         <div class="cu-avatar-group">
           <div
             class="cu-avatar round lg"
-            v-for="(item,index) in 4"
+            v-for="(item,index) in avatar"
             :key="index"
-            :style="'background-image:url(https://image.weilanwl.com/img/square-'+(index+1)+'.jpg'"
+            :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"
           ></div>
         </div>
       </div>
@@ -119,9 +136,9 @@
       <div class="padding">
         <div
           class="cu-avatar round lg margin-left"
-          v-for="(item,index) in 4"
+          v-for="(item,index) in avatar"
           :key="index"
-          :style="'background-image:url(https://image.weilanwl.com/img/square-'+(index+1)+'.jpg'"
+          :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"
         >
           <div
             class="cu-tag badge"
@@ -214,6 +231,12 @@ export default {
           name: "white",
           color: "#ffffff"
         }
+      ],
+      avatar: [
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg",
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg",
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg"
       ]
     };
   },

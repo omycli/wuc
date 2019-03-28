@@ -6,6 +6,20 @@
       <div class="cu-item text-orange">
         <div class="bg-gradual-orange content shadow-blur">
           <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.1.1</div>
+            <div class="cu-tag line-white">2019/03/28</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.图片资源更新</div>
+            <div>2.优化垂直索引</div>
+            <div>3.增加评分组件</div>
+            <div>4.增加手风琴组件</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-orange">v2.1.0</div>
             <div class="cu-tag line-white">2019/03/27</div>
           </div>

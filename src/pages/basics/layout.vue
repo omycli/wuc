@@ -174,9 +174,9 @@
         <div class="grid col-4 grid-square">
           <div
             class="bg-img"
-            v-for="(item,index) in 4"
+            v-for="(item,index) in avatar"
             :key="index"
-            :style="'background-image:url(https://image.weilanwl.com/img/square-'+(index+1)+'.jpg);'"
+            :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"
           ></div>
         </div>
       </div>
@@ -256,6 +256,12 @@ export default {
   data() {
     return {
       TabCur: 0,
+      avatar: [
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg",
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg",
+        "https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg"
+      ],
       tabNav: ["Flex布局", "Grid布局", "辅助布局"]
     };
   },
@@ -283,7 +289,7 @@ export default {
 page {
   padding-top: 45px;
 }
-.w50{
+.w50 {
   width: 50%;
 }
 </style>

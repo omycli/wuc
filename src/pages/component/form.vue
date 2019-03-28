@@ -338,7 +338,7 @@ export default {
       this.multiArray = this.multiData.multiArray;
       this.multiIndex = this.multiData.multiIndex;
     },
-    recentTimeChange(time, timeStr) {
+    recentTimeChange(timeStr) {
       console.log(timeStr);
       this.recTime = timeStr;
     }

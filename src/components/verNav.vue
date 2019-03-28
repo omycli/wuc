@@ -5,7 +5,7 @@
       scroll-y
       scroll-with-animation
       :scroll-top="VerticalNavTop"
-      style="height:calc(100vh - 375rpx)"
+      style="height:calc(100vh - 375upx)"
     >
       <div
         class="cu-item"
@@ -20,8 +20,8 @@
       scroll-y
       scroll-with-animation
       style="height:calc(100vh - 375rpx)"
-      :scroll-into-view="'main-id-'+TabCur"
-      @scroll="VerticalRight"
+      :scroll-into-view="'main-'+mainCur"
+      @scroll="VerticalMain"
     >
       <slot name="right"></slot>
     </scroll-view>
@@ -34,7 +34,9 @@ export default {
   data() {
     return {
       TabCur: 0,
-      VerticalNavTop: 0
+      mainCur: 0,
+      VerticalNavTop: 0,
+      load: true
     };
   },
   props: {
@@ -57,11 +59,41 @@ export default {
   methods: {
     tabSelect(item, index) {
       this.TabCur = index;
+      this.mainCur = index;
       this.VerticalNavTop = (index - 1) * 50;
       this.$emit("tabLeft", item);
     },
-    VerticalRight(e) {
-      console.log(e);
+    VerticalMain(e) {
+      let tabHeight = 0;
+      if (this.load) {
+        for (let i = 0; i < this.leftData.length; i++) {
+          let view = uni.createSelectorQuery().select("#main-" + i);
+          view
+            .fields(
+              {
+                size: true
+              },
+              data => {
+                this.leftData[i].top = tabHeight;
+                tabHeight = tabHeight + data.height;
+                this.leftData[i].bottom = tabHeight;
+              }
+            )
+            .exec();
+        }
+        this.load = false;
+      }
+      let scrollTop = e.detail.scrollTop + 10;
+      for (let i = 0; i < this.leftData.length; i++) {
+        if (
+          scrollTop > this.leftData[i].top &&
+          scrollTop < this.leftData[i].bottom
+        ) {
+          this.verticalNavTop = (i - 1) * 50;
+          this.TabCur = i;
+          return false;
+        }
+      }
     }
   },
 

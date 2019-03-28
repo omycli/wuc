@@ -57,10 +57,10 @@
               <div class="cu-item">
                 <div
                   class="cu-avatar round lg"
-                  style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
+                  style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
                 ></div>
                 <div class="content">
-                  <div class="text-grey">文晓港</div>
+                  <div class="text-grey">德玛西亚</div>
                   <div class="text-gray text-sm">
                     <text class="icon-infofill text-red"></text>消息未送达
                   </div>
@@ -73,12 +73,12 @@
               <div class="cu-item">
                 <div
                   class="cu-avatar round lg"
-                  style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
+                  style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
                 >
                   <div class="cu-tag badge">99+</div>
                 </div>
                 <div class="content">
-                  <div class="text-grey">文晓港
+                  <div class="text-grey">德玛西亚
                     <div class="cu-tag round orange sm">SVIP</div>
                   </div>
                   <div class="text-gray text-sm">

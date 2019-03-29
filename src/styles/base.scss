@@ -64,7 +64,6 @@
   -webkit-justify-content: center;
 }
 
-
 .open-img {
   position: relative;
   top: -20rpx;
@@ -76,4 +75,12 @@
   border: 2px solid #fff;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

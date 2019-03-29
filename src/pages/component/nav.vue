@@ -19,12 +19,11 @@
           <text class="icon-titles text-orange"></text>默认
         </div>
       </div>
-      <mu-tab
-        :TabList="tabList"
-        :TabCur.sync="TabCur"
-        BgColor="#ffffff"
-        Color="#666666"
-      ></mu-tab>
+      <wuc-tab
+        :tab-list="tabList"
+        :tabCur.sync="TabCur"
+        tab-class="bg-white text-black"
+      ></wuc-tab>
     </div>
 
     <div>
@@ -33,14 +32,12 @@
           <text class="icon-title text-orange"></text>居中
         </div>
       </div>
-      <mu-tab
-        :TabList="tabList2"
-        :TabCur.sync="TabCur"
-        TextCenter="true"
-        SelectColor="text-blue"
-        BgColor="#ffffff"
-        Color="#666666"
-      ></mu-tab>
+      <wuc-tab
+        :tab-list="tabList2"
+        :tabCur.sync="TabCur"
+        tab-class="text-center text-black bg-white"
+        select-class="text-blue"
+      ></wuc-tab>
     </div>
 
     <div>
@@ -49,14 +46,12 @@
           <text class="icon-title text-orange"></text>平分
         </div>
       </div>
-      <mu-tab
-        :TabList="tabList2"
-        :TabCur.sync="TabCur"
-        :TextFlex="true"
-        SelectColor="text-orange"
-        BgColor="#ffffff"
-        Color="#666666"
-      ></mu-tab>
+      <wuc-tab
+        :tab-list="tabList2"
+        :tabCur.sync="TabCur"
+        tab-class="text-center text-black bg-white"
+        select-class="text-orange"
+      ></wuc-tab>
     </div>
 
     <div>
@@ -65,14 +60,12 @@
           <text class="icon-title text-orange"></text>背景
         </div>
       </div>
-      <mu-tab
-        :TabList="tabList2"
-        :TabCur.sync="TabCur"
-        :TextCenter="true"
-        SelectColor="text-white"
-        BgColor="#e54d42"
-        Color="#ffffff"
-      ></mu-tab>
+      <wuc-tab
+        :tab-list="tabList2"
+        :tabCur.sync="TabCur"
+        tab-class="text-center text-white bg-red"
+        select-class="text-white"
+      ></wuc-tab>
     </div>
 
     <div>
@@ -81,13 +74,11 @@
           <text class="icon-title text-orange"></text>图标
         </div>
       </div>
-      <mu-tab
-        :TabList="tabList3"
-        :TabCur.sync="TabCur"
-        :TextCenter="true"
-        SelectColor="text-white"
-        BgColor="#39b54a"
-        Color="#ffffff"
+      <wuc-tab
+        :tab-list="tabList3"
+        :tabCur.sync="TabCur"
+        tab-class="text-center text-white bg-green"
+        select-class="text-white"
       />
     </div>
   </div>
@@ -95,7 +86,7 @@
 
 <script>
 import Custom from "@/components/custom";
-import MuTab from "@/components/tab";
+import WucTab from "@/components/tab";
 export default {
   data() {
     return {
@@ -109,17 +100,22 @@ export default {
         { name: "tab6" },
         { name: "tab7" }
       ],
-      tabList2: [{ name: "tab0" }, { name: "tab1" }, { name: "tab2" }],
+      tabList2: [
+        { name: "tab0" },
+        { name: "tab1" },
+        { name: "tab2" },
+        { name: "tab3" }
+      ],
       tabList3: [
         { name: "数码", icon: "icon-camerafill" },
-        { name: "tab1", icon: "icon-upstagefill" },
-        { name: "tab2", icon: "icon-clothesfill" }
+        { name: "奖杯", icon: "icon-upstagefill" },
+        { name: "衣服", icon: "icon-clothesfill" }
       ],
       TabCur: 0
     };
   },
 
-  components: { Custom, MuTab },
+  components: { Custom, WucTab },
 
   computed: {},
 

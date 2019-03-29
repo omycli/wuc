@@ -2,7 +2,7 @@
 div
   Custom(freebar noneBg bg-img="https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg")
     div(slot='freebar')
-      div(class="content" :style="conTop") {{name}}
+      div(class="content" :style="conTop") {{names}}
   .cu-card
     div(
       class='cu-item bg-img shadow-blur' 
@@ -19,7 +19,7 @@ import { obj2style } from "@/utils/index";
 export default {
   data() {
     return {
-      name: "扩展",
+      names: "扩展",
       list: [
         {
           title: "索引列表",

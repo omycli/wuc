@@ -29,14 +29,14 @@
     <div>
       <div class="cu-bar bg-white margin-top solid-bottom">
         <div class="action">
-          <text class="icon-title text-orange"></text>居中
+          <text class="icon-title text-orange"></text>居中选中放大
         </div>
       </div>
       <wuc-tab
         :tab-list="tabList2"
         :tabCur.sync="TabCur"
         tab-class="text-center text-black bg-white"
-        select-class="text-blue"
+        select-class="text-blue text-xl"
       ></wuc-tab>
     </div>
 
@@ -48,6 +48,7 @@
       </div>
       <wuc-tab
         :tab-list="tabList2"
+        textFlex
         :tabCur.sync="TabCur"
         tab-class="text-center text-black bg-white"
         select-class="text-orange"

@@ -10,7 +10,7 @@
 
     <custom
       name="居左首页"
-      bg-color="bg-gradual-pink"
+      bg-color="bg-gradual-blue"
       open-type="switchTab"
       url="/pages/basics/index"
     ></custom>
@@ -23,7 +23,7 @@
 
     <custom bg-color="bg-black margin-top" freebar>
       <div slot="freebar">
-        <div class="action">
+        <div class="action" @tap="close">
           <text class="icon-close"></text>关闭
         </div>
         <div class="content" :style="conTop">带按钮的首页</div>
@@ -41,14 +41,14 @@
 
     <custom
       name="图片背景首页"
-      bg-color="margin-top"
-      bg-img="https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg"
+      bg-color="margin-top text-black text-blod"
+      bg-img="https://static.veer.com/veer/static/resources/keyword/2018-05-30/a207217f05aa426f821547508320178b.jpg"
       noneBg
     ></custom>
 
     <custom
       bg-color="margin-top"
-      bg-img="https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg"
+      bg-img="https://goss1.veer.com/creative/vcg/veer/612/veer-148024919.jpg"
       noneBg
       freebar
     >
@@ -78,15 +78,12 @@
         <text class="icon-homefill"></text>
       </text>
       <div slot="moreCon">
-        <scroll-view scroll-x class="nav text-center" :style="CustomBar">
-          <div
-            class="cu-item"
-            :class="index==TabCur?'text-yellow cur':''"
-            v-for="(item,index) in tabNav"
-            :key="index"
-            @click="tabSelect(index)"
-          >{{item}}</div>
-        </scroll-view>
+        <wuc-tab
+          :tab-list="tabNav"
+          :tabCur.sync="TabCur"
+          tab-class="text-center text-white"
+          select-class="text-yellow text-xl"
+        ></wuc-tab>
       </div>
     </custom>
   </div>
@@ -95,15 +92,20 @@
 <script>
 import Custom from "@/components/custom";
 import { obj2style } from "@/utils/index";
+import WucTab from "@/components/tab";
 export default {
   data() {
     return {
       TabCur: 0,
-      tabNav: ["首页", "列表", "我的"]
+      tabNav: [
+        { name: "tab0" },
+        { name: "tab1" },
+        { name: "tab2" }
+      ]
     };
   },
 
-  components: { Custom },
+  components: { Custom, WucTab },
 
   computed: {
     conTop() {
@@ -116,6 +118,13 @@ export default {
   methods: {
     tabSelect(index) {
       this.TabCur = index;
+    },
+    close() {
+      uni.showToast({
+        title: "点击了关闭",
+        mask: true,
+        duration: 2000
+      });
     }
   },
 

@@ -1,15 +1,8 @@
 <template>
-  <div class="cu-modal" :class="!show ? '' : 'show'">
+  <div class="cu-modal" :class="[type,visible]">
     <div class="cu-modal-cover" @tap="hideModal"></div>
     <div class="cu-dialog">
-      <div class="cu-bar bg-white justify-end">
-        <slot name="title"></slot>
-        <div class="action" @tap="hideModal">
-          <text v-if="CloseTag" class="icon-close" :class="CloseTag"></text>
-        </div>
-      </div>
-      <slot name="content"></slot>
-      <slot name="buttom"></slot>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -21,11 +14,11 @@ export default {
     return {};
   },
   props: {
-    type: {
-      type: String,
-      default: ""
+    visible: {
+      type: Boolean,
+      default: false
     },
-    CloseTag: {
+    type: {
       type: String,
       default: ""
     }
@@ -33,19 +26,11 @@ export default {
 
   components: {},
 
-  computed: {
-    show() {
-      if (!this.type || this.type !== 'center') {
-        return false;
-      } else {
-        return true;
-      }
-    }
-  },
+  computed: {},
 
   methods: {
     hideModal() {
-      this.$emit("update:type", null);
+      this.$emit("update:visible", null);
       this.$emit("hideModal", null);
     }
   },

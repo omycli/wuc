@@ -18,9 +18,10 @@ module.exports = {
     [
       '@vue/app',
       {
+        modules: 'commonjs',
         useBuiltIns: 'entry'
       }
     ]
   ],
   plugins
-}
+};

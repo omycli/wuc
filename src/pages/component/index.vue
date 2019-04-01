@@ -10,7 +10,7 @@
           navigator(
           open-type="navigate" 
           hover-class='none' 
-          :url = "'/pages/component/' + item.name"
+          :url = "item.name"
           class='content')
             text(
               :class="['icon-'+item.icon,'text-'+item.color]"
@@ -23,37 +23,93 @@ export default {
   data() {
     return {
       elements: [
-        { title: "顶部操作栏", name: "custom", color: "blue", icon: "more" },
-        { title: "手风琴", name: "accordion", color: "cyan", icon: "unfold" },
-        { title: "星级评价", name: "rater", color: "olive", icon: "favor" },
-        { title: "操作条", name: "bar", color: "purple", icon: "vipcard" },
-        { title: "导航栏 ", name: "nav", color: "mauve", icon: "formfill" },
-        { title: "列表", name: "list", color: "pink", icon: "list" },
-        { title: "卡片", name: "card", color: "brown", icon: "newsfill" },
-        { title: "表单", name: "form", color: "red", icon: "formfill" },
+        {
+          title: "顶部操作栏",
+          name: "/pages/component/custom",
+          color: "blue",
+          icon: "more"
+        },
+        {
+          title: "手风琴",
+          name: "/pages/component/accordion",
+          color: "cyan",
+          icon: "unfold"
+        },
+        {
+          title: "星级评价",
+          name: "/pages/component/rater",
+          color: "olive",
+          icon: "favor"
+        },
+        {
+          title: "级联选择器",
+          name: "/subPackagesA/component/cascader",
+          color: "orange",
+          icon: "cascades"
+        },
+        {
+          title: "操作条",
+          name: "/pages/component/bar",
+          color: "purple",
+          icon: "vipcard"
+        },
+        {
+          title: "导航栏 ",
+          name: "/pages/component/nav",
+          color: "mauve",
+          icon: "formfill"
+        },
+        {
+          title: "列表",
+          name: "/pages/component/list",
+          color: "pink",
+          icon: "list"
+        },
+        {
+          title: "卡片",
+          name: "/pages/component/card",
+          color: "brown",
+          icon: "newsfill"
+        },
+        {
+          title: "表单",
+          name: "/pages/component/form",
+          color: "red",
+          icon: "formfill"
+        },
         {
           title: "时间轴",
-          name: "timeline",
+          name: "/pages/component/timeline",
           color: "orange",
           icon: "timefill"
         },
-        { title: "聊天", name: "chat", color: "green", icon: "messagefill" },
-        { title: "轮播", name: "swiper", color: "olive", icon: "album" },
+        {
+          title: "聊天",
+          name: "/pages/component/chat",
+          color: "green",
+          icon: "messagefill"
+        },
+        {
+          title: "轮播",
+          name: "/pages/component/swiper",
+          color: "olive",
+          icon: "album"
+        },
         {
           title: "模态框",
-          name: "modal",
+          name: "/pages/component/modal",
           color: "grey",
           icon: "squarecheckfill"
         },
         {
           title: "步骤条",
-          name: "steps",
+          name: "/pages/component/steps",
           color: "cyan",
           icon: "roundcheckfill"
         },
         {
           title: "日历",
-          name: "calendar",
+          name: "/pages/component/calendar",
           color: "blue",
           icon: "calendar"
         }
@@ -79,7 +135,8 @@ export default {
   onShareAppMessage() {
     return {
       title: "WUC",
-      imageUrl: "https://goss3.veer.com/creative/vcg/veer/612/veer-309563777.jpg",
+      imageUrl:
+        "https://goss3.veer.com/creative/vcg/veer/612/veer-309563777.jpg",
       path: "/pages/basics/index"
     };
   }

@@ -308,6 +308,15 @@
           "style": {
             "navigationBarTitleText": "停车键盘"
           }
+        },
+        {
+          "path": "component/cascader",
+          "style": {
+            "navigationBarTitleText": "级联选择器",
+            "usingComponents": {
+              "wux-cascader": "/wxcomponents/wux-weapp/dist/cascader/index"
+            }
+          }
         }
       ]
     },
@@ -336,6 +345,10 @@
     }
   ],
   "preloadRule": {
+    "subPackagesA/component/cascader": {
+      "network": "all",
+      "packages": ["__APP__"]
+    },
     "subPackagesA/plugin/drawer": {
       "network": "all",
       "packages": ["__APP__"]

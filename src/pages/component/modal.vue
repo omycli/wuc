@@ -15,14 +15,17 @@
           >Modal</button>
         </div>
       </div>
-      <modal :type.sync="modalName">
-        <div slot="title">
-          <div class="content">Modal标题</div>
-        </div>
-        <div slot="content">
+      <div class="cu-modal" :class="modalName==='center'?'show':''">
+        <div class="cu-dialog">
+          <div class="cu-bar bg-white justify-end">
+            <div class="content">Modal标题</div>
+            <div class="action" @tap="hideModal">
+              <text class="icon-close text-red"></text>
+            </div>
+          </div>
           <div class="padding-xl">Modal 内容。</div>
         </div>
-      </modal>
+      </div>
     </div>
 
     <div>
@@ -169,7 +172,12 @@
               <div class="cu-item" v-for="(item,index) in 5" :key="index">
                 <label class="flex justify-between align-center flex-sub">
                   <div class="flex-sub">Item {{index +1}}</div>
-                  <radio class="round" :value="item"></radio>
+                  <radio
+                    class="round"
+                    :class="radio=='radio' + index?'checked':''"
+                    :checked="radio=='radio' + index?true:false"
+                    :value="'radio' + index"
+                  ></radio>
                 </label>
               </div>
             </div>
@@ -259,42 +267,11 @@
         <div class="cu-modal-cover" @tap="hideModal"></div>
         <div class="cu-dialog basis-lg" :style="CustomBar">
           <div class="cu-list menu menu-avatar text-left">
-            <div class="cu-item">
-              <div
-                class="cu-avatar round lg"
-                style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"
-              ></div>
-              <div class="content">
-                <div class="text-grey">文晓港</div>
-                <div class="text-gray text-sm">
-                  <text class="icon-infofill text-red"></text>消息未送达
-                </div>
-              </div>
-              <div class="action">
-                <div class="text-grey text-xs">22:20</div>
-                <div class="cu-tag round bg-grey sm">5</div>
-              </div>
-            </div>
-            <div class="cu-item">
-              <div
-                class="cu-avatar round lg"
-                style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"
-              >
-                <div class="cu-tag badge">99+</div>
-              </div>
-              <div class="content">
-                <div class="text-grey">文晓港
-                  <div class="cu-tag round bg-orange sm">SVIP</div>
-                </div>
-                <div class="text-gray text-sm">
-                  <text class="icon-redpacket_fill text-red"></text>收到红包
-                </div>
-              </div>
-              <div class="action">
-                <div class="text-grey text-xs">22:20</div>
-                <text class="icon-notice_forbid_fill text-gray"></text>
-              </div>
-            </div>
+            <view class="cu-item arrow" v-for="(item,index) in 5" :key="index">
+              <view class="content">
+                <view>Item {{index +1}}</view>
+              </view>
+            </view>
           </div>
         </div>
       </div>
@@ -305,7 +282,6 @@
 <script>
 import { obj2style } from "@/utils/index";
 import Custom from "@/components/custom";
-import Modal from "@/components/modal";
 export default {
   data() {
     return {
@@ -314,7 +290,7 @@ export default {
     };
   },
 
-  components: { Custom, Modal },
+  components: { Custom },
 
   computed: {
     CustomBar() {

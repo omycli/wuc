@@ -2,7 +2,7 @@
 	"description": "项目配置文件。",
 	"setting": {
 		"urlCheck": true,
-		"es6": false,
+		"es6": true,
 		"postcss": false,
 		"minified": false,
 		"newFeature": true,
@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -170,6 +170,13 @@
 					"id": -1,
 					"name": "手风琴",
 					"pathName": "pages/component/accordion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "级联选择器",
+					"pathName": "subPackagesA/component/cascader",
 					"scene": null
 				}
 			]

@@ -16,7 +16,7 @@
             <text class="text-black">默认方式</text>
           </div>
           <div class="action">
-            <text class="text-grey text-sm">小目标还没有实现！</text>
+            <text class="text-grey text-sm">{{title}}</text>
           </div>
         </div>
       </div>
@@ -24,36 +24,176 @@
 
     <wux-cascader
       :visible="visible"
-      controlled
-      :value="value"
+      :default-value="value"
       title="所在地区"
       :options="options"
       @close="onClose"
-      @change="onChange2"
-      @load="onLoadOptions"
+      @change="onChange"
     />
   </div>
 </template>
 
 <script>
 import Custom from "@/components/custom";
+
+const data1 = [
+  {
+    label: "河南省",
+    value: "410000",
+    children: [
+      {
+        label: "郑州市",
+        value: "410100",
+        children: [
+          {
+            label: "市辖区",
+            value: "410101"
+          },
+          {
+            label: "中原区",
+            value: "410102"
+          },
+          {
+            label: "二七区",
+            value: "410103"
+          },
+          {
+            label: "管城回族区",
+            value: "410104"
+          },
+          {
+            label: "金水区",
+            value: "410105"
+          },
+          {
+            label: "上街区",
+            value: "410106"
+          },
+          {
+            label: "惠济区",
+            value: "410108"
+          },
+          {
+            label: "中牟县",
+            value: "410122"
+          },
+          {
+            label: "巩义市",
+            value: "410181"
+          },
+          {
+            label: "荥阳市",
+            value: "410182"
+          },
+          {
+            label: "新密市",
+            value: "410183"
+          },
+          {
+            label: "新郑市",
+            value: "410184"
+          },
+          {
+            label: "登封市",
+            value: "410185"
+          }
+        ]
+      },
+      {
+        label: "焦作市",
+        value: "410800",
+        children: [
+          {
+            label: "市辖区",
+            value: "410801"
+          },
+          {
+            label: "解放区",
+            value: "410802"
+          },
+          {
+            label: "中站区",
+            value: "410803"
+          },
+          {
+            label: "马村区",
+            value: "410804"
+          },
+          {
+            label: "山阳区",
+            value: "410811"
+          },
+          {
+            label: "修武县",
+            value: "410821"
+          },
+          {
+            label: "博爱县",
+            value: "410822"
+          },
+          {
+            label: "武陟县",
+            value: "410823"
+          },
+          {
+            label: "温县",
+            value: "410825"
+          },
+          {
+            label: "沁阳市",
+            value: "410882"
+          },
+          {
+            label: "孟州市",
+            value: "410883"
+          }
+        ]
+      },
+      {
+        label: "漯河市",
+        value: "411100",
+        children: [
+          {
+            label: "市辖区",
+            value: "411101"
+          },
+          {
+            label: "源汇区",
+            value: "411102"
+          },
+          {
+            label: "郾城区",
+            value: "411103"
+          },
+          {
+            label: "召陵区",
+            value: "411104"
+          },
+          {
+            label: "舞阳县",
+            value: "411121"
+          },
+          {
+            label: "临颍县",
+            value: "411122"
+          }
+        ]
+      },
+      {
+        label: "济源市",
+        value: "419001"
+      }
+    ]
+  }
+];
+
 export default {
   data() {
     return {
       visible: false,
-      value: [],
-      options: [
-        {
-          value: "beijing",
-          label: "北京",
-          isLeaf: false
-        },
-        {
-          value: "hangzhou",
-          label: "杭州",
-          isLeaf: false
-        }
-      ]
+      title: "北京",
+      value: ["beijing"],
+      options: data1
     };
   },
 
@@ -68,53 +208,10 @@ export default {
     onClose() {
       this.visible = false;
     },
-    onChange2(e) {
-      console.log("onChange2", e.detail);
+    onChange(e) {
+      console.log("onChange", e.detail);
       this.value = e.detail.value;
-    },
-    onLoadOptions(e) {
-      console.log("onLoadOptions", e.detail);
-      const { value } = e.detail;
-      const options2 = [...this.options];
-
-      uni.showLoading({ mask: true });
-
-      setTimeout(() => {
-        if (value[value.length - 1] === "beijing") {
-          options2.forEach(n => {
-            if (n.value === "beijing") {
-              n.children = [
-                {
-                  value: "baidu",
-                  label: "百度"
-                },
-                {
-                  value: "sina",
-                  label: "新浪"
-                }
-              ];
-            }
-          });
-        } else if (value[value.length - 1] === "hangzhou") {
-          options2.forEach(n => {
-            if (n.value === "hangzhou") {
-              n.children = [
-                {
-                  value: "ali",
-                  label: "阿里巴巴"
-                },
-                {
-                  value: "163",
-                  label: "网易"
-                }
-              ];
-            }
-          });
-        }
-
-        uni.hideLoading();
-        this.value = value;
-      }, 1000);
+      this.title = e.detail.options.map(n => n.label).join("/");
     }
   },
 

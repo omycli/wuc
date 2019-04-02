@@ -6,6 +6,19 @@
       <div class="cu-item text-orange">
         <div class="bg-gradual-orange content shadow-blur">
           <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.1.2</div>
+            <div class="cu-tag line-white">2019/04/02</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.增加级联选择器</div>
+            <div>2.引入小程序原生组件</div>
+            <div>3.模态框组件优化</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-orange">v2.1.1</div>
             <div class="cu-tag line-white">2019/03/28</div>
           </div>

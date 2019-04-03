@@ -11,23 +11,20 @@
       </div>
     </div>
     <div class="wrap margin-top">
-      <echarts lazyLoad :echarts="echarts" :onInit="handleInit" ref="echarts"/>
+      <echarts lazyLoad :onInit="handleInit" ref="lineChart" canvasId="line"/>
     </div>
   </div>
 </template>
 
 <script>
 import Custom from "@/components/custom";
-import * as echarts from "omycli-npm/echarts.min";
+import * as echarts from "./echarts.min";
 import Echarts from "@/components/echarts/echarts";
-
-let chart = null;
 
 export default {
   data() {
     return {
-      option: null,
-      echarts
+      option: {}
     };
   },
 
@@ -95,16 +92,18 @@ export default {
           }
         ]
       };
-      this.$refs.echarts.init();
+      this.$refs.lineChart.init();
     },
     handleInit(canvas, width, height) {
-      chart = echarts.init(canvas, null, {
+      echarts.setCanvasCreator(() => canvas);
+      let lineChart = echarts.init(canvas, null, {
         width: width,
         height: height
       });
-      canvas.setChart(chart);
-      chart.setOption(this.option);
-      return chart;
+      canvas.setChart(lineChart);
+
+      lineChart.setOption(this.option);
+      return lineChart;
     }
   },
 

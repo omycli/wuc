@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default class WxCanvas {
   constructor(ctx, canvasId) {
     this.ctx = ctx;
@@ -49,8 +50,7 @@ export default class WxCanvas {
           ) {
             ctx[`set${style.charAt(0).toUpperCase()}${style.slice(1)}`](value);
           }
-        },
-        get: value => {}
+        }
       });
     });
 
@@ -89,3 +89,5 @@ export default class WxCanvas {
     });
   }
 }
+
+

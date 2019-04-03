@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="padding bg-white">
-        <rater :size="32" :value="1" :margin="6" @change="onChange"></rater>
+        <rater icon="icon-favorfill" :size="32" :value="1" :margin="6" @change="onChange"></rater>
       </div>
 
       <div class="cu-bar bg-white margin-top">
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="padding bg-white">
-        <rater :max="10" :value="5" active-color="#e54d42"></rater>
+        <rater  icon="icon-favorfill" :max="10" :value="5" active-color="#e54d42"></rater>
       </div>
 
       <div class="cu-bar bg-white margin-top">
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="padding bg-white">
-        <rater :disabled="true" :value="3.5"></rater>
+        <rater  icon="icon-favorfill" :disabled="true" :value="3.5"></rater>
       </div>
     </div>
   </div>

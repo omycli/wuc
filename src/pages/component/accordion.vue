@@ -23,11 +23,7 @@
         </div>
       </div>
       <div class="padding bg-white">
-        <accordion
-          showall
-          name="莫甘娜"
-          detail="凯尔，你被自己的光芒变的盲目！"
-        ></accordion>
+        <accordion showall name="莫甘娜" detail="凯尔，你被自己的光芒变的盲目！"></accordion>
       </div>
 
       <div class="cu-bar bg-white margin-top">
@@ -46,25 +42,107 @@
         ></accordion>
       </div>
     </div>
+
+    <div>
+      <div class="cu-bar bg-white margin-top">
+        <div class="action">
+          <text class="icon-title text-pink"></text>
+          <text>基础用法</text>
+        </div>
+      </div>
+      <uni-collapse @change="change">
+        <uni-collapse-item title="默认开启" :open="true">
+          <div style="padding: 30upx;">折叠内容主体，可自定义内容及样式</div>
+        </uni-collapse-item>
+        <uni-collapse-item title="禁用状态" :disabled="true">
+          <div style="padding: 30upx;">禁用状态</div>
+        </uni-collapse-item>
+      </uni-collapse>
+      <div class="cu-bar bg-white margin-top">
+        <div class="action">
+          <text class="icon-title text-pink"></text>
+          <text>手风琴效果</text>
+        </div>
+      </div>
+      <uni-collapse :accordion="true">
+        <uni-collapse-item title="标题文字">
+          <div style="padding: 30upx;">手风琴效果</div>
+        </uni-collapse-item>
+        <uni-collapse-item title="标题文字">
+          <div style="padding: 30upx;">手风琴效果</div>
+        </uni-collapse-item>
+        <uni-collapse-item title="标题文字">
+          <div style="padding: 30upx;">手风琴效果</div>
+        </uni-collapse-item>
+      </uni-collapse>
+
+      <div class="cu-bar bg-white margin-top">
+        <div class="action">
+          <text class="icon-title text-pink"></text>
+          <text>添加动画效果</text>
+        </div>
+      </div>
+      <uni-collapse>
+        <uni-collapse-item title="标题文字" :show-animation="true">
+          <div style="padding: 30upx;">折叠内容主体，可自定义内容及样式</div>
+        </uni-collapse-item>
+        <uni-collapse-item title="标题文字" :show-animation="true">
+          <div style="padding: 30upx;">折叠内容主体，可自定义内容及样式</div>
+        </uni-collapse-item>
+      </uni-collapse>
+      <div class="cu-bar bg-white margin-top">
+        <div class="action">
+          <text class="icon-title text-pink"></text>
+          <text>配置图标</text>
+        </div>
+      </div>
+      <uni-collapse>
+        <uni-collapse-item
+          title="标题文字"
+          thumb="https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg"
+        >
+          <div style="padding: 30upx;">折叠内容主体，可自定义内容及样式</div>
+        </uni-collapse-item>
+        <uni-collapse-item
+          title="标题文字"
+          thumb="https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg"
+        >
+          <div style="padding: 30upx;">折叠内容主体，可自定义内容及样式</div>
+        </uni-collapse-item>
+      </uni-collapse>
+      <div style="height: 60upx;"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import Custom from "@/components/custom";
 import Accordion from "@/components/accordion";
+import uniCollapse from "@/components/uni-collapse/uni-collapse";
+import uniCollapseItem from "@/components/uni-collapse/uni-collapse-item";
 export default {
   data() {
     return {};
   },
 
-  components: { Custom, Accordion },
+  components: { Custom, Accordion, uniCollapse, uniCollapseItem },
 
   computed: {},
 
-  methods: {},
+  methods: {
+    change(e) {
+      console.log(e);
+    }
+  },
 
   mounted() {}
 };
 </script>
 <style lang='scss'>
+page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #fff;
+}
 </style>

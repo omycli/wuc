@@ -310,6 +310,12 @@
           }
         },
         {
+          "path": "component/countDown",
+          "style": {
+            "navigationBarTitleText": "倒计时"
+          }
+        },
+        {
           "path": "component/cascader",
           "style": {
             "navigationBarTitleText": "级联选择器",

@@ -48,6 +48,12 @@ export default {
           icon: "cascades"
         },
         {
+          title: "倒计时",
+          name: "/subPackagesA/component/countDown",
+          color: "brown",
+          icon: "timefill"
+        },
+        {
           title: "操作条",
           name: "/pages/component/bar",
           color: "purple",

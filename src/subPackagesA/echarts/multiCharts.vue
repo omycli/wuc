@@ -1,178 +1,162 @@
 <template>
   <div>
     <custom name="多个图表" bg-color="bg-gradual-purple"></custom>
+
+    <div class="cu-bar bg-white solid-bottom">
+      <div class="action">
+        <text class="icon-title text-purple"></text>修改饼状图数据
+      </div>
+
+      <div class="action">
+        <button class="cu-btn bg-purple shadow" @tap="updatePie">修改</button>
+      </div>
+    </div>
     <div class="wrap">
-      <echarts :echarts="echarts" :onInit="ecScatterInit" canvasId="scatter"/>
-      <echarts :echarts="echarts" :onInit="ecRadar" canvasId="radar"/>
+      <echarts
+        class="ec-canvas"
+        :onInit="pieInit"
+        canvasId="pie"
+        ref="pieChart"
+        throttleTouch
+      />
+      <echarts
+        class="ec-canvas"
+        :onInit="lineInit"
+        canvasId="line"
+        ref="lineChart"
+        throttleTouch
+      />
     </div>
   </div>
 </template>
 
 <script>
 import Custom from "@/components/custom";
-import * as echarts from "omycli-npm/echarts.min";
+import * as echarts from "./echarts.min";
 import Echarts from "@/components/echarts/echarts";
 
-let radarChart, scatterChart;
-
-function getRadarOption(canvas, width, height) {
-  return {
-    backgroundColor: "#ffffff",
-    color: ["#37A2DA", "#FF9F7F"],
-    tooltip: {},
-    xAxis: {
-      show: false
-    },
-    yAxis: {
-      show: false
-    },
-    radar: {
-      // shape: 'circle',
-      indicator: [
-        {
-          name: "食品",
-          max: 500
-        },
-        {
-          name: "玩具",
-          max: 500
-        },
-        {
-          name: "服饰",
-          max: 500
-        },
-        {
-          name: "绘本",
-          max: 500
-        },
-        {
-          name: "医疗",
-          max: 500
-        },
-        {
-          name: "门票",
-          max: 500
-        }
-      ]
-    },
-    series: [
-      {
-        name: "预算 vs 开销",
-        type: "radar",
-        data: [
-          {
-            value: [430, 340, 500, 300, 490, 400],
-            name: "预算"
-          },
-          {
-            value: [300, 430, 150, 300, 420, 250],
-            name: "开销"
-          }
-        ]
-      }
-    ]
-  };
-}
-
-function getScatterOption() {
-  var data = [];
-  var data2 = [];
-
-  for (var i = 0; i < 10; i++) {
-    data.push([
-      Math.round(Math.random() * 100),
-      Math.round(Math.random() * 100),
-      Math.round(Math.random() * 40)
-    ]);
-    data2.push([
-      Math.round(Math.random() * 100),
-      Math.round(Math.random() * 100),
-      Math.round(Math.random() * 100)
-    ]);
+const cityList = [
+  {
+    value: 55,
+    name: "北京"
+  },
+  {
+    value: 38,
+    name: "上海"
+  },
+  {
+    value: 20,
+    name: "广州"
   }
+];
 
-  var axisCommon = {
-    axisLabel: {
-      textStyle: {
-        color: "#C8C8C8"
-      }
-    },
-    axisTick: {
-      lineStyle: {
-        color: "#fff"
-      }
-    },
-    axisLine: {
-      lineStyle: {
-        color: "#C8C8C8"
-      }
-    },
-    splitLine: {
-      lineStyle: {
-        color: "#C8C8C8",
-        type: "solid"
+let pieOption = {
+  animation: false,
+  backgroundColor: "#F8F8F8",
+  color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#FFDB5C", "#FF9F7F"],
+  series: [
+    {
+      label: {
+        normal: {
+          fontSize: 14
+        }
+      },
+      type: "pie",
+      center: ["50%", "50%"],
+      radius: [0, "60%"],
+      data: [],
+      itemStyle: {
+        emphasis: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: "rgba(0, 2, 2, 0.3)"
+        }
       }
     }
-  };
+  ]
+};
 
-  return {
-    color: ["#FF7070", "#60B6E3"],
-    backgroundColor: "#ffffff",
-    xAxis: axisCommon,
-    yAxis: axisCommon,
-    legend: {
-      data: ["aaaa", "bbbb"]
-    },
-    visualMap: {
-      show: false,
-      max: 100,
-      inRange: {
-        symbolSize: [20, 70]
+let lineOption = {
+  animation: false,
+  color: ["#37A2DA", "#9FE6B8"],
+  grid: {
+    x: 35,
+    x2: 10,
+    y: 30,
+    y2: 25
+  },
+  calculable: false,
+  xAxis: [
+    {
+      type: "category",
+      data: [
+        "1月",
+        "2月",
+        "3月",
+        "4月",
+        "5月",
+        "6月",
+        "7月",
+        "8月",
+        "9月",
+        "10月",
+        "11月",
+        "12月"
+      ]
+    }
+  ],
+  yAxis: [
+    {
+      type: "value",
+      splitArea: {
+        show: true
       }
+    }
+  ],
+  series: [
+    {
+      name: "蒸发量",
+      type: "line",
+      data: [
+        2.0,
+        4.9,
+        7.0,
+        23.2,
+        25.6,
+        76.7,
+        135.6,
+        162.2,
+        32.6,
+        20.0,
+        6.4,
+        3.3
+      ]
     },
-    series: [
-      {
-        type: "scatter",
-        name: "aaaa",
-        data: data
-      },
-      {
-        name: "bbbb",
-        type: "scatter",
-        data: data2
-      }
-    ],
-    animationDelay: function(idx) {
-      return idx * 50;
-    },
-    animationEasing: "elasticOut"
-  };
-}
+    {
+      name: "降水量",
+      type: "line",
+      data: [
+        2.6,
+        5.9,
+        9.0,
+        26.4,
+        28.7,
+        70.7,
+        175.6,
+        182.2,
+        48.7,
+        18.8,
+        6.0,
+        2.3
+      ]
+    }
+  ]
+};
 
 export default {
   data() {
     return {
-      echarts,
-      ecRadar(canvas, width, height) {
-        radarChart = echarts.init(canvas, null, {
-          width: width,
-          height: height
-        });
-        canvas.setChart(radarChart);
-
-        radarChart.setOption(getRadarOption());
-        return radarChart;
-      },
-      ecScatterInit: function(canvas, width, height) {
-        scatterChart = echarts.init(canvas, null, {
-          width: width,
-          height: height
-        });
-        canvas.setChart(scatterChart);
-
-        scatterChart.setOption(getScatterOption());
-        return scatterChart;
-      }
+      updateStatus: false
     };
   },
 
@@ -180,9 +164,49 @@ export default {
 
   computed: {},
 
-  methods: {},
+  methods: {
+    updatePie() {
+      if (this.updateStatus) {
+        return;
+      }
+      pieOption.series[0].data.push({
+        value: 20,
+        name: "武汉"
+      });
+      pieOption.series[0].data.push({
+        value: 10,
+        name: "杭州"
+      });
+      this.$refs.pieChart.init();
+      this.updateStatus = true;
+    },
+    pieInit(canvas, width, height) {
+      echarts.setCanvasCreator(() => canvas);
+      let pieChart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      canvas.setChart(pieChart);
 
-  mounted() {}
+      pieChart.setOption(pieOption);
+      return pieChart;
+    },
+    lineInit(canvas, width, height) {
+      echarts.setCanvasCreator(() => canvas);
+      let lineChart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      canvas.setChart(lineChart);
+
+      lineChart.setOption(lineOption);
+      return lineChart;
+    }
+  },
+
+  onLoad() {
+    pieOption.series[0].data = cityList.slice(0);
+  }
 };
 </script>
 <style>

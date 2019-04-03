@@ -15,7 +15,7 @@
 import WxCanvas from "./wx-canvas";
 
 function wrapTouch(e) {
-  for (let i = 0; i < e.mp.touches.length; ++i) {
+  for (let i = 0; i < e.mp.touches.length; i += 1) {
     const touch = e.mp.touches[i];
     touch.offsetX = touch.x;
     touch.offsetY = touch.y;
@@ -25,13 +25,6 @@ function wrapTouch(e) {
 
 export default {
   props: {
-    echarts: {
-      required: true,
-      type: Object,
-      default() {
-        return null;
-      }
-    },
     onInit: {
       required: true,
       type: Function,
@@ -54,41 +47,29 @@ export default {
       default: false
     }
   },
-  onReady() {
-    if (!this.echarts) {
-      console.warn(
-        '组件需绑定 echarts 变量，例：<ec-canvas id="mychart-dom-bar" ' +
-          'canvas-id="mychart-bar" :echarts="echarts"></ec-canvas>'
-      );
-      return;
-    }
-
+  // #ifdef H5
+  mounted() {
     if (!this.lazyLoad) this.init();
   },
+  // #endif
+  // #ifndef H5
+  onReady() {
+    if (!this.lazyLoad) this.init();
+  },
+  // #endif
   methods: {
     init(callback) {
-      const version = wx.version.version.split(".").map(n => parseInt(n, 10));
-      const isValid =
-        version[0] > 1 ||
-        (version[0] === 1 && version[1] > 9) ||
-        (version[0] === 1 && version[1] === 9 && version[2] >= 91);
-      if (!isValid) {
-        console.error(
-          "微信基础库版本过低，需大于等于 1.9.91。" +
-            "参见：https://github.com/ecomfe/echarts-for-weixin" +
-            "#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82"
-        );
+      if (!this.onInit) {
+        console.warn("请传入 onInit 函数进行初始化");
         return;
       }
 
       const { canvasId } = this;
-      this.ctx = wx.createCanvasContext(canvasId);
+      this.ctx = wx.createCanvasContext(canvasId, this);
 
       const canvas = new WxCanvas(this.ctx, canvasId);
 
-      this.echarts.setCanvasCreator(() => canvas);
-
-      const query = wx.createSelectorQuery();
+      const query = wx.createSelectorQuery().in(this);
       query
         .select(`#${canvasId}`)
         .boundingClientRect(res => {
@@ -104,8 +85,17 @@ export default {
           } else if (typeof this.onInit === "function") {
             this.chart = this.onInit(canvas, width, height);
           } else {
-            this.$emit("init", { canvas, width, height });
+            this.chart = this.$emit("init", { canvas, width, height });
           }
+
+          if (!this.chart) {
+            return;
+          }
+
+          const { handler } = this.chart.getZr();
+
+          this.handler = handler;
+          this.processGesture = handler.proxy.processGesture || (() => {});
         })
         .exec();
     },
@@ -122,16 +112,15 @@ export default {
       const { disableTouch, chart } = this;
       if (disableTouch || !chart || !e.mp.touches.length) return;
       const touch = e.mp.touches[0];
-      const { handler } = this.chart.getZr();
-      handler.dispatch("mousedown", {
+      chart._zr.handler.dispatch("mousedown", {
         zrX: touch.x,
         zrY: touch.y
       });
-      handler.dispatch("mousemove", {
+      chart._zr.handler.dispatch("mousemove", {
         zrX: touch.x,
         zrY: touch.y
       });
-      handler.proxy.processGesture(wrapTouch(e), "start");
+      this.processGesture(wrapTouch(e), "start");
     },
     touchMove(e) {
       const { disableTouch, throttleTouch, chart, lastMoveTime } = this;
@@ -144,27 +133,25 @@ export default {
       }
 
       const touch = e.mp.touches[0];
-      const { handler } = this.chart.getZr();
-      handler.dispatch("mousemove", {
+      chart._zr.handler.dispatch("mousemove", {
         zrX: touch.x,
         zrY: touch.y
       });
-      handler.proxy.processGesture(wrapTouch(e), "change");
+      this.processGesture(wrapTouch(e), "change");
     },
     touchEnd(e) {
       const { disableTouch, chart } = this;
       if (disableTouch || !chart) return;
       const touch = e.mp.changedTouches ? e.mp.changedTouches[0] : {};
-      const { handler } = this.chart.getZr();
-      handler.dispatch("mouseup", {
+      chart._zr.handler.dispatch("mouseup", {
         zrX: touch.x,
         zrY: touch.y
       });
-      handler.dispatch("click", {
+      chart._zr.handler.dispatch("click", {
         zrX: touch.x,
         zrY: touch.y
       });
-      handler.proxy.processGesture(wrapTouch(e), "end");
+      this.processGesture(wrapTouch(e), "end");
     }
   }
 };
@@ -174,5 +161,6 @@ export default {
 .ec-canvas {
   width: 100%;
   height: 100%;
+  flex: 1;
 }
 </style>

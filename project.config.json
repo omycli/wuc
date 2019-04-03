@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 20,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -83,9 +83,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 7,
 					"name": "图表库",
-					"pathName": "pages/plugin/echarts",
+					"pathName": "subPackagesA/plugin/echarts",
 					"query": "",
 					"scene": null
 				},
@@ -177,6 +177,7 @@
 					"id": -1,
 					"name": "级联选择器",
 					"pathName": "subPackagesA/component/cascader",
+					"query": "",
 					"scene": null
 				}
 			]

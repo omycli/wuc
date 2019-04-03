@@ -4,9 +4,9 @@
       <img :src="logo" class="scroll-msg__msg-icon">
       <swiper
         class="scroll-msg__swiper"
-        vertical="true"
-        autoplay="true"
-        circular="true"
+        :vertical="vertical"
+        :autoplay="true"
+        :circular="true"
         interval="3000"
       >
         <swiper-item
@@ -24,6 +24,12 @@
 export default {
   name: "scrollmsg",
   props: {
+    vertical: {
+      type: Boolean,
+      default() {
+        return true;
+      }
+    },
     logo: {
       type: String,
       default() {

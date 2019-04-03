@@ -6,6 +6,21 @@
       <div class="cu-item text-orange">
         <div class="bg-gradual-orange content shadow-blur">
           <div class="cu-capsule radius">
+            <div class="cu-tag bg-white text-orange">v2.1.3</div>
+            <div class="cu-tag line-white">2019/04/03</div>
+          </div>
+          <div class="margin-top-sm text-content">
+            <div>1.丰富手风琴效果</div>
+            <div>2.增加倒计时组件</div>
+            <div>3.公告支持横向滚动播放和纵向滚动播放</div>
+            <div>4.更新图表组件</div>
+            <div>5.评分组件优化</div>
+          </div>
+        </div>
+      </div>
+      <div class="cu-item text-orange">
+        <div class="bg-gradual-orange content shadow-blur">
+          <div class="cu-capsule radius">
             <div class="cu-tag bg-white text-orange">v2.1.2</div>
             <div class="cu-tag line-white">2019/04/02</div>
           </div>

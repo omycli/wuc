@@ -1,6 +1,6 @@
 {
   "name": "wuc",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "移动端项目基础库",
   "author": "Mr.Ypeng",
   "private": true,
@@ -30,9 +30,9 @@
     "@dcloudio/uni-mp-toutiao": "*",
     "@dcloudio/uni-mp-weixin": "*",
     "flyio": "^0.6.2",
-    "regenerator-runtime": "^0.12.1",
     "mpvue-keyboard": "^1.1.2",
     "omycli-npm": "^0.0.1",
+    "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.9",
     "vuex": "^3.0.1"
   },

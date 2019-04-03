@@ -105,7 +105,7 @@
         </div>
         <div
           class="cu-avatar xl radius"
-          style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"
+          style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"
         >
           <div class="cu-tag badge">9</div>
         </div>

@@ -35,24 +35,20 @@
       </div>
     </div>
 
-    <modal :type.sync="modalName">
-      <div slot="title">
-        <div class="content">图表使用指南</div>
+    <modal :visible.sync="modalName" @hideModal="hideModal">
+      <div class="content padding">图表使用指南</div>
+      <div class="padding-xl text-left">
+        图表是基于echarts制作的。
+        由于微信有软件包大小限制，本demo只提供几种个别样例，具体使用哪种图表可以通过官网定制，地址为：
+        <div
+          class="cu-tag bg-yellow radius"
+          @click="CopyLink"
+          data-link="http://echarts.baidu.com/builder.html"
+        >http://echarts.baidu.com/builder.html</div>
       </div>
-      <div slot="content">
-        <div class="padding-xl text-left">
-          图表是基于echarts制作的。
-          由于微信有软件包大小限制，本demo只提供几种个别样例，具体使用哪种图表可以通过官网定制，地址为：
-          <div
-            class="cu-tag bg-yellow radius"
-          >http://echarts.baidu.com/builder.html</div>
-        </div>
-      </div>
-      <div slot="buttom">
-        <div class="cu-bar bg-white justify-end">
-          <div class="action">
-            <button class="cu-btn bg-red margin-left" @tap="hideModal">确定</button>
-          </div>
+      <div class="cu-bar bg-white justify-end">
+        <div class="action">
+          <button class="cu-btn bg-red margin-left" @tap="hideModal">确定</button>
         </div>
       </div>
     </modal>
@@ -127,10 +123,21 @@ export default {
 
   methods: {
     showModal(e) {
-      this.modalName = e.currentTarget.dataset.target;
+      this.modalName = "show";
     },
     hideModal() {
       this.modalName = "";
+    },
+    CopyLink(e) {
+      uni.setClipboardData({
+        data: e.currentTarget.dataset.link,
+        success: res => {
+          uni.showToast({
+            title: "已复制",
+            duration: 1000
+          });
+        }
+      });
     }
   },
 

@@ -15,8 +15,8 @@ export default {
   },
   props: {
     visible: {
-      type: Boolean,
-      default: false
+      type: String,
+      default: ""
     },
     type: {
       type: String,

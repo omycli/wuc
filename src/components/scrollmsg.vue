@@ -1,5 +1,5 @@
 <template>
-  <div v-if="msg && msg.length > 0" class="scroll-msg" :style="BaseStyle">
+  <div v-if="msg && msg.length > 0" class="scroll-msg" :style="BaseClass">
     <div class="scroll-msg__msg">
       <img :src="logo" class="scroll-msg__msg-icon">
       <swiper
@@ -7,14 +7,18 @@
         :vertical="vertical"
         :autoplay="true"
         :circular="true"
+        :indicator-dots="false"
+        indicator-color="rgba(255,255,255,0)"
+        indicator-active-color="rgba(255,255,255,0)"
         interval="3000"
       >
         <swiper-item
           class="scroll-msg__swiper-item"
           v-for="(item, index) in msg"
           :key="index"
+          @click="tapMsg(item)"
         >
-          <div class="scroll-msg__text" @click="tapMsg(item)">{{item.content}}</div>
+          <div class="scroll-msg__text" >{{item.content}}</div>
         </swiper-item>
       </swiper>
     </div>
@@ -42,7 +46,7 @@ export default {
         return [];
       }
     },
-    BaseStyle: {
+    BaseClass: {
       type: String,
       default() {
         return "";

@@ -4,7 +4,7 @@
 
     Scrollmsg(
       :msg="content"
-      :base-style="'margin:14px'"
+      base-class="margin"
       logo="https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg"
       @onevent="showModal"
     )
@@ -49,7 +49,7 @@ export default {
       ],
       content: [
         {
-          content: "告诉你个小秘密，该组件库可以生成各端代码",
+          content: "欢迎使用wuc组件库",
           link: "/subPackagesA/about/home"
         },
         { content: "为了少折腾而折腾", link: "/subPackagesA/about/log" }

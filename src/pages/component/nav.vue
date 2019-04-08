@@ -6,6 +6,9 @@
       :current="TabCur"
       class="swiper row"
       duration="300"
+      :circular="true"
+      indicator-color="rgba(255,255,255,0)"
+      indicator-active-color="rgba(255,255,255,0)"
       @change="swiperChange"
     >
       <swiper-item v-for="(item,index) in tabList" :key="index">
@@ -64,7 +67,7 @@
       <wuc-tab
         :tab-list="tabList2"
         :tabCur.sync="TabCur"
-        tab-class="text-center text-white bg-red"
+        tab-class="text-center text-white bg-blue"
         select-class="text-white"
       ></wuc-tab>
     </div>
@@ -78,7 +81,7 @@
       <wuc-tab
         :tab-list="tabList3"
         :tabCur.sync="TabCur"
-        tab-class="text-center text-white bg-green"
+        tab-class="text-center text-white bg-yellow"
         select-class="text-white"
       />
     </div>

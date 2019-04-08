@@ -679,8 +679,8 @@
   resolved "http://registry.npm.taobao.org/@dcloudio/uni-app-plus/download/@dcloudio/uni-app-plus-0.0.206.tgz#8c35adc3bf9b74d0844dccab4ddda83c3b6e5ff2"
 
 "@dcloudio/uni-cli-shared@*":
-  version "0.2.938"
-  resolved "http://registry.npm.taobao.org/@dcloudio/uni-cli-shared/download/@dcloudio/uni-cli-shared-0.2.938.tgz#88d28c221144c17a80d457445e2c8107db5c8338"
+  version "0.2.940"
+  resolved "http://registry.npm.taobao.org/@dcloudio/uni-cli-shared/download/@dcloudio/uni-cli-shared-0.2.940.tgz#48ced99df90df863fe46e5f68665113f11a0565d"
   dependencies:
     hash-sum "^1.0.2"
     strip-json-comments "^2.0.1"
@@ -702,12 +702,12 @@
   resolved "https://registry.yarnpkg.com/@dcloudio/uni-mp-toutiao/-/uni-mp-toutiao-0.0.312.tgz#1a51f8af062b06d6512b4b998ffe389c59492dc1"
 
 "@dcloudio/uni-mp-weixin@*":
-  version "0.0.926"
-  resolved "http://registry.npm.taobao.org/@dcloudio/uni-mp-weixin/download/@dcloudio/uni-mp-weixin-0.0.926.tgz#0378f78161d2cddff241447bc081246ce597edaf"
+  version "0.0.927"
+  resolved "http://registry.npm.taobao.org/@dcloudio/uni-mp-weixin/download/@dcloudio/uni-mp-weixin-0.0.927.tgz#ecda54fcb98b1b1ea8df50426ab7aad88bf90c71"
 
 "@dcloudio/uni-template-compiler@*":
-  version "0.9.148"
-  resolved "http://registry.npm.taobao.org/@dcloudio/uni-template-compiler/download/@dcloudio/uni-template-compiler-0.9.148.tgz#158aec945d73f30e8d093fc547a34fbf9eaff89f"
+  version "0.9.151"
+  resolved "http://registry.npm.taobao.org/@dcloudio/uni-template-compiler/download/@dcloudio/uni-template-compiler-0.9.151.tgz#5b4f09d91a443e961bf515d0594860f973bf3af8"
   dependencies:
     "@babel/parser" "^7.3.3"
     "@babel/traverse" "^7.3.3"
@@ -740,12 +740,12 @@
     xregexp "4.0.0"
 
 "@dcloudio/webpack-uni-mp-loader@*":
-  version "0.3.608"
-  resolved "http://registry.npm.taobao.org/@dcloudio/webpack-uni-mp-loader/download/@dcloudio/webpack-uni-mp-loader-0.3.608.tgz#86d88f6b6935773f6d092af29ef39714764b7bf8"
+  version "0.3.609"
+  resolved "http://registry.npm.taobao.org/@dcloudio/webpack-uni-mp-loader/download/@dcloudio/webpack-uni-mp-loader-0.3.609.tgz#2223f36bf9892ded1155c229117a8d641bb33e5c"
 
 "@dcloudio/webpack-uni-pages-loader@*":
-  version "0.2.820"
-  resolved "http://registry.npm.taobao.org/@dcloudio/webpack-uni-pages-loader/download/@dcloudio/webpack-uni-pages-loader-0.2.820.tgz#5d886dc9a43c23420525cc7330ea0e750edfacb7"
+  version "0.2.821"
+  resolved "http://registry.npm.taobao.org/@dcloudio/webpack-uni-pages-loader/download/@dcloudio/webpack-uni-pages-loader-0.2.821.tgz#5bdddb860ec5b5b3d1d8b41fb83834adc4b9f1f7"
   dependencies:
     merge "^1.2.1"
     strip-json-comments "^2.0.1"
@@ -2734,7 +2734,7 @@ debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
 
 debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   version "4.1.1"
-  resolved "http://registry.npm.taobao.org/debug/download/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  resolved "http://registry.npm.taobao.org/debug/download/debug-4.1.1.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fdebug%2Fdownload%2Fdebug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   dependencies:
     ms "^2.1.1"
 

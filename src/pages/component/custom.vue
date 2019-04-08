@@ -86,6 +86,23 @@
         ></wuc-tab>
       </div>
     </custom>
+
+    <custom bg-color="bg-white margin-top" color="text-cyan">
+      <div slot="leftMore">
+        <div class="flex-center" style="margin-left:60upx;width:60vw;">
+          <div
+            class="cu-btn"
+            :class="timeType === 1 ? 'text-white bg-cyan' : 'text-grey line-cyan'"
+            @tap="orderTime(1)"
+          >这是tab0</div>
+          <div
+            class="cu-btn block"
+            :class="timeType === 2 ? 'text-white bg-cyan' : 'text-grey line-cyan'"
+            @tap="orderTime(2)"
+          >这是tab1</div>
+        </div>
+      </div>
+    </custom>
   </div>
 </template>
 
@@ -97,11 +114,8 @@ export default {
   data() {
     return {
       TabCur: 0,
-      tabNav: [
-        { name: "tab0" },
-        { name: "tab1" },
-        { name: "tab2" }
-      ]
+      timeType: 1,
+      tabNav: [{ name: "tab0" }, { name: "tab1" }, { name: "tab2" }]
     };
   },
 
@@ -125,6 +139,9 @@ export default {
         mask: true,
         duration: 2000
       });
+    },
+    orderTime(e) {
+      this.timeType = e;
     }
   },
 

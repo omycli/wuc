@@ -16,8 +16,12 @@
           hover-class="none"
           :style="navCustom"
         >
-          <text v-if="openType === 'navigateBack'" class="icon-back"></text>
-          <text v-if="!leftMore">{{name}}</text>
+          <text
+            v-if="openType === 'navigateBack'"
+            class="icon-back"
+            :style="navColor"
+          ></text>
+          <text v-if="!leftMore" :style="navColor">{{name}}</text>
           <slot name="leftMore"></slot>
         </navigator>
       </div>
@@ -84,6 +88,12 @@ export default {
       default() {
         return false;
       }
+    },
+    color: {
+      type: String,
+      default() {
+        return "#ffffff";
+      }
     }
   },
   data() {
@@ -125,6 +135,11 @@ export default {
         style["height"] = Custom.height + "px";
         style["margin-left"] = `calc(750rpx - (${Custom.right})px`;
       }
+      return obj2style(style);
+    },
+    navColor() {
+      let style = {};
+      style["color"] = this.color;
       return obj2style(style);
     }
   },

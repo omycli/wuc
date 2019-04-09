@@ -54,16 +54,16 @@ export default {
           icon: "timefill"
         },
         {
+          title: "横向选项卡 ",
+          name: "/pages/component/nav",
+          color: "mauve",
+          icon: "formfill"
+        },
+        {
           title: "操作条",
           name: "/pages/component/bar",
           color: "purple",
           icon: "vipcard"
-        },
-        {
-          title: "导航栏 ",
-          name: "/pages/component/nav",
-          color: "mauve",
-          icon: "formfill"
         },
         {
           title: "列表",

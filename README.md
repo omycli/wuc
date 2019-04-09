@@ -22,7 +22,7 @@
   - 小程序 使用微信开发者工具打开将`project.config.json`中的`miniprogramRoot`改为  `dist/build/mp-weixin`点击微信开发者工具的上传按钮并到微信公众平台的小程序后台进行发布。
 
 
-## 参考与使用
+## 感谢以下的支持（排名不分先后）
 [vue](https://vuejs.org)   
 [mpvue](https://github.com/Meituan-Dianping/mpvue)   
 [uni-app](https://uniapp.dcloud.io)  

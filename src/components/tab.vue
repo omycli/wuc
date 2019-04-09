@@ -93,8 +93,7 @@ export default {
       return (this.tabCur - 1) * 60;
     }
   },
-  async mounted() {},
-  onLoad: async function(option) {}
+  onReady() {}
 };
 </script>
 <style lang="scss">

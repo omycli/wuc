@@ -93,12 +93,12 @@
           <div
             class="cu-btn"
             :class="timeType === 1 ? 'text-white bg-cyan' : 'text-grey line-cyan'"
-            @tap="orderTime(1)"
+            @tap.stop="orderTime(1)"
           >这是tab0</div>
           <div
             class="cu-btn block"
             :class="timeType === 2 ? 'text-white bg-cyan' : 'text-grey line-cyan'"
-            @tap="orderTime(2)"
+            @tap.stop="orderTime(2)"
           >这是tab1</div>
         </div>
       </div>

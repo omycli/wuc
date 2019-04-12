@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="padding flex justify-between align-center">
-        <div class="cu-avatar xl radius">港
+        <div class="cu-avatar xl radius">W
           <div class="cu-tag badge">99+</div>
         </div>
         <div

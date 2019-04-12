@@ -1,7 +1,7 @@
 <template>
-  <div v-if="msg && msg.length > 0" class="scroll-msg" :style="BaseClass">
+  <div v-if="msg && msg.length > 0" class="scroll-msg" :class="BaseClass">
     <div class="scroll-msg__msg">
-      <img :src="logo" class="scroll-msg__msg-icon">
+      <img :src="logo" :class="logoClass">
       <swiper
         class="scroll-msg__swiper"
         :vertical="vertical"
@@ -13,12 +13,14 @@
         interval="3000"
       >
         <swiper-item
-          class="scroll-msg__swiper-item"
           v-for="(item, index) in msg"
           :key="index"
-          @click="tapMsg(item)"
+          @tap="tapMsg(item)"
         >
-          <div class="scroll-msg__text" >{{item.content}}</div>
+          <div
+            class="scroll-msg__swiper-item"
+            :class="textClass"
+          >{{item.content}}</div>
         </swiper-item>
       </swiper>
     </div>
@@ -37,7 +39,19 @@ export default {
     logo: {
       type: String,
       default() {
-        return "https://itrip-public-1256737511.cos.ap-chengdu.myqcloud.com/itrip/small-notice-icon.png";
+        return "https://goss1.veer.com/creative/vcg/veer/612/veer-316928759.jpg";
+      }
+    },
+    logoClass: {
+      type: String,
+      default() {
+        return "scroll-msg__msg-icon";
+      }
+    },
+    textClass: {
+      type: String,
+      default() {
+        return "scroll-msg__text";
       }
     },
     msg: {
@@ -55,6 +69,7 @@ export default {
   },
   methods: {
     tapMsg(item) {
+      console.log(item);
       this.$emit("onevent", item);
     }
   }
@@ -78,11 +93,9 @@ export default {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  padding: 0 15px;
 
   &__msg {
     width: 100%;
-    padding: 6px 0;
     -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
     display: -webkit-box;
@@ -91,24 +104,25 @@ export default {
   }
 
   &__msg-icon {
-    width: 30px;
-    height: 28px;
+    width: 60upx;
+    height: 56upx;
     margin-right: 10px;
   }
 
   &__swiper {
     width: 100%;
-    height: 26px;
+    height: 100%;
   }
 
   &__swiper-item {
-    line-height: 26px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 
   &__text {
-    width: 100%;
-    height: 100%;
-    font-size: 14px;
+    font-size: 28upx;
     color: #999999;
     @include text-line(1);
   }

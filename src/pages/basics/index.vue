@@ -4,8 +4,7 @@
 
     Scrollmsg(
       :msg="content"
-      base-class="margin"
-      logo="https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg"
+      base-class="padding-lr padding-tb-sm"
       @onevent="showModal"
     )
 
@@ -107,7 +106,8 @@ export default {
   onShareAppMessage() {
     return {
       title: "WUC",
-      imageUrl: "https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg",
+      imageUrl:
+        "https://goss.veer.com/creative/vcg/veer/612/veer-303358101.jpg",
       path: "/pages/basics/index"
     };
   }
